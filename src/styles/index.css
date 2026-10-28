@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-fondo: #faf3dd;
+    --color-principal: #264653;
+    --color-contraste: #5f4a39;
+    --color-secundario: #e76f51;
+    --color-complementario-principal: #e9c46a;
+    --color-complementario-secundario: #2a9d8f;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-fondo font-cuerpo text-principal antialiased;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-titulos;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-complementario-secundario ring-offset-2 ring-offset-fondo;
+  }
+}
+
+@layer components {
+  .contenedor {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-10-28
-- **Fase actual:** F0 completada y publicada; F1 pendiente de aprobación
+- **Fase actual:** F1 en curso — base técnica
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` publicado en `origin`; commit inicial `76dee25`.
+- **Estado del repositorio:** `main` publicado en `origin` con el commit inicial `76dee25`; el commit local `6087924` sigue pendiente de push.
 
 ---
 
@@ -69,27 +69,43 @@
 
 ---
 
-## 3. Verificaciones realizadas
+## 3. Verificaciones realizadas en F0
 
 - `opencode.json` validado como JSON.
 - Repositorio remoto comprobado: público y vacío.
 - Búsqueda de contradicciones: no quedan referencias a Neon, Vercel como stack, `DATABASE_URL` ni `lib/db.js`, salvo la justificación del cambio en `03-TECNOLOGIAS.md`.
 - No se creó `package.json`.
-- No se ejecutó `npm install`.
-- No se creó código de aplicación.
+- F0 se cerró sin `npm install`.
+- No se creó código de aplicación en F0.
 - No se tocó Supabase ni Netlify.
 - Commit `76dee25` creado y push a `origin/main` realizado.
 
 ---
 
-## 4. Pendiente inmediato
+## 4. Estado de F1
 
-1. Recibir la palabra **“aprobado F0”**.
-2. Iniciar F1 — Base técnica.
+Completado:
+
+- `package.json` con versiones exactas y `package-lock.json`.
+- Dependencias instaladas; `npm audit` sin vulnerabilidades.
+- Vite, PostCSS, Tailwind, DaisyUI, ESLint, Prettier y Vitest configurados.
+- Tokens de marca y fuentes `@fontsource` configurados.
+- Logo, icono y favicon normalizados en `public/marca/`.
+- Componente `Logo` con isotipo PNG y texto HTML; variantes para fondo claro y navbar azul.
+- Tests de `Logo` para nombre visible, imagen decorativa y fondo sobre oscuro.
+- Estructura inicial de `src/`, `tests/`, `public/`, `netlify/functions/` y `db/`.
+
+Pendiente:
+
+1. Crear layout, router y página 404.
+2. Agregar pruebas smoke.
+3. Crear `netlify.toml` y `.env.example`.
+4. Verificar `npm test`, `npm run lint` y `npm run build`.
+5. Proponer commits de F1.
 
 ---
 
-## 5. Próxima fase: F1
+## 5. Alcance de F1
 
 Alcance:
 
@@ -99,8 +115,6 @@ Alcance:
 - Crear layout, router, 404, Vitest, ESLint y Prettier.
 - Crear `netlify.toml` y `.env.example`.
 - Verificar `npm test`, `npm run lint` y `npm run build`.
-
-F1 no comienza hasta recibir **“aprobado F0”**.
 
 ---
 
@@ -132,3 +146,4 @@ F1 no comienza hasta recibir **“aprobado F0”**.
 | Fecha | Fase | Cambio |
 | :--- | :--- | :--- |
 | 2026-10-28 | F0 | Constitución, roadmap, reglas, comandos, skills y documentación base. |
+| 2026-10-28 | F1 | Dependencias, configuración base, fuentes y favicon. |

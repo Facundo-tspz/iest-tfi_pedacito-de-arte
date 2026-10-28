@@ -22,12 +22,14 @@ Este documento operacionaliza `docs/ROADMAP.md`. Las tareas se ejecutan de a una
 
 ## F1 — Base técnica
 
-- [ ] Crear `package.json` y fijar versiones.
-- [ ] Instalar React, Vite, React Router, Tailwind, DaisyUI y dependencias aprobadas.
-- [ ] Configurar tokens de marca y fuentes.
-- [ ] Normalizar logo y favicon en `public/marca/`.
+- [x] Crear `package.json` y fijar versiones.
+- [x] Instalar React, Vite, React Router, Tailwind, DaisyUI y dependencias aprobadas.
+- [x] Configurar tokens de marca y fuentes.
+- [x] Normalizar logo y favicon en `public/marca/`.
+- [x] Crear componente `Logo` reutilizable con variantes para fondo claro y oscuro.
+- [x] Agregar tests del componente `Logo`.
 - [ ] Crear layout base, router y página 404.
-- [ ] Configurar Vitest, ESLint y Prettier.
+- [x] Configurar Vitest, ESLint y Prettier.
 - [ ] Crear `netlify.toml` y `.env.example`.
 - [ ] Verificar `npm test`, `npm run lint` y `npm run build`.
 - [ ] Aprobar F1.

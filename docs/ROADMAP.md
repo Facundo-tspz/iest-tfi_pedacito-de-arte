@@ -1,5 +1,15 @@
 # Roadmap del Proyecto: Pedacito de Arte
 
+## Checklist de fases
+
+- [x] **F0** — Constitución, arnés y documentación
+- [ ] **F1** — Base técnica del proyecto
+- [ ] **F2** — Spec 001: Home + Catálogo
+- [ ] **F3** — Spec 002: Carrito de encargos + WhatsApp
+- [ ] **F4** — Spec 003: Panel admin + CMS
+- [ ] **F5** — Producción multimedia con IA
+- [ ] **F6** — QA, deploy, informe y defensa
+
 ## Regla estricta e inamovible
 
 1. Se trabaja **una sola fase a la vez**.
@@ -17,7 +27,7 @@
 | Fase | Nombre | Estado |
 | :--- | :--- | :--- |
 | **F0** | Constitución, arnés y documentación | Completada y publicada (`76dee25`); esperando “aprobado F0” |
-| **F1** | Base técnica del proyecto | Pendiente |
+| **F1** | Base técnica del proyecto | En curso |
 | **F2** | Spec 001: Home + Catálogo | Pendiente |
 | **F3** | Spec 002: Carrito de encargos + WhatsApp | Pendiente |
 | **F4** | Spec 003: Panel admin + CMS | Pendiente |

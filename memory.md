@@ -1,9 +1,9 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F0 completada y publicada; F1 pendiente de aprobación
-- **Último cambio:** commit `76dee25` y push de F0 a `origin/main`.
-- **Próximo paso:** recibir “aprobado F0” e iniciar F1.
+- **Fase actual:** F1 en curso — base técnica
+- **Último cambio:** componente `Logo` con isotipo PNG, texto HTML y variante para navbar azul; tests agregados.
+- **Próximo paso:** layout, rutas, 404, tests smoke y configuración de Netlify.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo

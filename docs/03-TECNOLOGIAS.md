@@ -33,6 +33,7 @@ Este documento define el stack oficial y justifica los cambios respecto de la ba
 | Librería | Uso |
 | :--- | :--- |
 | `@supabase/supabase-js` | Lectura pública y cliente administrativo en Functions. |
+| `@fontsource/cormorant-garamond` y `@fontsource/poppins` | Fuentes oficiales autoalojadas. |
 | `jose` | Firma y verificación de sesiones JWT. |
 | `zod` | Validación de payloads en el servidor. |
 | `react-hook-form` | Formularios públicos y administrativos. |

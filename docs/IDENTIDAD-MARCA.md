@@ -26,7 +26,14 @@ Este documento especifica la esencia, los elementos visuales, la paleta de color
 
 El logo combina un estilo minimalista y artesanal que transmite la creatividad del taller.
 
-- **Ubicación de archivos:** los originales viven en `marca/`. En F1 se normalizan como `public/marca/logo.png`, `public/marca/logo-icono.png` y `public/marca/favicon.ico`. No se borran los originales.
+- **Ubicación y formatos:** los originales viven en `marca/`: `Logo - PNG.png` (logo completo), `Logo - icono.png` (isotipo) y `Logo - SVG.svg` (export de CorelDRAW). El SVG de Corel no se usa en la web porque tiene mesa A4 y mucho espacio vacío. Para la web se usan:
+  - `public/marca/logo-icono.png`: isotipo PNG de 512×512 con fondo transparente.
+  - `public/marca/apple-touch-icon.png`: 180×180 con fondo crema `#FAF3DD`.
+  - `public/marca/favicon-32.png` y `public/marca/favicon.ico`.
+  - No se borran los originales de `marca/`.
+- **Composición web:** isotipo a la izquierda y texto HTML a la derecha, alineado a la izquierda. `Pedacito` y `de` usan Cormorant Garamond 600 itálica; `ARTE` usa Poppins 800 en mayúsculas. El texto no se incrusta en la imagen: lo renderiza `Logo.jsx` para mantener accesibilidad y control tipográfico.
+- **Fondos:** sobre fondo crema el isotipo va sin caja. Sobre la navbar azul, el isotipo lleva un fondo crema redondeado para conservar los trazos claros y el texto usa el token `fondo`. La versión definitiva para fondos de bajo contraste queda para el diseño del home.
+- **Verde del isotipo:** los tokens de marca usan `#2A9D8F`. El PNG original conserva su verde y no se recolorea en F1; el SVG de Corel no se toma como referencia de color.
 - **Composición Visual:** 
   - *Isotipo / Ilustración:* Una paleta de pintor estilizada dibujada con un trazo simple de estilo minimalista en color Azul Medianoche. Contiene tres orificios/gotas de pintura que representan la paleta de colores de la marca (Rojo Coral, Naranja Cálido y Verde Azulado). Sobre ella se cruza un pincel con cerdas doradas en Naranja Cálido y un trazo curvado inferior de pincelada en Rojo Coral.
   - *Tipografía de Marca:* Al lado derecho del isotipo, la frase **"Pedacito de"** en tipografía principal *Cormorant Garamond* (estilo elegante e itálico) y la palabra **"Arte"** destacada en tipografía secundaria *Poppins ExtraBold* en color Azul Medianoche.
