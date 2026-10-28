@@ -16,7 +16,7 @@
 
 | Fase | Nombre | Estado |
 | :--- | :--- | :--- |
-| **F0** | Constitución, arnés y documentación | Completada, pendiente de aprobación |
+| **F0** | Constitución, arnés y documentación | Completada y publicada (`76dee25`); esperando “aprobado F0” |
 | **F1** | Base técnica del proyecto | Pendiente |
 | **F2** | Spec 001: Home + Catálogo | Pendiente |
 | **F3** | Spec 002: Carrito de encargos + WhatsApp | Pendiente |

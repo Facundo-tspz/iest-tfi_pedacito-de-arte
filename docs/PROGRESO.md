@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
-**Última actualización:** 2026-10-28  
-**Fase actual:** F0 completada, pendiente de aprobación  
-**Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte  
-**Estado del repositorio:** inicializado localmente, remoto configurado, sin commit ni push todavía.
+- **Última actualización:** 2026-10-28
+- **Fase actual:** F0 completada y publicada; F1 pendiente de aprobación
+- **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
+- **Estado del repositorio:** `main` publicado en `origin`; commit inicial `76dee25`.
 
 ---
 
@@ -78,17 +78,14 @@
 - No se ejecutó `npm install`.
 - No se creó código de aplicación.
 - No se tocó Supabase ni Netlify.
-- No se hizo commit ni push.
+- Commit `76dee25` creado y push a `origin/main` realizado.
 
 ---
 
 ## 4. Pendiente inmediato
 
-1. Revisar los archivos de F0.
-2. Aprobar el mensaje de commit propuesto.
-3. Ejecutar el commit de F0.
-4. Aprobar el push a `main`.
-5. Iniciar F1 — Base técnica.
+1. Recibir la palabra **“aprobado F0”**.
+2. Iniciar F1 — Base técnica.
 
 ---
 
@@ -103,7 +100,7 @@ Alcance:
 - Crear `netlify.toml` y `.env.example`.
 - Verificar `npm test`, `npm run lint` y `npm run build`.
 
-F1 no comienza hasta recibir **“aprobado F0”** y resolver el commit.
+F1 no comienza hasta recibir **“aprobado F0”**.
 
 ---
 

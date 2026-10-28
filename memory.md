@@ -1,10 +1,10 @@
 # Memoria del Proyecto
 
-**Fuente completa de progreso:** `docs/PROGRESO.md`  
-**Fase actual:** F0 completada, pendiente de aprobación  
-**Último cambio:** creación de constitución, roadmap, reglas de IA, arnés del agente y corrección documental.  
-**Próximo paso:** aprobar el commit de F0 y luego iniciar F1.  
-**Regla:** no avanzar de fase sin la palabra “aprobado”.
+- **Fuente completa de progreso:** `docs/PROGRESO.md`
+- **Fase actual:** F0 completada y publicada; F1 pendiente de aprobación
+- **Último cambio:** commit `76dee25` y push de F0 a `origin/main`.
+- **Próximo paso:** recibir “aprobado F0” e iniciar F1.
+- **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo
 

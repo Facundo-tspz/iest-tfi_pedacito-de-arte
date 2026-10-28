@@ -16,7 +16,7 @@ Este documento operacionaliza `docs/ROADMAP.md`. Las tareas se ejecutan de a una
 - [x] Actualizar `AGENTS.md`, `CLAUDE.md`, `README.md` y `.gitignore`.
 - [x] Actualizar los documentos 01 a 10.
 - [x] Inicializar Git y configurar el remoto.
-- [ ] Aprobar el commit de F0.
+- [x] Aprobar el commit de F0.
 
 ---
 
