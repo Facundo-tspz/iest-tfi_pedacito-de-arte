@@ -3,8 +3,6 @@
   "instructions": [
     "AGENTS.md",
     "docs/CONSTITUCION.md",
-    "docs/REGLAS-IA.md",
-    "docs/ROADMAP.md",
     "docs/PROGRESO.md",
     "memory.md"
   ],
