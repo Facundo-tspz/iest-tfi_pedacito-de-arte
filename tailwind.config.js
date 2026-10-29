@@ -3,6 +3,7 @@ import daisyui from 'daisyui';
 const coloresMarca = {
   fondo: '#FAF3DD',
   principal: '#264653',
+  blanco: '#FFFFFF',
   contraste: '#5F4A39',
   secundario: '#E76F51',
   'complementario-principal': '#E9C46A',

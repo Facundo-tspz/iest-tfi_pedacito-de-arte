@@ -32,7 +32,7 @@ El logo combina un estilo minimalista y artesanal que transmite la creatividad d
   - `public/marca/favicon-32.png` y `public/marca/favicon.ico`.
   - No se borran los originales de `marca/`.
 - **Composición web:** isotipo a la izquierda y texto HTML a la derecha, alineado a la izquierda. `Pedacito` y `de` usan Cormorant Garamond 600 itálica; `ARTE` usa Poppins 800 en mayúsculas. El texto no se incrusta en la imagen: lo renderiza `Logo.jsx` para mantener accesibilidad y control tipográfico.
-- **Fondos:** sobre fondo crema el isotipo va sin caja. Sobre la navbar azul, el isotipo lleva un fondo crema redondeado para conservar los trazos claros y el texto usa el token `fondo`. La versión definitiva para fondos de bajo contraste queda para el diseño del home.
+- **Fondos:** sobre fondo crema el isotipo va sin caja. Sobre la navbar azul, el isotipo lleva un fondo crema circular y el texto usa el token `blanco`. La versión definitiva para fondos de bajo contraste queda para el diseño del home.
 - **Verde del isotipo:** los tokens de marca usan `#2A9D8F`. El PNG original conserva su verde y no se recolorea en F1; el SVG de Corel no se toma como referencia de color.
 - **Composición Visual:** 
   - *Isotipo / Ilustración:* Una paleta de pintor estilizada dibujada con un trazo simple de estilo minimalista en color Azul Medianoche. Contiene tres orificios/gotas de pintura que representan la paleta de colores de la marca (Rojo Coral, Naranja Cálido y Verde Azulado). Sobre ella se cruza un pincel con cerdas doradas en Naranja Cálido y un trazo curvado inferior de pincelada en Rojo Coral.
@@ -59,6 +59,7 @@ La paleta evoca una sensación artesanal, equilibrada y moderna, combinando tono
 | **Rojo Coral** | `#E76F51` | Secundario / Trazo de Pincelada / Botones CTA | **5%** (Acentos, botones primarios e íconos) |
 | **Verde Azulado** | `#2A9D8F` | Complementario Secundario / Detalles en Paleta | Sustituto / Acompañamiento de estado |
 | **Marrón Chocolate** | `#5F4A39` | Contraste Alto / Textos secundarios y bordes | Bordes y detalles de impresión |
+| **Blanco Puro** | `#FFFFFF` | Texto sobre fondos oscuros / Navbar | Legibilidad sobre azul medianoche |
 
 ---
 
@@ -102,6 +103,7 @@ Copiar y mantener este bloque en `app/globals.css`. Los agentes de IA deben util
   --color-secundario: #E76F51;
   --color-complementario-secundario: #2A9D8F;
   --color-contraste-alto: #5F4A39;
+  --color-blanco: #FFFFFF;
 
   /* Tipografías */
   --fuente-titulos: 'Cormorant Garamond', Georgia, serif;

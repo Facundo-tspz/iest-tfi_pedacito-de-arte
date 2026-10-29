@@ -1,6 +1,6 @@
 # Progreso del Proyecto: Pedacito de Arte
 
-- **Última actualización:** 2026-10-28
+- **Última actualización:** 2026-10-29
 - **Fase actual:** F1 en curso — base técnica
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
 - **Estado del repositorio:** `main` publicado en `origin` con el commit inicial `76dee25`; el commit local `6087924` sigue pendiente de push.
@@ -92,12 +92,15 @@ Completado:
 - Tokens de marca y fuentes `@fontsource` configurados.
 - Logo, icono y favicon normalizados en `public/marca/`.
 - Componente `Logo` con isotipo PNG y texto HTML; variantes para fondo claro y navbar azul.
-- Tests de `Logo` para nombre visible, imagen decorativa y fondo sobre oscuro.
+- `Navbar` sticky siempre visible, azul sólido con degradado sutil al pie, blur y borde inferior dorado.
+- Logo sobre navbar con círculo crema fijo, isotipo PNG más grande, texto blanco, `Pedacito` más grande y distribuido para alinear con `de ARTE`, y `ARTE` en Poppins ExtraBold.
+- Token `blanco` agregado a Tailwind, CSS e identidad de marca.
+- Tests de `Logo` (nombre, decorativo, círculo, texto blanco) y `Navbar` (scroll, opacidad, colores).
 - Estructura inicial de `src/`, `tests/`, `public/`, `netlify/functions/` y `db/`.
 
 Pendiente:
 
-1. Crear layout, router y página 404.
+1. Crear router y página 404 (navbar y layout base ya resueltos en `main.jsx`).
 2. Agregar pruebas smoke.
 3. Crear `netlify.toml` y `.env.example`.
 4. Verificar `npm test`, `npm run lint` y `npm run build`.
@@ -147,3 +150,6 @@ Alcance:
 | :--- | :--- | :--- |
 | 2026-10-28 | F0 | Constitución, roadmap, reglas, comandos, skills y documentación base. |
 | 2026-10-28 | F1 | Dependencias, configuración base, fuentes y favicon. |
+| 2026-10-29 | F1 | `opencode.json` reducido a contexto esencial para bajar consumo; `REGLAS-IA.md` y `ROADMAP.md` se leen bajo demanda desde `AGENTS.md`. Se quitó el `theme-color` con hex suelto de `index.html`; los originales de `marca/` se conservan según `IDENTIDAD-MARCA.md`. |
+| 2026-10-29 | F1 | Navbar sticky con opacidad/blur, borde verde y ocultado al bajar; logo circular crema con texto blanco y tamaños unificados. Token `blanco` agregado. |
+| 2026-10-29 | F1 | Navbar rediseñada: azul sólido con degradado sutil al pie, borde dorado, sombra y logo con PNG más grande; `Pedacito` más grande y alineado con `de ARTE`. |

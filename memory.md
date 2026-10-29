@@ -2,8 +2,8 @@
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
 - **Fase actual:** F1 en curso — base técnica
-- **Último cambio:** componente `Logo` con isotipo PNG, texto HTML y variante para navbar azul; tests agregados.
-- **Próximo paso:** layout, rutas, 404, tests smoke y configuración de Netlify.
+- **Último cambio:** navbar azul sólida con degradado sutil al pie, borde dorado y logo con `Pedacito` más grande alineado con `de ARTE`.
+- **Próximo paso:** router, 404, tests smoke y configuración de Netlify.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo
