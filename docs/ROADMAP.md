@@ -3,7 +3,7 @@
 ## Checklist de fases
 
 - [x] **F0** — Constitución, arnés y documentación
-- [ ] **F1** — Base técnica del proyecto
+- [x] **F1** — Base técnica del proyecto
 - [ ] **F2** — Spec 001: Home + Catálogo
 - [ ] **F3** — Spec 002: Carrito de encargos + WhatsApp
 - [ ] **F4** — Spec 003: Panel admin + CMS
@@ -27,7 +27,7 @@
 | Fase | Nombre | Estado |
 | :--- | :--- | :--- |
 | **F0** | Constitución, arnés y documentación | Completada y publicada (`76dee25`); esperando “aprobado F0” |
-| **F1** | Base técnica del proyecto | En curso |
+| **F1** | Base técnica del proyecto | Completada y publicada (`26ce078`); aprobada |
 | **F2** | Spec 001: Home + Catálogo | Pendiente |
 | **F3** | Spec 002: Carrito de encargos + WhatsApp | Pendiente |
 | **F4** | Spec 003: Panel admin + CMS | Pendiente |

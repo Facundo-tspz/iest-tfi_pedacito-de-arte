@@ -1,9 +1,9 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F1 en curso — base técnica
-- **Último cambio:** navbar azul sólida con degradado sutil al pie, borde dorado y logo con `Pedacito` más grande alineado con `de ARTE`.
-- **Próximo paso:** router, 404, tests smoke y configuración de Netlify.
+- **Fase actual:** F1 completada — esperando inicio de F2
+- **Último cambio:** F1 cerrada: router, 404, `netlify.toml`, `.env.example` y deploy verificado en Netlify.
+- **Próximo paso:** F2 — Spec 001: Home + Catálogo; empezar con `/spec` y esperar aprobación.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo
