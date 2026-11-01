@@ -1,7 +1,7 @@
 # Tareas — Spec 001: Home + Catálogo
 
 - **Fase:** F2
-- **Estado:** Aprobado — T07 completada; T08 pendiente
+- **Estado:** Aprobado — T08 completada; T09 pendiente
 - **Plan:** `specs/001-catalogo/plan.md`
 - **Regla:** una tarea por vez. No se avanza sin marcar la anterior como terminada y verificada.
 - **Estimación:** cada tarea debe resolverse en menos de 30 minutos. Si una tarea se agranda, se divide antes de empezar.

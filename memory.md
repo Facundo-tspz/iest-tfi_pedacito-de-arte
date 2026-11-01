@@ -1,9 +1,9 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F2 en curso — T07 completada; T08 pendiente de aprobación
-- **Último cambio:** T07 completada: hooks de debounce, catálogo y detalle con tests.
-- **Próximo paso:** Con “aprobado”, ejecutar T08: hooks de movimiento reducido y scroll a anclas.
+- **Fase actual:** F2 en curso — T08 completada; T09 pendiente de aprobación
+- **Último cambio:** T08 completada: hooks de movimiento reducido y scroll a anclas con tests.
+- **Próximo paso:** Con “aprobado”, ejecutar T09: hook de carrusel.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo

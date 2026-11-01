@@ -1,7 +1,7 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-10-30
-- **Fase actual:** F2 en curso — T07 completada; T08 pendiente de aprobación
+- **Fase actual:** F2 en curso — T08 completada; T09 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
 - **Estado del repositorio:** `main` actualizado en `origin`; deploy en Netlify funcionando.
 
@@ -134,15 +134,17 @@ Completado:
 - `src/hooks/useDebouncedValue.js` con retardo de 300 ms y cancelación del temporizador anterior.
 - `src/hooks/useCatalogo.js` con productos, loading, error y reintento; evita respuestas obsoletas.
 - `src/hooks/useProducto.js` con detalle por slug, loading, error, no encontrado y reintento.
-- Tests de texto, precio, WhatsApp, servicio y hooks agregados; `npm test` 82/82.
+- `src/hooks/useMovimientoReducido.js` con detección y escucha de `prefers-reduced-motion`.
+- `src/hooks/useScrollToHash.js` con scroll a anclas, offset del navbar y respeto al movimiento reducido.
+- Tests de texto, precio, WhatsApp, servicio y hooks agregados; `npm test` 94/94.
 
 En curso:
 
-- T08: hooks de movimiento reducido y scroll a anclas, pendiente de aprobación.
+- T09: hook de carrusel, pendiente de aprobación.
 
 Pendiente:
 
-- T09–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
+- T10–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
 
 ---
 
@@ -202,3 +204,4 @@ Alcance:
 | 2026-10-30 | F2 | T05 completada: normalización de texto compartida y tests. |
 | 2026-10-30 | F2 | T06 completada: utilidades de precio y WhatsApp con tests. |
 | 2026-10-30 | F2 | T07 completada: hooks de debounce, catálogo y detalle con tests. |
+| 2026-10-30 | F2 | T08 completada: hooks de movimiento reducido y scroll a anclas con tests. |
