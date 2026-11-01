@@ -1,9 +1,9 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F2 en curso — T05 completada; T06 pendiente de aprobación
-- **Último cambio:** T05 completada: `src/utils/texto.js` y tests de normalización.
-- **Próximo paso:** Con “aprobado”, ejecutar T06: utilidades de precio y WhatsApp.
+- **Fase actual:** F2 en curso — T06 completada; T07 pendiente de aprobación
+- **Último cambio:** T06 completada: utilidades de precio y WhatsApp con tests.
+- **Próximo paso:** Con “aprobado”, ejecutar T07: hooks de debounce y datos del catálogo.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo
