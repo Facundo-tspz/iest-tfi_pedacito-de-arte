@@ -33,6 +33,7 @@ Categorías iniciales: Agendas, Agendas Docentes, Anotadores, Revistas para Colo
 | `slug` | `text` | NOT NULL, UNIQUE |
 | `categoria_id` | `uuid` | FK `categorias(id)` |
 | `descripcion` | `text` | NOT NULL |
+| `caracteristicas` | `text[]` | NOT NULL, DEFAULT '{}' |
 | `precio_base` | `numeric(12,2)` | NULL, CHECK ≥ 0 |
 | `destacado` | `boolean` | DEFAULT false |
 | `disponible` | `boolean` | DEFAULT true |
@@ -45,6 +46,8 @@ Categorías iniciales: Agendas, Agendas Docentes, Anotadores, Revistas para Colo
 | `actualizado_por` | `uuid` | FK `usuarios_admin(id)` |
 
 `precio_base` puede ser `NULL` mientras el precio no esté cargado. La UI muestra “Precio a confirmar”.
+
+`caracteristicas` guarda una lista de características breves (máximo 8, hasta 80 caracteres cada una). El admin de F4 valida la cantidad y la longitud.
 
 ### `producto_imagenes`
 
