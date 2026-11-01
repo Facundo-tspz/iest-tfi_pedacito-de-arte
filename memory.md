@@ -1,9 +1,9 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F1 completada — esperando inicio de F2
-- **Último cambio:** F1 cerrada: router, 404, `netlify.toml`, `.env.example` y deploy verificado en Netlify.
-- **Próximo paso:** F2 — Spec 001: Home + Catálogo; empezar con `/spec` y esperar aprobación.
+- **Fase actual:** F2 en curso — T05 completada; T06 pendiente de aprobación
+- **Último cambio:** T05 completada: `src/utils/texto.js` y tests de normalización.
+- **Próximo paso:** Con “aprobado”, ejecutar T06: utilidades de precio y WhatsApp.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo
@@ -14,6 +14,7 @@
 4. Leer `docs/ROADMAP.md`.
 5. Leer `docs/PROGRESO.md`.
 6. Leer la spec activa en `specs/`.
+7. Leer `docs/11-CAMBIOS.md` si la tarea toca dependencias, datos o configuración.
 
 ## Datos fijos
 

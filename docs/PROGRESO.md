@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-10-30
-- **Fase actual:** F1 completada — esperando inicio de F2
+- **Fase actual:** F2 en curso — T05 completada; T06 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` actualizado en `origin` hasta `26ce078`; deploy en Netlify funcionando.
+- **Estado del repositorio:** `main` actualizado en `origin`; deploy en Netlify funcionando.
 
 ---
 
@@ -108,7 +108,40 @@ Pendiente:
 
 ---
 
-## 5. Alcance de F1
+## 5. Estado de F2
+
+Completado:
+
+- Spec 001 de Home + Catálogo aprobada.
+- Clarificación QA resuelta y aprobada; decisiones en `specs/001-catalogo/clarificacion.md`.
+- `docs/11-CAMBIOS.md` creado como registro provisional de tecnologías, datos y configuración.
+- `docs/05-DATOS.md` actualizado con `caracteristicas text[]`.
+- `react-helmet-async` 3.0.0 instalado con versión exacta.
+- `HelmetProvider` envolviendo la app en `src/main.jsx`.
+- Smoke test de `src/main.test.jsx` agregado.
+- `.env.example` con `VITE_WHATSAPP`, `VITE_INSTAGRAM` y `VITE_EMAIL`; `VITE_SITE_URL` conservada.
+- `src/config/configuracion.js` con normalización de WhatsApp, URL del sitio y fallback seguro.
+- Tests de configuración agregados.
+- `docs/03-TECNOLOGIAS.md`, `docs/07-CONVENCIONES.md`, `docs/10-SEGURIDAD.md` y `docs/11-CAMBIOS.md` actualizados.
+- `src/data/mockCatalogo.js` con 4 categorías, 10 productos, 4 destacados, 4 fotos de proceso y opciones de personalización.
+- Todos los productos tienen `caracteristicas`, `precio_base: null` y marca `provisional: true`.
+- Test de forma y cobertura del mock agregado.
+- `src/services/catalogo.js` con categorías, productos, búsqueda, detalle, destacados y novedades.
+- El servicio excluye productos no disponibles y categorías inactivas; completa destacados y normaliza búsqueda.
+- `src/utils/texto.js` con normalización sin acentos ni mayúsculas; el servicio lo importa.
+- Tests de texto y servicio agregados; `npm test` 55/55.
+
+En curso:
+
+- T06: utilidades de precio y WhatsApp, pendiente de aprobación.
+
+Pendiente:
+
+- T07–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
+
+---
+
+## 6. Alcance de F1
 
 Alcance:
 
@@ -121,7 +154,7 @@ Alcance:
 
 ---
 
-## 6. Datos pendientes para fases futuras
+## 7. Datos pendientes para fases futuras
 
 - Precios reales por producto.
 - Fotos y descripciones reales.
@@ -132,7 +165,7 @@ Alcance:
 
 ---
 
-## 7. Orden de lectura para retomar en otro chat
+## 8. Orden de lectura para retomar en otro chat
 
 1. `AGENTS.md`
 2. `docs/CONSTITUCION.md`
@@ -144,7 +177,7 @@ Alcance:
 
 ---
 
-## 8. Historial
+## 9. Historial
 
 | Fecha | Fase | Cambio |
 | :--- | :--- | :--- |
@@ -154,3 +187,11 @@ Alcance:
 | 2026-10-29 | F1 | Navbar sticky con opacidad/blur, borde verde y ocultado al bajar; logo circular crema con texto blanco y tamaños unificados. Token `blanco` agregado. |
 | 2026-10-29 | F1 | Navbar rediseñada: azul sólido con degradado sutil al pie, borde dorado, sombra y logo con PNG más grande; `Pedacito` más grande y alineado con `de ARTE`. |
 | 2026-10-30 | F1 | Cierre de F1: router, 404, tests smoke, `netlify.toml`, `.env.example` y deploy verificado en Netlify. |
+| 2026-10-30 | F2 | Spec 001 creada y aprobada; clarificación QA con hallazgos pendientes. |
+| 2026-10-30 | F2 | Clarificación aprobada; spec y docs actualizados; plan/tareas en curso. |
+| 2026-10-30 | F2 | Plan técnico y tareas creados; pendiente aprobación para implementar. |
+| 2026-10-30 | F2 | T01 completada: `react-helmet-async` 3.0.0, `HelmetProvider` y smoke test. |
+| 2026-10-30 | F2 | T02 completada: variables de entorno y helper de configuración con tests. |
+| 2026-10-30 | F2 | T03 completada: datos mock del catálogo con tests de forma y cobertura. |
+| 2026-10-30 | F2 | T04 completada: capa de servicio del catálogo con búsqueda, filtros y tests. |
+| 2026-10-30 | F2 | T05 completada: normalización de texto compartida y tests. |
