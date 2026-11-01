@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
 import '@fontsource/cormorant-garamond/latin-600.css';
 import '@fontsource/cormorant-garamond/latin-600-italic.css';
 import '@fontsource/cormorant-garamond/latin-700.css';
@@ -13,6 +14,8 @@ import './styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AppRouter />
+    <HelmetProvider>
+      <AppRouter />
+    </HelmetProvider>
   </React.StrictMode>,
 );
