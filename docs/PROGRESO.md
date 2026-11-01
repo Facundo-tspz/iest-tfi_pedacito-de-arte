@@ -1,7 +1,7 @@
 # Progreso del Proyecto: Pedacito de Arte
 
-- **Última actualización:** 2026-10-30
-- **Fase actual:** F2 en curso — T08 completada; T09 pendiente de aprobación
+- **Última actualización:** 2026-11-01
+- **Fase actual:** F2 en curso — T09 completada; T10 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
 - **Estado del repositorio:** `main` actualizado en `origin`; deploy en Netlify funcionando.
 
@@ -136,11 +136,13 @@ Completado:
 - `src/hooks/useProducto.js` con detalle por slug, loading, error, no encontrado y reintento.
 - `src/hooks/useMovimientoReducido.js` con detección y escucha de `prefers-reduced-motion`.
 - `src/hooks/useScrollToHash.js` con scroll a anclas, offset del navbar y respeto al movimiento reducido.
-- Tests de texto, precio, WhatsApp, servicio y hooks agregados; `npm test` 94/94.
+- `src/hooks/useCarrusel.js` con avance automático, pausa por interacción, reanudación a los 5 s, pausa manual, flechas, índice circular y respeto al movimiento reducido.
+- Tests de texto, precio, WhatsApp, servicio y hooks agregados; `npm test` 107/107.
+- `npm run lint` y `npm run build` pasan con T09.
 
 En curso:
 
-- T09: hook de carrusel, pendiente de aprobación.
+- T09 completada; pendiente de commit. T10 (UI compartida) espera aprobación.
 
 Pendiente:
 
@@ -205,3 +207,4 @@ Alcance:
 | 2026-10-30 | F2 | T06 completada: utilidades de precio y WhatsApp con tests. |
 | 2026-10-30 | F2 | T07 completada: hooks de debounce, catálogo y detalle con tests. |
 | 2026-10-30 | F2 | T08 completada: hooks de movimiento reducido y scroll a anclas con tests. |
+| 2026-11-01 | F2 | T09 completada: hook de carrusel con avance, pausas, reanudación y tests con fake timers. |
