@@ -1,7 +1,7 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-10-30
-- **Fase actual:** F2 en curso — T06 completada; T07 pendiente de aprobación
+- **Fase actual:** F2 en curso — T07 completada; T08 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
 - **Estado del repositorio:** `main` actualizado en `origin`; deploy en Netlify funcionando.
 
@@ -131,15 +131,18 @@ Completado:
 - `src/utils/texto.js` con normalización sin acentos ni mayúsculas; el servicio lo importa.
 - `src/utils/precio.js` con formato ARS sin decimales, “Precio a confirmar” para base nula y cálculo del estimado.
 - `src/utils/whatsapp.js` con mensaje de consulta y URL `wa.me` codificada; notas limitadas a 500 caracteres.
-- Tests de texto, precio, WhatsApp y servicio agregados; `npm test` 71/71.
+- `src/hooks/useDebouncedValue.js` con retardo de 300 ms y cancelación del temporizador anterior.
+- `src/hooks/useCatalogo.js` con productos, loading, error y reintento; evita respuestas obsoletas.
+- `src/hooks/useProducto.js` con detalle por slug, loading, error, no encontrado y reintento.
+- Tests de texto, precio, WhatsApp, servicio y hooks agregados; `npm test` 82/82.
 
 En curso:
 
-- T07: hooks de debounce y datos del catálogo, pendiente de aprobación.
+- T08: hooks de movimiento reducido y scroll a anclas, pendiente de aprobación.
 
 Pendiente:
 
-- T08–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
+- T09–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
 
 ---
 
@@ -198,3 +201,4 @@ Alcance:
 | 2026-10-30 | F2 | T04 completada: capa de servicio del catálogo con búsqueda, filtros y tests. |
 | 2026-10-30 | F2 | T05 completada: normalización de texto compartida y tests. |
 | 2026-10-30 | F2 | T06 completada: utilidades de precio y WhatsApp con tests. |
+| 2026-10-30 | F2 | T07 completada: hooks de debounce, catálogo y detalle con tests. |
