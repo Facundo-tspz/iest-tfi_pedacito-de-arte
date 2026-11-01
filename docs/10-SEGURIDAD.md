@@ -11,6 +11,9 @@ Públicas del frontend:
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_ANON_KEY`
 - `VITE_SITE_URL`
+- `VITE_WHATSAPP`
+- `VITE_INSTAGRAM`
+- `VITE_EMAIL`
 
 Privadas, solo en Netlify Functions:
 
