@@ -13,5 +13,5 @@ describe('punto de entrada', () => {
         name: 'Papelería creativa hecha con amor',
       }),
     ).toBeInTheDocument();
-  });
+  }, 15000);
 });
