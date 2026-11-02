@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-01
-- **Fase actual:** F2 en curso — T17 completada; T18 pendiente de aprobación
+- **Fase actual:** F2 en curso — T18 completada; T19 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` actualizado en `origin`; T17 en commit de cierre.
+- **Estado del repositorio:** `main` actualizado en `origin`; T18 en commit de cierre.
 
 ---
 
@@ -156,18 +156,20 @@ Completado:
 - `src/components/home/Novedades.jsx` con las siguientes 4 piezas por orden, excluyendo los slugs del hero.
 - `src/components/seo/SEO.jsx` con título, descripción, canonical, Open Graph y Twitter absolutos desde `VITE_SITE_URL`.
 - `HomePage` compuesta con hero, intro, categorías, novedades, proceso, servicios y SEO; un solo `h1`.
+- `src/components/catalogo/BuscadorCatalogo.jsx` con etiqueta, debounce de 300 ms, limpieza, contador `aria-live` y URL con `replace`.
+- `src/components/catalogo/FiltrosCategoria.jsx` con “Todas”, `aria-pressed`, URL sincronizada y conservación de la búsqueda.
 - `useCarrusel` expone `reinicio` para reiniciar la barra de progreso al reanudar o cambiar de slide.
 - `src/styles/index.css` con la animación `progreso-hero`.
-- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro, servicios, categorías, novedades, SEO y Home agregados; `npm test` 163/163.
-- `npm run lint` y `npm run build` pasan con T17.
+- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro, servicios, categorías, novedades, SEO, Home y controles de catálogo agregados; `npm test` 171/171.
+- `npm run lint` y `npm run build` pasan con T18.
 
 Cierre:
 
-- T17 completada; commit de cierre.
+- T18 completada; commit de cierre.
 
 Pendiente:
 
-- T18–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
+- T19–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
 
 ---
 
@@ -237,3 +239,4 @@ Alcance:
 | 2026-11-01 | F2 | T15 completada: intro de marca y franja de servicios con CTA de WhatsApp. |
 | 2026-11-01 | F2 | T16 completada: categorías y novedades del Home con datos del servicio. |
 | 2026-11-01 | F2 | T17 completada: Home compuesta con SEO, un solo h1 y todas las secciones. |
+| 2026-11-01 | F2 | T18 completada: buscador y filtros del catálogo con sincronización de URL. |
