@@ -26,6 +26,12 @@ describe('AppRoutes', () => {
     ).toBeInTheDocument();
   });
 
+  it('muestra el catálogo en /catalogo', () => {
+    renderizarRuta('/catalogo');
+
+    expect(screen.getByRole('heading', { level: 1, name: 'Catálogo' })).toBeInTheDocument();
+  });
+
   it('muestra la página 404 en una ruta desconocida', () => {
     renderizarRuta('/ruta-inexistente');
 
