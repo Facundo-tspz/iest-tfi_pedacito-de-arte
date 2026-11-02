@@ -1,7 +1,7 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-02
-- **Fase actual:** F3 en curso — Spec 002 aprobada; clarificación en curso
+- **Fase actual:** F3 en curso — plan y tareas aprobados; T01 en curso
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
 - **Estado del repositorio:** `main` con commits locales desde T14; push pendiente de aprobación.
 
@@ -189,8 +189,7 @@ Cierre:
 
 Pendiente:
 
-- Aprobar `specs/002-carrito-whatsapp/spec.md`.
-- Ejecutar clarificación, plan y tareas de F3 antes de escribir código.
+- Implementar T01–T12 de F3 antes de avanzar a F4.
 - El diseño de F4 quedó documentado; su implementación espera a que termine F3.
 
 ---
@@ -275,3 +274,6 @@ Alcance:
 | 2026-11-02 | F2 | Ajustes de revisión visual C20: hero, intro, categorías y WhatsApp local. |
 | 2026-11-02 | F2 | F2 aprobada por revisión visual y humana; cierre de fase. |
 | 2026-11-02 | F3 | Diseño del panel administrativo documentado; Spec 002 del carrito creada. |
+| 2026-11-02 | F3 | Clarificación de F3 propuesta con decisiones C01–C20. |
+| 2026-11-02 | F3 | Clarificación aprobada; spec actualizada; plan y tareas creados. |
+| 2026-11-02 | F3 | Plan y tareas aprobados; comienza T01. |

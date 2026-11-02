@@ -1,7 +1,7 @@
 # Spec 002 — Carrito de encargos + WhatsApp
 
 - **Fase:** F3
-- **Estado:** Aprobada — pendiente de clarificación
+- **Estado:** Aprobada — clarificación aprobada (C01–C20)
 - **Depende de:** F2 cerrada y aprobada
 - **Habilita:** F4 (panel admin + CMS)
 
@@ -134,11 +134,12 @@ Cada ítem deberá conservar:
 
 Reglas:
 
-- `clave` identifica producto + opciones + notas.
+- `clave` identifica producto + opciones + notas normalizadas.
 - `cantidad` será un entero entre 1 y 99.
-- `notas` se recortan a 500 caracteres.
+- `notas` se recortan a 500 caracteres y se les aplica `trim`.
 - El carrito no guarda datos personales, pagos ni secretos.
-- La versión del almacenamiento será explícita para permitir migraciones futuras.
+- La versión del almacenamiento será explícita: `pedacito-encargos-v1`.
+- No habrá expiración automática del carrito.
 
 ---
 
@@ -146,11 +147,14 @@ Reglas:
 
 - El detalle de producto mantiene “Consultar por WhatsApp” para una consulta individual.
 - “Agregar al encargo” queda activo y confirma la acción.
-- La navbar muestra un contador junto al enlace del carrito.
+- El carrito será una página dedicada en `/carrito`.
+- La navbar muestra un contador por unidades totales junto al enlace del carrito.
 - El carrito muestra una lista de ítems con imagen, nombre, opciones, notas, cantidad, precio estimado y acciones.
+- Las opciones no se editan dentro del carrito: para cambiarlas se quita el ítem y se vuelve al detalle.
 - El total se muestra como “Total estimado”.
 - Si algún ítem no tiene precio base, el total se muestra como “Total a confirmar por WhatsApp”.
 - El botón principal será “Enviar encargo por WhatsApp”.
+- El carrito no se vacía al abrir WhatsApp; se vacía solo con confirmación manual.
 - No habrá botón de pago.
 
 ---
@@ -167,6 +171,9 @@ Reglas:
 8. `VITE_WHATSAPP` vacío: deshabilitar envío con explicación.
 9. Carrito vacío: mostrar estado vacío y no permitir enviar.
 10. Recarga o nueva pestaña: recuperar el carrito válido.
+11. Ítem repetido: fusionar solo con producto, opciones y notas iguales.
+12. Vaciado: pedir confirmación antes de eliminar todos los ítems.
+13. Envío: mantener el carrito después de abrir WhatsApp.
 
 ---
 
@@ -199,15 +206,16 @@ Reglas:
 
 ---
 
-## 11. Decisiones pendientes de clarificación
+## 11. Decisiones de clarificación aprobadas
 
-1. ¿El carrito será una página `/carrito` o un panel lateral?
-2. ¿“Consultar por WhatsApp” individual se mantiene junto a “Agregar al encargo”?
-3. ¿El carrito se vacía después de abrir WhatsApp o queda hasta que el usuario lo vacíe?
-4. ¿La revalidación de productos debe actualizar el precio guardado o solo avisar?
-5. ¿El contador de la navbar suma unidades o cuenta líneas distintas?
-6. ¿Se permite editar opciones desde el carrito o solo desde el detalle?
-7. ¿El total estimado debe mostrarse por ítem y general, o solo general?
+- El carrito será la página `/carrito`.
+- Se mantiene “Consultar por WhatsApp” individual junto a “Agregar al encargo”.
+- El carrito no se vacía automáticamente después de abrir WhatsApp.
+- La revalidación actualiza precios y quita productos u opciones no disponibles.
+- El contador de navbar suma unidades totales.
+- Las opciones se editan solo desde el detalle.
+- Se muestran subtotales por ítem y total general cuando corresponda.
+- Detalle completo en `clarificacion.md` (C01–C20).
 
 ---
 

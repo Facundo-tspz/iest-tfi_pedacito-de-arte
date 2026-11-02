@@ -1,9 +1,9 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F3 en curso — Spec 002 aprobada; clarificación en curso
-- **Último cambio:** Diseño de F4 documentado; Spec 002 del carrito aprobada.
-- **Próximo paso:** Resolver la clarificación de F3 y luego generar plan y tareas.
+- **Fase actual:** F3 en curso — plan y tareas aprobados; T01 en curso
+- **Último cambio:** Plan y tareas de F3 aprobados; comienza T01.
+- **Próximo paso:** Implementar T01: utilidades del carrito y persistencia.
 - **Commits pendientes:** ninguno; T27–T28 se cierran en este commit.
 - **Push pendiente:** commits locales desde T14 hasta el cierre de F2.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
