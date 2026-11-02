@@ -21,7 +21,7 @@ Base de datos relacional en **Supabase Postgres**. Las escrituras públicas est�
 | `created_at` | `timestamptz` | DEFAULT `now()` |
 | `updated_at` | `timestamptz` | DEFAULT `now()` |
 
-Categorías iniciales: Agendas, Agendas Docentes, Anotadores, Revistas para Colorear.
+Categorías iniciales: Agendas, Agendas Docentes, Anotadores, Para colorear.
 
 ### `productos`
 
@@ -34,7 +34,10 @@ Categorías iniciales: Agendas, Agendas Docentes, Anotadores, Revistas para Colo
 | `categoria_id` | `uuid` | FK `categorias(id)` |
 | `descripcion` | `text` | NOT NULL |
 | `caracteristicas` | `text[]` | NOT NULL, DEFAULT '{}' |
-| `precio_base` | `numeric(12,2)` | NULL, CHECK ≥ 0 |
+| `precio_base` | `numeric(12,2)` | NULL, CHECK ≥ 0; precio minorista |
+| `precio_mayorista` | `numeric(12,2)` | NULL, CHECK ≥ 0 |
+| `cantidad_minima_mayorista` | `integer` | NOT NULL, DEFAULT 10, CHECK > 0 |
+| `precio_desde` | `boolean` | NOT NULL, DEFAULT false |
 | `destacado` | `boolean` | DEFAULT false |
 | `disponible` | `boolean` | DEFAULT true |
 | `meta_titulo` | `text` | NULL |
@@ -45,9 +48,26 @@ Categorías iniciales: Agendas, Agendas Docentes, Anotadores, Revistas para Colo
 | `creado_por` | `uuid` | FK `usuarios_admin(id)` |
 | `actualizado_por` | `uuid` | FK `usuarios_admin(id)` |
 
-`precio_base` puede ser `NULL` mientras el precio no esté cargado. La UI muestra “Precio a confirmar”.
+`precio_base` es el precio minorista y puede ser `NULL` mientras no esté cargado. La UI muestra “Precio a confirmar” cuando falta.
+
+`precio_mayorista` se guarda para consulta interna. Si existe, la web puede mostrarlo; si no, muestra “Consultar precio mayorista”. El mínimo mayorista por defecto es 10 unidades.
+
+`precio_desde` permite mostrar “Desde $13.000” en productos cuyo precio final depende del contenido, como la Agenda Personalizada.
 
 `caracteristicas` guarda una lista de características breves (máximo 8, hasta 80 caracteres cada una). El admin de F4 valida la cantidad y la longitud.
+
+### Seed inicial del MVP
+
+| Producto | Categoría | Minorista | Mayorista |
+| :--- | :--- | ---: | ---: |
+| Anotador A6 x 50 hojas | Anotadores | $3.500 | $2.200 |
+| Libro de Recetas A5 x 40 hojas | Anotadores | $8.000 | $5.500 |
+| Revista para Colorear | Para colorear | $2.000 | $1.200 |
+| Agenda Docente A5 | Agendas Docentes | $12.000 base | NULL |
+| Agenda Personalizada | Agendas | Desde $13.000 | NULL |
+| Libro A5 para Colorear | Para colorear | $8.000 | NULL |
+
+Las imágenes se cargan después desde el panel. El seed no incluye archivos de imagen.
 
 ### `producto_imagenes`
 

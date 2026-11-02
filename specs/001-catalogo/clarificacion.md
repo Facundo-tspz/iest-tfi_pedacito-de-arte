@@ -62,6 +62,7 @@ Estas decisiones ya están reflejadas en la spec y no requieren nueva confirmaci
 | **C18** | Variables de entorno. | Agregar `VITE_WHATSAPP`, `VITE_SITE_URL`, `VITE_INSTAGRAM` y `VITE_EMAIL` a `.env.example`; cargar valores en `.env.local` y Netlify. | RP03.6, configuración | Aprobado |
 | **C19** | Migas de pan en el detalle. | Omitirlas en F2. | RF04.9 | Aprobado |
 | **C20** | Ajustes de la revisión visual de F2. | Frase del hero centrada; pausa por foco, clic, touch o teclado, sin hover; segmentos de progreso vacíos hasta su turno; intro más compacta; categorías con acentos de la paleta. | RP01.3, RP01.6, RP01.13, AC02, AC04 | Aprobado |
+| **C21** | Unificación de la categoría de colorear. | “Revistas para Colorear” pasa a “Para colorear” e incluye revistas, libros y futuros productos como mandalas. | RF02.1, F4 | Aprobado |
 
 ---
 
@@ -77,7 +78,7 @@ Estas decisiones ya están reflejadas en la spec y no requieren nueva confirmaci
 
 ## 4. Criterio para avanzar a la implementación
 
-- Todas las decisiones C01–C20 están aprobadas.
+- Todas las decisiones C01–C21 están aprobadas.
 - La spec y `docs/05-DATOS.md` quedaron actualizados.
 - El plan y las tareas deben aprobarse antes de escribir código.
 

@@ -22,7 +22,7 @@ El sitio ya incluye Home, catálogo, búsqueda, filtros, detalle de producto, pe
 - Agendas
 - Agendas Docentes
 - Anotadores
-- Revistas para Colorear
+- Para colorear
 
 ## Enlaces
 

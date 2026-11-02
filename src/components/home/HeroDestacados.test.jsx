@@ -46,7 +46,7 @@ const PRODUCTOS = [
     id: 'prod-4',
     nombre: 'Revista Mandalas',
     slug: 'revista-mandalas',
-    categoria: { nombre: 'Revistas para Colorear' },
+    categoria: { nombre: 'Para colorear' },
     descripcion: 'Revista con ilustraciones para colorear.',
     precio_base: 7500,
     imagenes: [{ url: null, alt: 'Revista Mandalas con diseños circulares' }],

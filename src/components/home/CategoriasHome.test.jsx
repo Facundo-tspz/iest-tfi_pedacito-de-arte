@@ -29,8 +29,8 @@ const CATEGORIAS = [
   },
   {
     id: 'cat-revistas',
-    nombre: 'Revistas para Colorear',
-    slug: 'revistas-para-colorear',
+    nombre: 'Para colorear',
+    slug: 'para-colorear',
     descripcion: 'Revistas con ilustraciones para colorear.',
   },
 ];
@@ -64,7 +64,7 @@ describe('CategoriasHome', () => {
       ['Agendas', '/catalogo?categoria=agendas'],
       ['Agendas Docentes', '/catalogo?categoria=agendas-docentes'],
       ['Anotadores', '/catalogo?categoria=anotadores'],
-      ['Revistas para Colorear', '/catalogo?categoria=revistas-para-colorear'],
+      ['Para colorear', '/catalogo?categoria=para-colorear'],
     ];
 
     enlaces.forEach(([nombre, href]) => {

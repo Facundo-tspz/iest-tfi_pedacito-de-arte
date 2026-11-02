@@ -95,7 +95,7 @@ Implementar la Home y el catálogo público de las cuatro líneas de producto, c
 
 ### RF02 — Filtrado por categoría
 
-- **RF02.1** El sistema deberá ofrecer los filtros “Todas”, “Agendas”, “Agendas Docentes”, “Anotadores” y “Revistas para Colorear”.
+- **RF02.1** El sistema deberá ofrecer los filtros “Todas”, “Agendas”, “Agendas Docentes”, “Anotadores” y “Para colorear”.
 - **RF02.2** Cuando el usuario seleccione una categoría, el sistema deberá mostrar solo los productos de esa categoría.
 - **RF02.3** Cuando el usuario seleccione “Todas”, el sistema deberá mostrar todos los productos disponibles.
 - **RF02.4** El sistema deberá reflejar la categoría activa en la URL mediante `?categoria=slug`.

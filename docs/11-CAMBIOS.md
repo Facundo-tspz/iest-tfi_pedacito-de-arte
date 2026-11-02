@@ -1,7 +1,7 @@
 # 11 - Cambios y Justificaciones: Pedacito de Arte
 
-- **Estado:** Provisional — aprobado por el estudiante (2026-10-30); se completa al cerrar F2.
-- **Última actualización:** 2026-10-30
+- **Estado:** Activo — se actualiza al cerrar cada fase.
+- **Última actualización:** 2026-11-02
 - **Objetivo:** registrar tecnologías, dependencias, cambios de datos y decisiones estructurales que se incorporan al proyecto, con su justificación, alternativas e impacto.
 
 > Este documento se completa a medida que avanza el roadmap. No reemplaza a `docs/PROGRESO.md` ni a las specs.
@@ -21,6 +21,8 @@
 | Fecha | Fase | Tabla | Cambio | Motivo | Impacto | Aprobación | Estado |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 2026-10-30 | F4 | `productos` | Agregar `caracteristicas text[] NOT NULL DEFAULT '{}'`. | RF04.1 exige mostrar características y hoy no existe un campo para eso. | El mock de F2 usa `caracteristicas: string[]`; el admin de F4 debe permitir editar una lista. | Aprobado por el estudiante (C02). | Reflejado en `docs/05-DATOS.md`; pendiente de implementar en el esquema de F4. |
+| 2026-11-02 | F4 | `productos` | Agregar `precio_mayorista`, `cantidad_minima_mayorista` y `precio_desde`. | Los productos reales tienen precio minorista y mayorista, y la Agenda Personalizada se muestra “desde”. | El catálogo público debe mostrar “Consultar precio mayorista” cuando no haya valor. | Aprobado por el estudiante. | Reflejado en `docs/05-DATOS.md` y migraciones. |
+| 2026-11-02 | F4 | `categorias` | “Revistas para Colorear” pasa a “Para colorear”. | Unifica revistas, libros para colorear y futuros productos como mandalas. | Cambia el nombre y slug de la cuarta categoría. | Aprobado por el estudiante (C21). | Reflejado en docs, spec y seed. |
 
 ---
 

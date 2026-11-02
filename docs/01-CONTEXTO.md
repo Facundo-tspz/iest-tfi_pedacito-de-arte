@@ -48,8 +48,8 @@ Agendas con planificadores adaptados a la rutina docente: cursos, alumnos, calif
 ### Anotadores
 Anotadores y cuadernos en formatos A5/A6, con hojas lisas, rayadas o punteadas.
 
-### Revistas para Colorear
-Revistas y libros temáticos con ilustraciones y actividades para colorear.
+### Para colorear
+Revistas y libros temáticos con ilustraciones y actividades para colorear, incluyendo futuros productos como mandalas.
 
 ### Servicios complementarios
 Diseño personalizado, impresión, laminado y encuadernación. Los trabajos especiales se consultan por WhatsApp.

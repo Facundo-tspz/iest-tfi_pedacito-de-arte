@@ -24,7 +24,7 @@ describe('servicio de catálogo', () => {
       'agendas',
       'agendas-docentes',
       'anotadores',
-      'revistas-para-colorear',
+      'para-colorear',
     ]);
     expect(categorias.every((categoria) => categoria.activo)).toBe(true);
   });
@@ -33,18 +33,14 @@ describe('servicio de catálogo', () => {
     const productos = await obtenerProductos();
 
     expect(productos).toHaveLength(10);
-    expect(productos.map((producto) => producto.orden)).toEqual([
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-    ]);
+    expect(productos.map((producto) => producto.orden)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   });
 
   it('filtra por categoría', async () => {
     const productos = await obtenerProductos({ categoria: 'agendas' });
 
     expect(productos).toHaveLength(3);
-    expect(
-      productos.every((producto) => producto.categoria.slug === 'agendas'),
-    ).toBe(true);
+    expect(productos.every((producto) => producto.categoria.slug === 'agendas')).toBe(true);
   });
 
   it('ignora una categoría inválida', async () => {
@@ -56,36 +52,26 @@ describe('servicio de catálogo', () => {
   it('busca sin distinguir mayúsculas ni acentos', async () => {
     const productos = await obtenerProductos({ buscar: 'BOTÁNICA' });
 
-    expect(productos.map((producto) => producto.slug)).toEqual([
-      'agenda-botanica',
-    ]);
+    expect(productos.map((producto) => producto.slug)).toEqual(['agenda-botanica']);
   });
 
   it('busca por código', async () => {
     const productos = await obtenerProductos({ buscar: 'AD-002' });
 
-    expect(productos.map((producto) => producto.slug)).toEqual([
-      'agenda-docente-bosque',
-    ]);
+    expect(productos.map((producto) => producto.slug)).toEqual(['agenda-docente-bosque']);
   });
 
   it('busca por descripción', async () => {
     const productos = await obtenerProductos({ buscar: 'recetas' });
 
-    expect(productos.map((producto) => producto.slug)).toEqual([
-      'anotador-de-cocina',
-    ]);
+    expect(productos.map((producto) => producto.slug)).toEqual(['anotador-de-cocina']);
   });
 
   it('busca por nombre de categoría', async () => {
     const productos = await obtenerProductos({ buscar: 'anotadores' });
 
     expect(productos).toHaveLength(2);
-    expect(
-      productos.every(
-        (producto) => producto.categoria.slug === 'anotadores',
-      ),
-    ).toBe(true);
+    expect(productos.every((producto) => producto.categoria.slug === 'anotadores')).toBe(true);
   });
 
   it('combina categoría y búsqueda', async () => {
@@ -94,9 +80,7 @@ describe('servicio de catálogo', () => {
       buscar: 'viajera',
     });
 
-    expect(productos.map((producto) => producto.slug)).toEqual([
-      'agenda-viajera',
-    ]);
+    expect(productos.map((producto) => producto.slug)).toEqual(['agenda-viajera']);
   });
 
   it('devuelve vacío cuando la combinación no tiene resultados', async () => {
@@ -123,9 +107,7 @@ describe('servicio de catálogo', () => {
   });
 
   it('completa los destacados con los primeros disponibles', async () => {
-    const revista = PRODUCTOS.find(
-      (producto) => producto.slug === 'revista-mandalas',
-    );
+    const revista = PRODUCTOS.find((producto) => producto.slug === 'revista-mandalas');
 
     revista.destacado = false;
 
@@ -161,9 +143,7 @@ describe('servicio de catálogo', () => {
   });
 
   it('excluye productos de categorías inactivas', async () => {
-    const categoria = CATEGORIAS.find(
-      (item) => item.slug === 'anotadores',
-    );
+    const categoria = CATEGORIAS.find((item) => item.slug === 'anotadores');
 
     categoria.activo = false;
 
@@ -171,14 +151,8 @@ describe('servicio de catálogo', () => {
       const categorias = await obtenerCategorias();
       const productos = await obtenerProductos();
 
-      expect(
-        categorias.some((item) => item.slug === 'anotadores'),
-      ).toBe(false);
-      expect(
-        productos.some(
-          (producto) => producto.categoria.slug === 'anotadores',
-        ),
-      ).toBe(false);
+      expect(categorias.some((item) => item.slug === 'anotadores')).toBe(false);
+      expect(productos.some((producto) => producto.categoria.slug === 'anotadores')).toBe(false);
       expect(await obtenerProductoPorSlug('anotador-de-cocina')).toBeNull();
     } finally {
       categoria.activo = true;
@@ -186,18 +160,14 @@ describe('servicio de catálogo', () => {
   });
 
   it('excluye productos no disponibles', async () => {
-    const producto = PRODUCTOS.find(
-      (item) => item.slug === 'agenda-minimal',
-    );
+    const producto = PRODUCTOS.find((item) => item.slug === 'agenda-minimal');
 
     producto.disponible = false;
 
     try {
       const productos = await obtenerProductos();
 
-      expect(
-        productos.some((item) => item.slug === 'agenda-minimal'),
-      ).toBe(false);
+      expect(productos.some((item) => item.slug === 'agenda-minimal')).toBe(false);
       expect(await obtenerProductoPorSlug('agenda-minimal')).toBeNull();
     } finally {
       producto.disponible = true;

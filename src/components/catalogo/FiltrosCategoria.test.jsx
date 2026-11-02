@@ -10,8 +10,8 @@ const CATEGORIAS = [
   { id: 'cat-anotadores', nombre: 'Anotadores', slug: 'anotadores' },
   {
     id: 'cat-revistas',
-    nombre: 'Revistas para Colorear',
-    slug: 'revistas-para-colorear',
+    nombre: 'Para colorear',
+    slug: 'para-colorear',
   },
 ];
 

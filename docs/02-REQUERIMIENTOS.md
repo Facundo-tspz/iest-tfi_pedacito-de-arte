@@ -9,7 +9,7 @@ Este documento define los requerimientos funcionales (RF) y no funcionales (RNF)
 | ID | Requerimiento | Descripción | Prioridad |
 | :--- | :--- | :--- | :--- |
 | **RF01** | Catálogo público | Mostrar productos con imagen, nombre, descripción, categoría y precio base o “Precio a confirmar”. | Alta |
-| **RF02** | Filtrado por categoría | Permitir filtrar por Agendas, Agendas Docentes, Anotadores y Revistas para Colorear. | Alta |
+| **RF02** | Filtrado por categoría | Permitir filtrar por Agendas, Agendas Docentes, Anotadores y Para colorear. | Alta |
 | **RF03** | Búsqueda | Buscar productos por nombre, categoría, código o temática. | Media |
 | **RF04** | Detalle y personalización | Mostrar galería, características y opciones de personalización con precio adicional cuando corresponda. | Alta |
 | **RF05** | Carrito de encargos | Agregar, modificar cantidad y quitar productos; conservar opciones y notas; calcular total estimado. | Alta |
