@@ -35,11 +35,25 @@
   :focus-visible {
     @apply outline-none ring-2 ring-complementario-secundario ring-offset-2 ring-offset-fondo;
   }
+
+  section[id] {
+    @apply scroll-mt-24;
+  }
 }
 
 @layer components {
   .contenedor {
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@keyframes progreso-hero {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
   }
 }
 

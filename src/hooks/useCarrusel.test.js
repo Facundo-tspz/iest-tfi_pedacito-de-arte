@@ -26,9 +26,7 @@ describe('useCarrusel', () => {
   });
 
   it('avanza automáticamente cada intervalo', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 4, intervalo: 8000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
 
     expect(result.current.indice).toBe(0);
 
@@ -43,9 +41,7 @@ describe('useCarrusel', () => {
   });
 
   it('vuelve al inicio al pasar el último slide', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 2, intervalo: 1000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 2, intervalo: 1000 }));
 
     avanzar(2000);
 
@@ -53,20 +49,51 @@ describe('useCarrusel', () => {
   });
 
   it('no incrementa versionManual con el avance automático', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 4, intervalo: 8000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
 
     avanzar(8000);
 
     expect(result.current.indice).toBe(1);
     expect(result.current.versionManual).toBe(0);
+    expect(result.current.reinicio).toBe(0);
+  });
+
+  it('incrementa reinicio al reanudar por interacción', () => {
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
+
+    expect(result.current.reinicio).toBe(0);
+
+    act(() => {
+      result.current.registrarInteraccion();
+    });
+
+    expect(result.current.reinicio).toBe(0);
+
+    avanzar(5000);
+
+    expect(result.current.pausado).toBe(false);
+    expect(result.current.reinicio).toBe(1);
+  });
+
+  it('incrementa reinicio al quitar la pausa manual', () => {
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
+
+    act(() => {
+      result.current.alternarPausa();
+    });
+
+    expect(result.current.reinicio).toBe(0);
+
+    act(() => {
+      result.current.alternarPausa();
+    });
+
+    expect(result.current.pausado).toBe(false);
+    expect(result.current.reinicio).toBe(1);
   });
 
   it('pausa por interacción y reanuda a los 5 segundos', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 4, intervalo: 8000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
 
     act(() => {
       result.current.iniciarInteraccion();
@@ -89,9 +116,7 @@ describe('useCarrusel', () => {
   });
 
   it('registra clics, toques o teclado y reanuda a los 5 segundos', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 4, intervalo: 8000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
 
     act(() => {
       result.current.registrarInteraccion();
@@ -104,9 +129,7 @@ describe('useCarrusel', () => {
   });
 
   it('mantiene la pausa manual hasta que el usuario la quite', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 4, intervalo: 8000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
 
     act(() => {
       result.current.alternarPausa();
@@ -127,9 +150,7 @@ describe('useCarrusel', () => {
   });
 
   it('quita la pausa por interacción al reanudar manualmente', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 4, intervalo: 8000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
 
     act(() => {
       result.current.iniciarInteraccion();
@@ -149,9 +170,7 @@ describe('useCarrusel', () => {
   });
 
   it('cambia de slide con las flechas y reinicia el temporizador', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 4, intervalo: 8000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
 
     avanzar(6000);
 
@@ -170,9 +189,7 @@ describe('useCarrusel', () => {
   });
 
   it('permite ir al slide anterior con vuelta circular', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 4, intervalo: 8000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
 
     act(() => {
       result.current.irAnterior();
@@ -183,9 +200,7 @@ describe('useCarrusel', () => {
   });
 
   it('permite ir a un slide concreto', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 4, intervalo: 8000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
 
     act(() => {
       result.current.irA(2);
@@ -198,9 +213,7 @@ describe('useCarrusel', () => {
   it('se detiene con movimiento reducido', () => {
     useMovimientoReducido.mockReturnValue(true);
 
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 4, intervalo: 8000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 4, intervalo: 8000 }));
 
     expect(result.current.pausado).toBe(true);
 
@@ -209,9 +222,7 @@ describe('useCarrusel', () => {
   });
 
   it('no avanza si hay un solo slide', () => {
-    const { result } = renderHook(() =>
-      useCarrusel({ total: 1, intervalo: 1000 }),
-    );
+    const { result } = renderHook(() => useCarrusel({ total: 1, intervalo: 1000 }));
 
     expect(result.current.pausado).toBe(true);
 

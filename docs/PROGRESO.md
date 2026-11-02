@@ -1,7 +1,7 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-01
-- **Fase actual:** F2 en curso — T09 completada; T10 pendiente de aprobación
+- **Fase actual:** F2 en curso — T13 completada; T14 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
 - **Estado del repositorio:** `main` actualizado en `origin`; deploy en Netlify funcionando.
 
@@ -137,16 +137,30 @@ Completado:
 - `src/hooks/useMovimientoReducido.js` con detección y escucha de `prefers-reduced-motion`.
 - `src/hooks/useScrollToHash.js` con scroll a anclas, offset del navbar y respeto al movimiento reducido.
 - `src/hooks/useCarrusel.js` con avance automático, pausa por interacción, reanudación a los 5 s, pausa manual, flechas, índice circular y respeto al movimiento reducido.
-- Tests de texto, precio, WhatsApp, servicio y hooks agregados; `npm test` 107/107.
-- `npm run lint` y `npm run build` pasan con T09.
+- `src/components/ui/PlaceholderImagen.jsx` con placeholder de marca, tokens, aspecto configurable, `alt` accesible y modo decorativo.
+- `src/components/ui/Seccion.jsx` con `section`, título semántico configurable, descripción, ancho y ancla por `id`.
+- `src/components/ui/Boton.jsx` con variantes, tamaños, estado deshabilitado y soporte de enlace con `href`.
+- `src/components/layout/AppLayout.jsx` sin contenedor global, con Navbar, `main` flexible, Outlet y Footer.
+- `src/components/layout/Footer.jsx` con logo, navegación, contacto desde configuración, redes y textos legales.
+- `src/components/layout/Navbar.jsx` con enlaces de escritorio y botón hamburguesa móvil.
+- `src/components/layout/MenuMovil.jsx` con `aria-expanded`/`aria-controls`, foco inicial, trampa de foco, Escape, cierre por ruta y retorno de foco.
+- `src/hooks/useScrollToHash.js` conectado en `AppLayout` para navegar a las anclas del Home.
+- `src/styles/index.css` con `scroll-mt-24` para secciones con `id`.
+- `HomePage` y `NotFoundPage` conservan su propio contenedor y espaciado vertical.
+- `src/components/home/HeroDestacados.jsx` con hasta 4 destacados, frase de marca, flechas, pausa/play, barra de progreso, `aria-live` solo manual, fallback y respeto al movimiento reducido.
+- `src/components/home/HeroSlide.jsx` con imagen o placeholder, categoría, nombre, descripción, precio y CTA; slides inactivos ocultos y fuera del orden de tabulación.
+- `useCarrusel` expone `reinicio` para reiniciar la barra de progreso al reanudar o cambiar de slide.
+- `src/styles/index.css` con la animación `progreso-hero`.
+- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil y hero agregados; `npm test` 147/147.
+- `npm run lint` y `npm run build` pasan con T13.
 
-En curso:
+Cierre:
 
-- T09 completada; pendiente de commit. T10 (UI compartida) espera aprobación.
+- T13 completada; T10–T13 se incluyen en el commit de cierre.
 
 Pendiente:
 
-- T10–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
+- T14–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
 
 ---
 
@@ -208,3 +222,7 @@ Alcance:
 | 2026-10-30 | F2 | T07 completada: hooks de debounce, catálogo y detalle con tests. |
 | 2026-10-30 | F2 | T08 completada: hooks de movimiento reducido y scroll a anclas con tests. |
 | 2026-11-01 | F2 | T09 completada: hook de carrusel con avance, pausas, reanudación y tests con fake timers. |
+| 2026-11-01 | F2 | T10 completada: UI compartida con placeholder, sección semántica y botón con variantes. |
+| 2026-11-01 | F2 | T11 completada: layout sin contenedor global, footer completo y offset para anclas. |
+| 2026-11-01 | F2 | T12 completada: navbar con enlaces, menú móvil accesible y scroll a anclas conectado. |
+| 2026-11-01 | F2 | T13 completada: hero destacado con carrusel, barra de progreso, controles accesibles y tests. |

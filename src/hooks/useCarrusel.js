@@ -18,11 +18,7 @@ function normalizarIndice(indice, total) {
   return ((indiceEntero % total) + total) % total;
 }
 
-export default function useCarrusel({
-  total = 0,
-  intervalo = 8000,
-  reanudarMs = 5000,
-} = {}) {
+export default function useCarrusel({ total = 0, intervalo = 8000, reanudarMs = 5000 } = {}) {
   const movimientoReducido = useMovimientoReducido();
   const totalNormalizado = normalizarTotal(total);
   const [indice, setIndice] = useState(0);
@@ -33,11 +29,7 @@ export default function useCarrusel({
   const temporizadorReanudacion = useRef(null);
 
   const indiceActual = normalizarIndice(indice, totalNormalizado);
-  const pausado =
-    pausaManual ||
-    pausaPorInteraccion ||
-    movimientoReducido ||
-    totalNormalizado <= 1;
+  const pausado = pausaManual || pausaPorInteraccion || movimientoReducido || totalNormalizado <= 1;
 
   const limpiarTemporizadorReanudacion = useCallback(() => {
     if (temporizadorReanudacion.current !== null) {
@@ -51,8 +43,9 @@ export default function useCarrusel({
     temporizadorReanudacion.current = setTimeout(() => {
       temporizadorReanudacion.current = null;
       setPausaPorInteraccion(false);
+      setReinicio((valor) => valor + 1);
     }, reanudarMs);
-  }, [limpiarTemporizadorReanudacion, reanudarMs, setPausaPorInteraccion]);
+  }, [limpiarTemporizadorReanudacion, reanudarMs, setPausaPorInteraccion, setReinicio]);
 
   const iniciarInteraccion = useCallback(() => {
     limpiarTemporizadorReanudacion();
@@ -74,6 +67,7 @@ export default function useCarrusel({
     if (pausaManual) {
       setPausaManual(false);
       setPausaPorInteraccion(false);
+      setReinicio((valor) => valor + 1);
       return;
     }
 
@@ -83,6 +77,7 @@ export default function useCarrusel({
     pausaManual,
     setPausaManual,
     setPausaPorInteraccion,
+    setReinicio,
   ]);
 
   const irA = useCallback(
@@ -143,6 +138,7 @@ export default function useCarrusel({
     pausaManual,
     movimientoReducido,
     versionManual,
+    reinicio,
     irAnterior,
     irSiguiente,
     irA,

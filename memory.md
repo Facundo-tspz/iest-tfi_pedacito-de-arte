@@ -1,9 +1,10 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F2 en curso — T09 completada; T10 pendiente de aprobación
-- **Último cambio:** T09 completada: hook de carrusel con avance, pausas, reanudación y tests con fake timers.
-- **Próximo paso:** Proponer el commit de T09 y, con “aprobado”, ejecutar T10: UI compartida.
+- **Fase actual:** F2 en curso — T13 completada; T14 pendiente de aprobación
+- **Último cambio:** T13 completada: hero destacado con carrusel, barra de progreso y controles accesibles.
+- **Próximo paso:** Con “aprobado”, ejecutar T14: hero de proceso.
+- **Commits pendientes:** ninguno; T10–T13 se cierran en el commit de T13.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo
@@ -24,3 +25,7 @@
 - Usuario admin inicial: Facundo.
 - Stack: React + Vite + Supabase + Netlify.
 - La web es solo de encargos: sin pagos, sin checkout y sin historial de pedidos.
+
+## Preferencias del estudiante
+
+- Avisar antes de comenzar el diseño del panel administrativo (F4) para revisarlo.
