@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-02
-- **Fase actual:** F3 completada y aprobada; F4 en curso — base de autenticación y Supabase
+- **Fase actual:** F4 en curso — Bloque B completado; Bloque C pendiente
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` con commits locales desde T14; F3 en commit de cierre; push pendiente de aprobación.
+- **Estado del repositorio:** `main` con commits locales desde T14; Bloque B de F4 sin commit; push pendiente de aprobación.
 
 ---
 
@@ -189,8 +189,9 @@ Cierre:
 
 Pendiente:
 
-- Implementar el Bloque B de F4: Supabase público, auth, login, rutas protegidas y dashboard.
-- El diseño de F4 quedó documentado; su implementación espera a que termine F3.
+- Implementar el Bloque C de F4: medios y productos.
+- Cerrar F4 con pruebas, deploy, RLS y verificación.
+- F6 queda para la etapa final.
 
 ---
 
@@ -239,8 +240,30 @@ Incluyen:
 
 Pendiente:
 
-- Cargar variables en Netlify.
 - Verificar RLS con la `anon key` desde el cliente.
+
+---
+
+## 5.3. F4 en curso — Bloque B
+
+Completado:
+
+- `@supabase/supabase-js` 2.58.0 instalado.
+- `src/lib/supabase.js` con cliente público.
+- Servicio de catálogo híbrido: Supabase en producción y mock como fallback.
+- Functions `admin-login`, `admin-session` y `admin-logout`.
+- Helpers de sesión JWT, scrypt, cookies y Supabase admin.
+- Login propio en `/estudio/login`.
+- Ruta `/estudio` protegida.
+- Layout administrativo con sidebar y dashboard básico.
+- `X-Robots-Tag: noindex` para `/estudio/*`.
+- Tests globales: `npm test` 257/257.
+- `npm run lint` y `npm run build` pasan.
+
+Pendiente:
+
+- Bloque C: biblioteca de medios con recorte/WebP y CRUD de productos.
+- Verificación de F4.
 
 ---
 
@@ -340,3 +363,4 @@ Alcance:
 | 2026-11-02 | F3 | T09 completada: botón de envío del encargo. |
 | 2026-11-02 | F3 | T10–T11 completadas: integración, SEO y flujo del carrito. |
 | 2026-11-02 | F3 | T12 completada: verificación y cierre de F3. |
+| 2026-11-02 | F4 | Bloque B completado: Supabase público, auth, login, rutas protegidas y dashboard. |

@@ -1,10 +1,10 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F3 completada y aprobada; F4 en curso — base de autenticación y Supabase
-- **Último cambio:** F3 cerrada con carrito, totales, estados y envío por WhatsApp.
-- **Próximo paso:** Implementar el Bloque B de F4: Supabase público, Functions, login, rutas protegidas y dashboard.
-- **Commits pendientes:** ninguno; F3 se cierra en este commit.
+- **Fase actual:** F4 en curso — Bloque B completado; Bloque C pendiente
+- **Último cambio:** Bloque B completado: Supabase público, auth, login, rutas protegidas y dashboard.
+- **Próximo paso:** Implementar el Bloque C de F4: medios y productos.
+- **Commits pendientes:** Bloque B de F4, pendiente de aprobación.
 - **Push pendiente:** commits locales desde T14 hasta el cierre de F2.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 

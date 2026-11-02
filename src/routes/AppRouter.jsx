@@ -1,14 +1,25 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AdminLayout from '../components/admin/AdminLayout';
+import RutaAdminProtegida from '../components/admin/RutaAdminProtegida';
 import AppLayout from '../components/layout/AppLayout';
 import CarritoPage from '../pages/CarritoPage';
 import CatalogoPage from '../pages/CatalogoPage';
 import HomePage from '../pages/HomePage';
 import NotFoundPage from '../pages/NotFoundPage';
 import ProductoDetallePage from '../pages/ProductoDetallePage';
+import DashboardPage from '../pages/admin/DashboardPage';
+import LoginPage from '../pages/admin/LoginPage';
 
 export function AppRoutes() {
   return (
     <Routes>
+      <Route path="estudio/login" element={<LoginPage />} />
+      <Route path="estudio" element={<RutaAdminProtegida />}>
+        <Route element={<AdminLayout />}>
+          <Route index element={<DashboardPage />} />
+        </Route>
+      </Route>
+
       <Route element={<AppLayout />}>
         <Route index element={<HomePage />} />
         <Route path="catalogo" element={<CatalogoPage />} />

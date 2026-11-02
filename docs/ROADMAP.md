@@ -30,7 +30,7 @@
 | **F1** | Base técnica del proyecto | Completada y publicada (`26ce078`); aprobada |
 | **F2** | Spec 001: Home + Catálogo | Completada y aprobada |
 | **F3** | Spec 002: Carrito de encargos + WhatsApp | Completada y aprobada |
-| **F4** | Spec 003: Panel admin + CMS | En curso — base de autenticación y Supabase |
+| **F4** | Spec 003: Panel admin + CMS | En curso — Bloque B completado; Bloque C pendiente |
 | **F5** | Producción multimedia con IA | Pendiente |
 | **F6** | QA, deploy, informe y defensa | Pendiente |
 
