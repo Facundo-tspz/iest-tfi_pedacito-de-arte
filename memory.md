@@ -1,10 +1,10 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F2 en curso — T13 completada; T14 pendiente de aprobación
-- **Último cambio:** T13 completada: hero destacado con carrusel, barra de progreso y controles accesibles.
-- **Próximo paso:** Con “aprobado”, ejecutar T14: hero de proceso.
-- **Commits pendientes:** ninguno; T10–T13 se cierran en el commit de T13.
+- **Fase actual:** F2 en curso — T14 completada; T15 pendiente de aprobación
+- **Último cambio:** T14 completada: hero de proceso con rotación, pausa/reanudación y movimiento reducido.
+- **Próximo paso:** Con “aprobado”, ejecutar T15: intro de marca y franja de servicios.
+- **Commits pendientes:** ninguno; T14 se cierra en este commit.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo

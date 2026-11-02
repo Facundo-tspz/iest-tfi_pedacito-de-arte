@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-01
-- **Fase actual:** F2 en curso — T13 completada; T14 pendiente de aprobación
+- **Fase actual:** F2 en curso — T14 completada; T15 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` actualizado en `origin`; deploy en Netlify funcionando.
+- **Estado del repositorio:** `main` actualizado en `origin`; T14 en commit de cierre.
 
 ---
 
@@ -149,18 +149,19 @@ Completado:
 - `HomePage` y `NotFoundPage` conservan su propio contenedor y espaciado vertical.
 - `src/components/home/HeroDestacados.jsx` con hasta 4 destacados, frase de marca, flechas, pausa/play, barra de progreso, `aria-live` solo manual, fallback y respeto al movimiento reducido.
 - `src/components/home/HeroSlide.jsx` con imagen o placeholder, categoría, nombre, descripción, precio y CTA; slides inactivos ocultos y fuera del orden de tabulación.
+- `src/components/home/HeroProceso.jsx` con 4 fotos de proceso, rotación de 4 s hacia la izquierda, pausa/reanudación, botón de pausa/play, movimiento reducido y `aria` correctos.
 - `useCarrusel` expone `reinicio` para reiniciar la barra de progreso al reanudar o cambiar de slide.
 - `src/styles/index.css` con la animación `progreso-hero`.
-- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil y hero agregados; `npm test` 147/147.
-- `npm run lint` y `npm run build` pasan con T13.
+- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil y heroes agregados; `npm test` 152/152.
+- `npm run lint` y `npm run build` pasan con T14.
 
 Cierre:
 
-- T13 completada; T10–T13 se incluyen en el commit de cierre.
+- T14 completada; commit de cierre.
 
 Pendiente:
 
-- T14–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
+- T15–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
 
 ---
 
@@ -226,3 +227,4 @@ Alcance:
 | 2026-11-01 | F2 | T11 completada: layout sin contenedor global, footer completo y offset para anclas. |
 | 2026-11-01 | F2 | T12 completada: navbar con enlaces, menú móvil accesible y scroll a anclas conectado. |
 | 2026-11-01 | F2 | T13 completada: hero destacado con carrusel, barra de progreso, controles accesibles y tests. |
+| 2026-11-01 | F2 | T14 completada: hero de proceso con rotación, pausa/reanudación y movimiento reducido. |
