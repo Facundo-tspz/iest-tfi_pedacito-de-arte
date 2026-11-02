@@ -84,26 +84,54 @@ Prohibido usar valores hex directamente en componentes.
 
 ## 4. Panel administrativo
 
-Rutas:
+Rutas base: `/estudio`. Se evita `/admin` y `/panel`.
 
 ```text
-/admin/login
-/admin
-/admin/productos
-/admin/productos/nuevo
-/admin/productos/:id
-/admin/categorias
-/admin/contenido
-/admin/media
-/admin/usuarios
-/admin/configuracion
+/estudio/login
+/estudio
+/estudio/productos
+/estudio/productos/nuevo
+/estudio/productos/:id
+/estudio/categorias
+/estudio/media
+/estudio/contenido
+/estudio/usuarios
+/estudio/configuracion
+/estudio/sin-permiso
 ```
 
 ### Login
 Usuario y contraseña. Sin registro público, sin Gmail y sin Supabase Auth.
 
+Diseño de pantalla partida:
+- Izquierda: fondo `principal`, logo, nombre de marca y frase breve.
+- Derecha: formulario blanco con usuario, contraseña y botón “Ingresar”.
+- En móvil se apila: marca compacta arriba y formulario abajo.
+- Sin “recordarme”, sin recuperación por email y con error genérico.
+
+### Layout
+- Sidebar fijo a la izquierda con navegación vertical.
+- Contenido a la derecha con barra superior y `h1` de la sección.
+- El título de la sección aparece en el ítem activo del sidebar, en la barra superior y en el contenido.
+- El ítem activo se marca con barra izquierda dorada, fondo dorado suave y texto/icono en `complementario-principal`.
+- Iconos SVG pequeños propios, sin librería externa.
+- Barra superior: título de sección a la izquierda, usuario y “Salir” a la derecha.
+
+### Responsive
+- Escritorio `lg`: sidebar expandido de ~260 px con icono y texto.
+- Tablet `md`: rail compacto de ~72 px solo con iconos, `aria-label` y tooltip.
+- Móvil: drawer lateral con iconos y texto, abierto desde la barra superior; el contenido usa todo el ancho.
+- No se usa un rail de solo iconos en 360 px para no reducir el espacio de tablas y formularios.
+
+### Estética
+- Sidebar: `bg-principal`, texto `blanco`.
+- Contenido: `bg-blanco`, títulos `text-principal` y lectura `text-contraste`.
+- Acentos: `complementario-principal` para activo y `complementario-secundario` para acciones secundarias.
+- Tablas con encabezado `bg-fondo/60` y bordes `contraste/10` o `contraste/15`.
+- Sin negro puro; se usa `contraste` para reducir fatiga visual.
+
 ### Dashboard
-Resumen de productos, categorías, imágenes y último acceso.
+Resumen de productos, categorías, imágenes y último acceso, con accesos rápidos.
 
 ### Productos
 Listado con búsqueda, filtro y estado. Formulario con:
@@ -134,18 +162,19 @@ Solo admin. WhatsApp, email, redes, dirección, horarios y textos legales.
 
 ## 5. Roles en la interfaz
 
-- El editor ve Productos, Categorías, Contenido y Media.
+- El editor ve Dashboard, Productos, Categorías, Medios y Contenido.
 - El editor no ve botones de eliminar, Usuarios ni Configuración.
 - El admin ve todo.
 - Si un editor intenta llamar una acción prohibida, el servidor responde `403`.
-- Página `403` con mensaje claro.
+- Página `403` en `/estudio/sin-permiso` con mensaje claro.
 
 ---
 
 ## 6. Estados y responsive
 
 - Mobile first desde 360 px.
-- Menú hamburguesa en móvil.
+- Menú hamburguesa en el sitio público.
+- Panel admin: sidebar expandido en escritorio, rail de iconos en tablet y drawer en móvil.
 - Botón flotante de WhatsApp.
 - Foco visible en todos los controles.
 - Contraste verificado.

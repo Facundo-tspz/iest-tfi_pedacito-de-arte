@@ -143,4 +143,4 @@ Imagen → Function genera URL firmada → upload directo a Storage → registro
 - Functions: `netlify/functions`.
 - Redirect `/api/*` a Functions.
 - Fallback SPA `/*` a `index.html`.
-- Cabecera `X-Robots-Tag: noindex` para `/admin/*`.
+- Cabecera `X-Robots-Tag: noindex` para `/estudio/*`.

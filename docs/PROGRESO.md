@@ -1,7 +1,7 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-02
-- **Fase actual:** F2 completada y aprobada
+- **Fase actual:** F3 en curso — Spec 002 aprobada; clarificación en curso
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
 - **Estado del repositorio:** `main` con commits locales desde T14; push pendiente de aprobación.
 
@@ -23,6 +23,7 @@
 | Precios | Precio base + total estimado; el final se confirma por WhatsApp. |
 | WhatsApp | +54 9 297 462 371 → `549297462371`. |
 | Admin inicial | Usuario `Facundo`; contraseña definida por script local. |
+| Ruta admin | `/estudio`, con login partido, sidebar azul y contenido blanco. |
 | Specs | 001 Catálogo, 002 Carrito/WhatsApp, 003 Panel admin + CMS. |
 | Commits | Por fase; mensaje propuesto y aprobado antes de ejecutar. |
 | Push | Solo con aprobación explícita. |
@@ -188,8 +189,9 @@ Cierre:
 
 Pendiente:
 
-- Iniciar F3: Spec 002 (carrito + WhatsApp).
-- El diseño de F4 se puede conversar, pero su implementación espera a que termine F3.
+- Aprobar `specs/002-carrito-whatsapp/spec.md`.
+- Ejecutar clarificación, plan y tareas de F3 antes de escribir código.
+- El diseño de F4 quedó documentado; su implementación espera a que termine F3.
 
 ---
 
@@ -272,3 +274,4 @@ Alcance:
 | 2026-11-02 | F2 | T28 completada: matriz de verificación, comandos de calidad y evidencia de F2. |
 | 2026-11-02 | F2 | Ajustes de revisión visual C20: hero, intro, categorías y WhatsApp local. |
 | 2026-11-02 | F2 | F2 aprobada por revisión visual y humana; cierre de fase. |
+| 2026-11-02 | F3 | Diseño del panel administrativo documentado; Spec 002 del carrito creada. |

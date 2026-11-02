@@ -143,5 +143,5 @@ Resultado esperado: error por RLS.
 - [ ] RBAC verificado en servidor.
 - [ ] Validación con `zod`.
 - [ ] Uploads con tipo, tamaño y URL firmada.
-- [ ] `noindex` en `/admin`.
+- [ ] `noindex` en `/estudio`.
 - [ ] Sin datos personales en prompts.

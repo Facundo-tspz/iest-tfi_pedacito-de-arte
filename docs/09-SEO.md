@@ -57,8 +57,8 @@ Usar URLs absolutas y sin Markdown. Ejemplo:
 - Cada producto tiene `slug` único.
 - Ruta pública: `/catalogo/:slug`.
 - Sitemap con Home, Catálogo, Servicios, Contacto y productos activos.
-- `robots.txt` permite el sitio público y bloquea `/admin`.
-- `/admin/*` responde con `X-Robots-Tag: noindex`.
+- `robots.txt` permite el sitio público y bloquea `/estudio`.
+- `/estudio/*` responde con `X-Robots-Tag: noindex`.
 
 ---
 
