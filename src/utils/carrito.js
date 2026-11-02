@@ -77,6 +77,7 @@ export function crearItemCarrito({ producto, opciones = [], notas = '', cantidad
 
   const opcionesNormalizadas = normalizarOpciones(opciones);
   const notasNormalizadas = normalizarNotas(notas);
+  const imagen = producto.imagenes?.[0];
 
   return {
     clave: crearClaveItem(producto, opcionesNormalizadas, notasNormalizadas),
@@ -90,6 +91,15 @@ export function crearItemCarrito({ producto, opciones = [], notas = '', cantidad
       slug: typeof producto.categoria?.slug === 'string' ? producto.categoria.slug.trim() : '',
     },
     precio_base: normalizarPrecio(producto.precio_base),
+    imagen: imagen
+      ? {
+          url: typeof imagen.url === 'string' && imagen.url ? imagen.url : null,
+          alt:
+            typeof imagen.alt === 'string' && imagen.alt
+              ? imagen.alt.trim()
+              : `Imagen de ${nombre}`,
+        }
+      : null,
     cantidad: normalizarCantidad(cantidad),
     opciones: opcionesNormalizadas,
     notas: notasNormalizadas,
@@ -109,6 +119,7 @@ export function normalizarItemCarrito(item) {
       codigo: item.codigo,
       categoria: item.categoria,
       precio_base: item.precio_base,
+      imagenes: item.imagen ? [item.imagen] : [],
     },
     opciones: item.opciones,
     notas: item.notas,

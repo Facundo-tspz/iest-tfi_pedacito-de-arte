@@ -43,6 +43,14 @@ describe('AppRoutes', () => {
     ).toBeInTheDocument();
   });
 
+  it('muestra el carrito en /carrito', () => {
+    renderizarRuta('/carrito');
+
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'Carrito de encargos' }),
+    ).toBeInTheDocument();
+  });
+
   it('muestra la página 404 en una ruta desconocida', () => {
     renderizarRuta('/ruta-inexistente');
 

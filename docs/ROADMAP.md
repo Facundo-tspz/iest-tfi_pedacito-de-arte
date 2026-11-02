@@ -29,7 +29,7 @@
 | **F0** | Constitución, arnés y documentación | Completada y publicada (`76dee25`); esperando “aprobado F0” |
 | **F1** | Base técnica del proyecto | Completada y publicada (`26ce078`); aprobada |
 | **F2** | Spec 001: Home + Catálogo | Completada y aprobada |
-| **F3** | Spec 002: Carrito de encargos + WhatsApp | En curso — T05 completada; migraciones de BD preparadas |
+| **F3** | Spec 002: Carrito de encargos + WhatsApp | En curso — T06 completada; T07 pendiente |
 | **F4** | Spec 003: Panel admin + CMS | Pendiente |
 | **F5** | Producción multimedia con IA | Pendiente |
 | **F6** | QA, deploy, informe y defensa | Pendiente |

@@ -1,10 +1,10 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F3 en curso — T05 completada; T06 pendiente de aprobación
-- **Último cambio:** T01–T05 completadas: utilidades, contexto, revalidación, agregado y contador.
-- **Próximo paso:** Implementar T06: página `/carrito` con lista y cantidades.
-- **Commits pendientes:** ninguno; T01–T05 se cierran en este commit.
+- **Fase actual:** F3 en curso — T06 completada; T07 pendiente de aprobación
+- **Último cambio:** T06 completada: página `/carrito` con lista y cantidades; base y admin verificados.
+- **Próximo paso:** Implementar T07: resumen, totales, vaciado y estados.
+- **Commits pendientes:** ninguno; T06 se cierra en este commit.
 - **Push pendiente:** commits locales desde T14 hasta el cierre de F2.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 

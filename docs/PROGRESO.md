@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-02
-- **Fase actual:** F3 en curso — T05 completada; migraciones de BD preparadas; T06 pendiente
+- **Fase actual:** F3 en curso — T06 completada; T07 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` con commits locales desde T14; migraciones de BD sin commit; push pendiente de aprobación.
+- **Estado del repositorio:** `main` con commits locales desde T14; T06 en commit de cierre; push pendiente de aprobación.
 
 ---
 
@@ -203,16 +203,17 @@ Completado:
 - T03: revalidación de productos/opciones contra el servicio al recuperar el carrito.
 - T04: “Agregar al encargo” activo en el detalle, con confirmación accesible.
 - T05: contador por unidades en navbar y menú móvil.
-- Tests globales: `npm test` 228/228.
-- `npm run lint` y `npm run build` pasan con T01–T05.
+- T06: página `/carrito` con lista de ítems, opciones, notas, cantidades y acciones.
+- Tests globales: `npm test` 234/234.
+- `npm run lint` y `npm run build` pasan con T01–T06.
 
 Pendiente:
 
-- T06–T12: página del carrito, resumen, estados, WhatsApp, integración y cierre de F3.
+- T07–T12: resumen, totales, estados, WhatsApp, integración y cierre de F3.
 
-## 5.2. Base de datos preparada
+## 5.2. Base de datos creada
 
-Migraciones listas para ejecutar en Supabase:
+Migraciones ejecutadas en Supabase:
 
 - `db/001_esquema.sql`
 - `db/002_policies.sql`
@@ -226,14 +227,13 @@ Incluyen:
 - categoría “Para colorear”;
 - precios minorista, mayorista y “desde”;
 - seed de 6 productos reales;
-- RLS y bucket `media`.
+- RLS y bucket `media`;
+- usuario admin `Facundo` verificado.
 
 Pendiente:
 
-- Ejecutar las migraciones en Supabase.
-- Crear el admin inicial con el script local.
 - Cargar variables en Netlify.
-- Verificar RLS con la `anon key`.
+- Verificar RLS con la `anon key` desde el cliente.
 
 ---
 
@@ -326,3 +326,5 @@ Alcance:
 | 2026-11-02 | F3 | T04 completada: agregar al encargo desde el detalle. |
 | 2026-11-02 | F3 | T05 completada: contador del carrito en navbar y menú móvil. |
 | 2026-11-02 | F3 | Migraciones de Supabase y seed real preparados para ejecutar. |
+| 2026-11-02 | F3 | Migraciones ejecutadas y admin `Facundo` creado y verificado. |
+| 2026-11-02 | F3 | T06 completada: página `/carrito` con lista y cantidades. |
