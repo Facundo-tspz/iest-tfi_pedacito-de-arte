@@ -57,7 +57,7 @@ export default function HeroSlide({ producto, activo, posicion, total }) {
               {producto.categoria.nombre}
             </span>
 
-            <h2 className="mt-4 font-titulos text-4xl font-bold leading-tight text-blanco sm:text-5xl lg:text-6xl">
+            <h2 className="mt-4 break-words font-titulos text-4xl font-bold leading-tight text-blanco sm:text-5xl lg:text-6xl">
               {producto.nombre}
             </h2>
 

@@ -67,7 +67,7 @@ function BarraProgreso({ pausado }) {
   const estiloAnimacion = {
     animationName: 'progreso-hero',
     animationTimingFunction: 'linear',
-    animationFillMode: 'forwards',
+    animationFillMode: 'both',
     animationPlayState: pausado ? 'paused' : 'running',
   };
 
@@ -86,6 +86,7 @@ function BarraProgreso({ pausado }) {
       </div>
       <div className="relative h-full overflow-hidden rounded-full bg-blanco/20">
         <div
+          data-testid="progreso-relleno-2"
           className="h-full origin-left rounded-full bg-complementario-principal"
           style={{
             ...estiloAnimacion,
@@ -96,6 +97,7 @@ function BarraProgreso({ pausado }) {
       </div>
       <div className="relative h-full overflow-hidden rounded-full bg-blanco/20">
         <div
+          data-testid="progreso-relleno-3"
           className="h-full origin-left rounded-full bg-complementario-principal"
           style={{
             ...estiloAnimacion,
@@ -174,7 +176,6 @@ export default function HeroDestacados() {
       aria-roledescription="carrusel"
       aria-label="Productos destacados"
       aria-busy={estado === 'cargando'}
-      onMouseEnter={carrusel.registrarInteraccion}
       onFocusCapture={carrusel.registrarInteraccion}
       onClick={carrusel.registrarInteraccion}
       onTouchStart={carrusel.registrarInteraccion}
@@ -183,7 +184,7 @@ export default function HeroDestacados() {
     >
       <h1
         aria-label="Papelería creativa hecha con amor"
-        className="absolute right-4 top-24 z-20 max-w-[11rem] text-left font-titulos text-xl font-semibold italic leading-tight text-blanco drop-shadow-lg sm:right-8 sm:top-28 sm:max-w-[16rem] sm:text-2xl"
+        className="absolute right-4 top-24 z-20 max-w-[11rem] text-center font-titulos text-xl font-semibold italic leading-tight text-blanco drop-shadow-lg sm:right-8 sm:top-28 sm:max-w-[16rem] sm:text-2xl"
       >
         <span className="block">Papelería creativa</span>
         <span className="block">hecha con amor</span>

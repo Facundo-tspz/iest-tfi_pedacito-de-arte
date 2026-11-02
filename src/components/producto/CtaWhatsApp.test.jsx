@@ -71,5 +71,6 @@ describe('CtaWhatsApp', () => {
 
     expect(screen.getByRole('button', { name: 'Consultar por WhatsApp' })).toBeDisabled();
     expect(screen.queryByRole('link', { name: 'Consultar por WhatsApp' })).not.toBeInTheDocument();
+    expect(screen.getByText(/La consulta por WhatsApp no está disponible/)).toBeInTheDocument();
   });
 });

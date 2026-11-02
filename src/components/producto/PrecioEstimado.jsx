@@ -8,7 +8,12 @@ export default function PrecioEstimado({ precioBase, opciones = [] }) {
       <p className="font-cuerpo text-xs font-semibold uppercase tracking-[0.16em] text-contraste">
         Precio estimado
       </p>
-      <p className="mt-2 font-titulos text-3xl font-semibold text-principal">
+      <p
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="mt-2 font-titulos text-3xl font-semibold text-principal"
+      >
         {formatearPrecio(precioEstimado)}
       </p>
       <p className="mt-2 font-cuerpo text-xs leading-relaxed text-contraste">

@@ -73,7 +73,7 @@ export default function CatalogoPage() {
           </p>
         ) : null}
 
-        <div className="mt-8">
+        <div className="mt-8" aria-busy={cargando}>
           {cargando ? (
             <div role="status" aria-live="polite">
               <span className="sr-only">Cargando productos…</span>

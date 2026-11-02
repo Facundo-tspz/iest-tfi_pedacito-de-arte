@@ -80,12 +80,11 @@ export default function HeroProceso() {
       role="region"
       aria-roledescription="carrusel"
       aria-labelledby={ID_TITULO}
-      onMouseEnter={carrusel.registrarInteraccion}
       onFocusCapture={carrusel.registrarInteraccion}
       onClick={carrusel.registrarInteraccion}
       onTouchStart={carrusel.registrarInteraccion}
       onKeyDown={carrusel.registrarInteraccion}
-      className="relative isolate h-[52vh] min-h-[320px] max-h-[540px] w-full overflow-hidden bg-principal"
+      className="relative isolate h-[55vh] min-h-[320px] max-h-[540px] w-full overflow-hidden bg-principal sm:h-[45vh]"
     >
       <h2 id={ID_TITULO} className="sr-only">
         Proceso artesanal

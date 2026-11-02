@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
-- **Última actualización:** 2026-11-01
-- **Fase actual:** F2 en curso — T23–T26 completadas; T27 pendiente de aprobación
+- **Última actualización:** 2026-11-02
+- **Fase actual:** F2 completada y aprobada
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` actualizado en `origin`; T23–T26 en commit de cierre.
+- **Estado del repositorio:** `main` con commits locales desde T14; push pendiente de aprobación.
 
 ---
 
@@ -175,16 +175,21 @@ Completado:
 - `useCarrusel` expone `reinicio` para reiniciar la barra de progreso al reanudar o cambiar de slide.
 - `src/styles/index.css` con la animación `progreso-hero`.
 - Smoke test de `main` con timeout ampliado para el suite completo.
-- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro, servicios, categorías, novedades, SEO, Home, controles de catálogo, tarjeta, grilla, estados, catálogo, rutas, galería, opciones, precio, notas, CTA y detalle agregados; `npm test` 205/205.
-- `npm run lint` y `npm run build` pasan con T23–T26.
+- Auditoría T27: skip link, `aria-live` del precio, aviso de WhatsApp faltante, `aria-busy` del catálogo, `break-words`/`min-w-0` y alturas 55/45 del hero chico.
+- Ajustes C20 de revisión visual: frase del hero centrada, segmentos de progreso vacíos hasta su turno, sin pausa por hover, intro más compacta y categorías con acentos de la paleta.
+- `specs/001-catalogo/verificacion.md` con matriz RF/AC, evidencia y auditoría.
+- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro, servicios, categorías, novedades, SEO, Home, controles de catálogo, tarjeta, grilla, estados, catálogo, rutas, galería, opciones, precio, notas, CTA y detalle agregados; `npm test` 208/208.
+- `npm run lint` y `npm run build` pasan con T27–T28.
 
 Cierre:
 
-- T23–T26 completadas; commit de cierre.
+- T27–T28 completadas; F2 cerrada y aprobada.
+- Commit de cierre.
 
 Pendiente:
 
-- T27–T28: auditoría de accesibilidad/responsive y cierre de calidad de F2.
+- Iniciar F3: Spec 002 (carrito + WhatsApp).
+- El diseño de F4 se puede conversar, pero su implementación espera a que termine F3.
 
 ---
 
@@ -263,3 +268,7 @@ Alcance:
 | 2026-11-01 | F2 | T24 completada: opciones de personalización y precio estimado. |
 | 2026-11-01 | F2 | T25 completada: notas y CTA de WhatsApp con carrito deshabilitado. |
 | 2026-11-01 | F2 | T26 completada: detalle completo, SEO y ruta `/catalogo/:slug`. |
+| 2026-11-02 | F2 | T27 completada: auditoría de accesibilidad y responsive con correcciones. |
+| 2026-11-02 | F2 | T28 completada: matriz de verificación, comandos de calidad y evidencia de F2. |
+| 2026-11-02 | F2 | Ajustes de revisión visual C20: hero, intro, categorías y WhatsApp local. |
+| 2026-11-02 | F2 | F2 aprobada por revisión visual y humana; cierre de fase. |

@@ -32,7 +32,7 @@ Estas decisiones ya están reflejadas en la spec y no requieren nueva confirmaci
 
 | ID | Hallazgo | Decisión | Impacto | Estado |
 | :--- | :--- | :--- | :--- | :--- |
-| **C01** | Los dos heroes avanzan solos y no tienen un control visible de pausa. WCAG 2.2.2 exige un mecanismo para pausar, detener u ocultar contenido que se mueve automáticamente. | Pausa al interactuar (hover, foco, clic, touch o teclado) y reanudación automática a los **5 s** sin interacción. Se agrega un botón visible de pausa/play en ambos heroes para cumplir WCAG 2.2.2. | RP01.4, RP01.6, RP01.12, RP01.13, RP05.6, AC02, AC04, AC19 | Resuelto y aprobado |
+| **C01** | Los dos heroes avanzan solos y no tienen un control visible de pausa. WCAG 2.2.2 exige un mecanismo para pausar, detener u ocultar contenido que se mueve automáticamente. | Pausa al interactuar (foco, clic, touch o teclado) y reanudación automática a los **5 s** sin interacción. El hover no pausa el carrusel. Se agrega un botón visible de pausa/play en ambos heroes para cumplir WCAG 2.2.2. | RP01.4, RP01.6, RP01.12, RP01.13, RP05.6, AC02, AC04, AC19 | Resuelto y aprobado |
 
 ### Severidad media
 
@@ -61,6 +61,7 @@ Estas decisiones ya están reflejadas en la spec y no requieren nueva confirmaci
 | **C17** | Botón “Agregar al encargo” deshabilitado. | Mantenerlo visible con el aviso “Disponible en la próxima etapa” hasta F3. | RF04.6 | Aprobado |
 | **C18** | Variables de entorno. | Agregar `VITE_WHATSAPP`, `VITE_SITE_URL`, `VITE_INSTAGRAM` y `VITE_EMAIL` a `.env.example`; cargar valores en `.env.local` y Netlify. | RP03.6, configuración | Aprobado |
 | **C19** | Migas de pan en el detalle. | Omitirlas en F2. | RF04.9 | Aprobado |
+| **C20** | Ajustes de la revisión visual de F2. | Frase del hero centrada; pausa por foco, clic, touch o teclado, sin hover; segmentos de progreso vacíos hasta su turno; intro más compacta; categorías con acentos de la paleta. | RP01.3, RP01.6, RP01.13, AC02, AC04 | Aprobado |
 
 ---
 
@@ -76,7 +77,7 @@ Estas decisiones ya están reflejadas en la spec y no requieren nueva confirmaci
 
 ## 4. Criterio para avanzar a la implementación
 
-- Todas las decisiones C01–C19 están aprobadas.
+- Todas las decisiones C01–C20 están aprobadas.
 - La spec y `docs/05-DATOS.md` quedaron actualizados.
 - El plan y las tareas deben aprobarse antes de escribir código.
 

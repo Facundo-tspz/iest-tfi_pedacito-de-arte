@@ -14,14 +14,13 @@ export default function IntroMarca() {
   const urlWhatsApp = crearUrlWhatsApp(configuracion.whatsapp, MENSAJE_CONSULTA);
 
   return (
-    <Seccion
-      id="nosotros"
-      titulo="Sobre nosotros"
-      descripcion="Un taller que transforma ideas en objetos de papel."
-    >
+    <Seccion id="nosotros" titulo="Sobre nosotros">
       <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
-          <p className="max-w-2xl font-cuerpo text-base leading-relaxed text-contraste">
+          <p className="max-w-2xl font-cuerpo text-lg font-medium leading-relaxed text-principal">
+            Un taller que transforma ideas en objetos de papel.
+          </p>
+          <p className="mt-3 max-w-2xl font-cuerpo text-base leading-relaxed text-contraste">
             Pedacito de Arte diseña y confecciona agendas, anotadores y revistas para colorear. Cada
             pieza combina funcionalidad, estética y calidez, y puede personalizarse con opciones de
             interior, tamaño y encuadernación.
@@ -61,7 +60,7 @@ export default function IntroMarca() {
 
         <PlaceholderImagen
           alt="Mesa de trabajo con papeles, herramientas y materiales de encuadernación"
-          aspecto="retrato"
+          aspecto="tarjeta"
           texto="Foto del taller próximamente"
           className="w-full shadow-xl shadow-principal/10"
         />

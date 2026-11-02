@@ -1,10 +1,11 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F2 en curso — T23–T26 completadas; T27 pendiente de aprobación
-- **Último cambio:** T23–T26 completadas: detalle completo con opciones, precio estimado, notas, WhatsApp y SEO.
-- **Próximo paso:** Con “aprobado”, ejecutar el bloque T27–T28: accesibilidad, responsive y cierre de F2.
-- **Commits pendientes:** ninguno; T23–T26 se cierran en este commit.
+- **Fase actual:** F2 completada y aprobada
+- **Último cambio:** F2 cerrada con T27–T28 y ajustes C20 de revisión visual.
+- **Próximo paso:** Iniciar F3 (Spec 002: carrito + WhatsApp).
+- **Commits pendientes:** ninguno; T27–T28 se cierran en este commit.
+- **Push pendiente:** commits locales desde T14 hasta el cierre de F2.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo

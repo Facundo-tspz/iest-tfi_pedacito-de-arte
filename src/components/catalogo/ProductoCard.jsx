@@ -41,7 +41,7 @@ export default function ProductoCard({ producto }) {
           <span className="font-cuerpo text-xs font-semibold uppercase tracking-[0.12em] text-contraste">
             {producto.categoria.nombre}
           </span>
-          <h3 className="mt-2 font-titulos text-xl font-semibold leading-tight text-principal">
+          <h3 className="mt-2 break-words font-titulos text-xl font-semibold leading-tight text-principal">
             {producto.nombre}
           </h3>
           <p className="mt-2 line-clamp-2 font-cuerpo text-sm leading-relaxed text-contraste">

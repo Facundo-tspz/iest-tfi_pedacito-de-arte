@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -85,7 +85,12 @@ describe('HeroDestacados', () => {
         level: 1,
         name: 'Papelería creativa hecha con amor',
       }),
-    ).toBeInTheDocument();
+    ).toHaveClass('text-center');
+
+    expect(screen.getByRole('region', { name: 'Productos destacados' })).toHaveClass(
+      'h-[80vh]',
+      'sm:h-[70vh]',
+    );
 
     const slides = document.querySelectorAll('article');
 
@@ -122,6 +127,14 @@ describe('HeroDestacados', () => {
     const relleno = screen.getByTestId('progreso-relleno');
 
     expect(relleno).toHaveStyle({ animationPlayState: 'running' });
+    expect(screen.getByTestId('progreso-relleno-2')).toHaveStyle({
+      animationFillMode: 'both',
+      animationDelay: '6s',
+    });
+    expect(screen.getByTestId('progreso-relleno-3')).toHaveStyle({
+      animationFillMode: 'both',
+      animationDelay: '7s',
+    });
 
     await usuario.click(screen.getByRole('button', { name: 'Pausar carrusel' }));
 
@@ -142,6 +155,23 @@ describe('HeroDestacados', () => {
     });
 
     expect(screen.getByRole('group', { name: '1 de 4' })).toBeInTheDocument();
+
+    act(() => {
+      vi.advanceTimersByTime(8000);
+    });
+
+    expect(screen.getByRole('group', { name: '2 de 4' })).toBeInTheDocument();
+  });
+
+  it('no pausa al pasar el mouse', async () => {
+    vi.useFakeTimers();
+    renderizarHero();
+
+    await act(async () => {
+      await Promise.resolve();
+    });
+
+    fireEvent.mouseEnter(screen.getByRole('region', { name: 'Productos destacados' }));
 
     act(() => {
       vi.advanceTimersByTime(8000);

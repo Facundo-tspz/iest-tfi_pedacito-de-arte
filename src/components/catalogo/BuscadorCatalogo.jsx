@@ -29,7 +29,7 @@ export default function BuscadorCatalogo({ cantidadResultados }) {
   }, [buscarUrl, searchParams, setSearchParams, textoDebounced]);
 
   return (
-    <div>
+    <div className="min-w-0">
       <div className="flex flex-col gap-2">
         <label
           htmlFor="buscador-catalogo"

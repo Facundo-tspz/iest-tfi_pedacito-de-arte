@@ -38,11 +38,11 @@ function DetalleProducto({ producto }) {
       <div className="mt-6 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
         <GaleriaProducto producto={producto} />
 
-        <div>
+        <div className="min-w-0">
           <span className="inline-flex rounded-full bg-complementario-principal px-3 py-1 font-cuerpo text-xs font-semibold uppercase tracking-[0.12em] text-principal">
             {producto.categoria.nombre}
           </span>
-          <h1 className="mt-4 font-titulos text-4xl font-bold leading-tight text-principal sm:text-5xl">
+          <h1 className="mt-4 break-words font-titulos text-4xl font-bold leading-tight text-principal sm:text-5xl">
             {producto.nombre}
           </h1>
           <p className="mt-4 font-cuerpo text-base leading-relaxed text-contraste">

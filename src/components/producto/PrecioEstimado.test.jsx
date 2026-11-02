@@ -6,7 +6,7 @@ describe('PrecioEstimado', () => {
   it('muestra Precio a confirmar cuando la base es nula', () => {
     render(<PrecioEstimado precioBase={null} />);
 
-    expect(screen.getByText('Precio a confirmar')).toBeInTheDocument();
+    expect(screen.getByRole('status')).toHaveTextContent('Precio a confirmar');
     expect(screen.queryByText(/\$\s?0/)).not.toBeInTheDocument();
   });
 

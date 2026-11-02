@@ -38,6 +38,7 @@ describe('ProductoDetallePage', () => {
     expect(
       await screen.findByRole('heading', { level: 1, name: 'Agenda Botánica' }),
     ).toBeInTheDocument();
+    expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);
     expect(screen.getByText('Agendas')).toBeInTheDocument();
     expect(
       screen.getByText(/Agenda artesanal con tapa ilustrada y hojas para organizar tus días/),

@@ -5,6 +5,7 @@ import Boton from '../ui/Boton';
 
 export default function CtaWhatsApp({ producto, opciones = [], notas = '' }) {
   const idAviso = useId();
+  const idConfiguracion = useId();
   const urlProducto = `${configuracion.urlSitio}/catalogo/${producto.slug}`;
   const mensaje = construirMensajeWhatsApp({
     producto,
@@ -21,7 +22,7 @@ export default function CtaWhatsApp({ producto, opciones = [], notas = '' }) {
           Consultar por WhatsApp
         </Boton>
       ) : (
-        <Boton disabled className="w-full">
+        <Boton disabled aria-describedby={idConfiguracion} className="w-full">
           Consultar por WhatsApp
         </Boton>
       )}
@@ -34,9 +35,13 @@ export default function CtaWhatsApp({ producto, opciones = [], notas = '' }) {
         Disponible en la próxima etapa.
       </p>
 
-      {!urlWhatsApp && import.meta.env.DEV ? (
-        <p className="text-center font-cuerpo text-xs leading-relaxed text-contraste">
-          Configurá VITE_WHATSAPP para habilitar la consulta.
+      {!urlWhatsApp ? (
+        <p
+          id={idConfiguracion}
+          className="text-center font-cuerpo text-xs leading-relaxed text-contraste"
+        >
+          La consulta por WhatsApp no está disponible en este momento.
+          {import.meta.env.DEV ? ' Configurá VITE_WHATSAPP para habilitarla.' : ''}
         </p>
       ) : null}
     </div>

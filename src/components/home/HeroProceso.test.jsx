@@ -37,6 +37,11 @@ describe('HeroProceso', () => {
     ).toBeInTheDocument();
     expect(screen.queryByRole('heading', { level: 1 })).not.toBeInTheDocument();
 
+    expect(screen.getByRole('region', { name: 'Proceso artesanal' })).toHaveClass(
+      'h-[55vh]',
+      'sm:h-[45vh]',
+    );
+
     const slides = obtenerSlides();
 
     expect(slides).toHaveLength(4);
@@ -96,11 +101,11 @@ describe('HeroProceso', () => {
     expect(screen.getByRole('group', { name: '2 de 4' })).toBeInTheDocument();
   });
 
-  it('pausa al interactuar y reanuda a los 5 segundos', () => {
+  it('pausa al hacer clic y reanuda a los 5 segundos', () => {
     vi.useFakeTimers();
     renderizarHero();
 
-    fireEvent.mouseEnter(screen.getByRole('region', { name: 'Proceso artesanal' }));
+    fireEvent.click(screen.getByRole('region', { name: 'Proceso artesanal' }));
 
     act(() => {
       vi.advanceTimersByTime(4999);
@@ -120,6 +125,19 @@ describe('HeroProceso', () => {
 
     act(() => {
       vi.advanceTimersByTime(1);
+    });
+
+    expect(screen.getByRole('group', { name: '2 de 4' })).toBeInTheDocument();
+  });
+
+  it('no pausa al pasar el mouse', () => {
+    vi.useFakeTimers();
+    renderizarHero();
+
+    fireEvent.mouseEnter(screen.getByRole('region', { name: 'Proceso artesanal' }));
+
+    act(() => {
+      vi.advanceTimersByTime(4000);
     });
 
     expect(screen.getByRole('group', { name: '2 de 4' })).toBeInTheDocument();

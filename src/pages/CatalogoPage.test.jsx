@@ -19,6 +19,7 @@ describe('CatalogoPage', () => {
     renderizarCatalogo();
 
     expect(screen.getByRole('heading', { level: 1, name: 'Catálogo' })).toBeInTheDocument();
+    expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);
     expect(
       await screen.findByRole('heading', { level: 3, name: 'Agenda Botánica' }),
     ).toBeInTheDocument();

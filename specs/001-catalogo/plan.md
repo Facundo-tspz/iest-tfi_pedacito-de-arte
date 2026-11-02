@@ -207,7 +207,7 @@ URL: {url del producto}
 ### Hero grande
 
 - 4 slides, 8 s por slide.
-- Texto superpuesto, frase fija “Papelería creativa / hecha con amor” en dos renglones.
+- Texto superpuesto, frase fija “Papelería creativa / hecha con amor” en dos renglones centrados.
 - Barra de progreso de 8 s: tramo continuo hasta 75 % y dos tramos cortos en el último 25 %.
 - Flechas, botón de pausa/play y barra se ocultan o desactivan con movimiento reducido.
 - `aria-roledescription="carrusel"`, slides inactivos con `aria-hidden="true"`, `aria-live="polite"` solo para cambios manuales.
@@ -216,7 +216,7 @@ URL: {url del producto}
 
 - 4 slides de proceso, 4 s por slide, transición hacia la izquierda.
 - Sin flechas; botón de pausa/play visible.
-- Pausa por interacción y reanudación a los 5 s.
+- Pausa por foco, clic, touch o teclado y reanudación a los 5 s; el hover no pausa.
 - Movimiento reducido: se detiene y se muestra una imagen fija.
 
 ---

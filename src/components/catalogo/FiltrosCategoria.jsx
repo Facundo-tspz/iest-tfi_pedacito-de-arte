@@ -32,8 +32,8 @@ export default function FiltrosCategoria({ categorias = [] }) {
             onClick={() => seleccionarCategoria(categoria.slug)}
             className={`inline-flex min-h-10 items-center justify-center rounded-full border px-4 font-cuerpo text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario focus-visible:ring-offset-2 focus-visible:ring-offset-fondo ${
               activo
-                ? 'border-principal bg-principal text-blanco'
-                : 'border-contraste/20 bg-blanco/60 text-principal hover:border-complementario-secundario hover:bg-blanco'
+                ? 'border-complementario-principal bg-complementario-principal text-principal shadow-sm shadow-principal/15'
+                : 'border-contraste/20 bg-fondo text-contraste hover:border-complementario-secundario hover:bg-blanco hover:text-principal'
             }`}
           >
             {categoria.nombre}

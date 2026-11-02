@@ -130,17 +130,17 @@ Implementar la Home y el catálogo público de las cuatro líneas de producto, c
 
 - **RP01.1** El sistema deberá mostrar un hero full-bleed con una foto de escena y texto superpuesto.
 - **RP01.2** El hero deberá mostrar hasta 4 productos con `destacado=true`, ordenados por `orden` y completados con los primeros disponibles si hay menos de 4, con nombre, descripción breve, categoría, precio y llamada a la acción.
-- **RP01.3** El hero deberá mostrar la frase fija “Papelería creativa / hecha con amor” en dos renglones, arriba a la derecha, con las líneas alineadas a la izquierda.
+- **RP01.3** El hero deberá mostrar la frase fija “Papelería creativa / hecha con amor” en dos renglones, arriba a la derecha, con las líneas centradas.
 - **RP01.4** El hero deberá avanzar automáticamente cada 8 segundos y permitir navegación manual con flechas.
 - **RP01.5** Mientras el hero esté en reproducción automática, la barra de progreso deberá llenarse de forma continua durante 6 segundos y mostrar dos segmentos cortos en los últimos 2 segundos; la barra se detiene con la pausa y se oculta con movimiento reducido.
-- **RP01.6** Cuando el usuario pase el mouse, enfoque, haga clic, toque o use el teclado sobre el hero, el sistema deberá pausar el avance automático y reanudarlo a los 5 segundos sin interacción; además, deberá ofrecer un botón visible de pausa/play.
+- **RP01.6** Cuando el usuario enfoque, haga clic, toque o use el teclado sobre el hero, el sistema deberá pausar el avance automático y reanudarlo a los 5 segundos sin interacción; además, deberá ofrecer un botón visible de pausa/play.
 - **RP01.7** Cuando el usuario use las flechas, el sistema deberá reiniciar el temporizador.
 - **RP01.8** Donde el usuario prefiera movimiento reducido, el sistema deberá detener el avance automático.
 - **RP01.9** El sistema deberá mostrar una sección de intro de marca con bajada, llamadas a la acción y foto.
 - **RP01.10** El sistema deberá mostrar 4 tarjetas de categoría que enlacen al catálogo filtrado.
 - **RP01.11** El sistema deberá mostrar una sección “Novedades” con las siguientes 4 tarjetas de producto por `orden` que no estén en el hero, completando con las disponibles si faltan.
 - **RP01.12** El sistema deberá mostrar un hero chico full-bleed con fotos de proceso que roten automáticamente hacia la izquierda cada 4 segundos.
-- **RP01.13** El hero chico deberá pausarse al pasar el mouse, enfocar, hacer clic o tocar, reanudarse a los 5 segundos sin interacción, ofrecer un botón visible de pausa/play y detenerse con movimiento reducido.
+- **RP01.13** El hero chico deberá pausarse al enfocar, hacer clic o tocar, reanudarse a los 5 segundos sin interacción, ofrecer un botón visible de pausa/play y detenerse con movimiento reducido.
 - **RP01.14** El sistema deberá mostrar una franja de servicios y una llamada a la acción de WhatsApp.
 - **RP01.15** El sistema deberá mostrar un footer con logo, navegación, contacto, redes y textos legales.
 - **RP01.16** La Home deberá tener un solo `h1` y una jerarquía de encabezados correcta.

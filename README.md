@@ -4,8 +4,9 @@ Sitio web de catálogo y encargos de papelería artesanal. No es una tienda con 
 
 ## Estado
 
-**Fase actual:** F0 — documentación y arnés del agente completados, pendientes de aprobación.  
-Todavía no hay código de aplicación ni dependencias instaladas.
+**Fase actual:** F2 — Home + Catálogo completada y aprobada.
+
+El sitio ya incluye Home, catálogo, búsqueda, filtros, detalle de producto, personalización y SEO. El carrito y el panel administrativo corresponden a F3 y F4.
 
 ## Stack
 
@@ -26,7 +27,7 @@ Todavía no hay código de aplicación ni dependencias instaladas.
 ## Enlaces
 
 - Repositorio: https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- Sitio publicado: pendiente
+- Sitio publicado: https://pedacito-de-arte.netlify.app
 - Video promocional: pendiente
 - Video demo: pendiente
 
@@ -44,4 +45,10 @@ La lectura obligatoria y el orden de trabajo están en `AGENTS.md` y `docs/REGLA
 
 ## Ejecución
 
-Pendiente de F1. No ejecutar `npm install` hasta que la fase esté aprobada.
+```bash
+npm install
+npm run dev
+npm test
+npm run lint
+npm run build
+```

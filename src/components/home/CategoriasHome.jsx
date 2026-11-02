@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import { obtenerCategorias } from '../../services/catalogo';
 import Seccion from '../ui/Seccion';
 
+const ACENTOS = [
+  'border-t-complementario-principal',
+  'border-t-secundario',
+  'border-t-complementario-secundario',
+  'border-t-principal',
+];
+
 export default function CategoriasHome() {
   const [categorias, setCategorias] = useState([]);
   const [estado, setEstado] = useState('cargando');
@@ -56,16 +63,16 @@ export default function CategoriasHome() {
             <li key={categoria.id}>
               <Link
                 to={`/catalogo?categoria=${encodeURIComponent(categoria.slug)}`}
-                className="group flex h-full flex-col justify-between rounded-2xl border border-contraste/15 bg-blanco/60 p-5 transition-colors hover:border-complementario-secundario hover:bg-blanco focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario focus-visible:ring-offset-2 focus-visible:ring-offset-fondo"
+                className={`group flex h-full flex-col justify-between rounded-2xl border border-t-4 border-contraste/15 bg-gradient-to-br from-blanco/90 via-fondo to-complementario-principal/20 p-5 shadow-sm shadow-principal/5 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-principal/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario focus-visible:ring-offset-2 focus-visible:ring-offset-fondo ${ACENTOS[indice % ACENTOS.length]}`}
               >
                 <div>
                   <span
                     aria-hidden="true"
-                    className="font-cuerpo text-xs font-semibold uppercase tracking-[0.16em] text-principal"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-principal font-cuerpo text-xs font-semibold text-blanco"
                   >
                     {String(indice + 1).padStart(2, '0')}
                   </span>
-                  <h3 className="mt-3 font-titulos text-2xl font-semibold leading-tight text-principal">
+                  <h3 className="mt-3 break-words font-titulos text-2xl font-semibold leading-tight text-principal">
                     {categoria.nombre}
                   </h3>
                   <p className="mt-2 font-cuerpo text-sm leading-relaxed text-contraste">
@@ -77,7 +84,7 @@ export default function CategoriasHome() {
                   Ver categoría
                   <span
                     aria-hidden="true"
-                    className="transition-transform group-hover:translate-x-1"
+                    className="text-complementario-secundario transition-transform group-hover:translate-x-1"
                   >
                     →
                   </span>

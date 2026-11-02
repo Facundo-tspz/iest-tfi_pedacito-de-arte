@@ -79,7 +79,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${configuracion.email}`}
-                  className="text-fondo/80 transition-colors hover:text-blanco focus-visible:text-blanco"
+                  className="break-words text-fondo/80 transition-colors hover:text-blanco focus-visible:text-blanco"
                 >
                   {configuracion.email}
                 </a>

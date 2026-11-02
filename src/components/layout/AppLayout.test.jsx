@@ -24,6 +24,16 @@ describe('AppLayout', () => {
     expect(screen.getByRole('contentinfo')).toBeInTheDocument();
   });
 
+  it('ofrece un enlace para saltar al contenido principal', () => {
+    renderizarLayout();
+
+    expect(screen.getByRole('link', { name: 'Saltar al contenido' })).toHaveAttribute(
+      'href',
+      '#contenido-principal',
+    );
+    expect(screen.getByRole('main')).toHaveAttribute('id', 'contenido-principal');
+  });
+
   it('no impone el contenedor global sobre el contenido', () => {
     renderizarLayout();
 
