@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-01
-- **Fase actual:** F2 en curso — T21 completada; T22 pendiente de aprobación
+- **Fase actual:** F2 en curso — T22 completada; T23 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` actualizado en `origin`; T21 sin commit.
+- **Estado del repositorio:** `main` actualizado en `origin`; T22 sin commit.
 
 ---
 
@@ -166,19 +166,20 @@ Completado:
 - `src/pages/CatalogoPage.jsx` con lectura de URL, filtros, búsqueda, aviso de categoría inválida, contador `aria-live` y metadatos.
 - Ruta `/catalogo` agregada a `AppRouter`.
 - `Novedades` y `HeroSlide` reutilizan la tarjeta y el enlace `/catalogo/:slug`.
+- `src/components/producto/GaleriaProducto.jsx` con imagen principal, miniaturas, navegación por teclado, placeholder y `alt`.
 - `useCarrusel` expone `reinicio` para reiniciar la barra de progreso al reanudar o cambiar de slide.
 - `src/styles/index.css` con la animación `progreso-hero`.
 - Smoke test de `main` con timeout ampliado para el suite completo.
-- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro, servicios, categorías, novedades, SEO, Home, controles de catálogo, tarjeta, grilla, estados, catálogo y rutas agregados; `npm test` 186/186.
-- `npm run lint` y `npm run build` pasan con T21.
+- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro, servicios, categorías, novedades, SEO, Home, controles de catálogo, tarjeta, grilla, estados, catálogo, rutas y galería agregados; `npm test` 189/189.
+- `npm run lint` y `npm run build` pasan con T22.
 
 Cierre:
 
-- T21 completada; commit pendiente de aprobación.
+- T22 completada; commit pendiente de aprobación.
 
 Pendiente:
 
-- T22–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
+- T23–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
 
 ---
 
@@ -252,3 +253,4 @@ Alcance:
 | 2026-11-01 | F2 | T19 completada: tarjeta y grilla responsive de productos. |
 | 2026-11-01 | F2 | T20 completada: skeletons, estados vacíos y error con reintento. |
 | 2026-11-01 | F2 | T21 completada: página de catálogo con URL, filtros, búsqueda, estados y SEO. |
+| 2026-11-01 | F2 | T22 completada: galería del detalle con miniaturas y navegación por teclado. |
