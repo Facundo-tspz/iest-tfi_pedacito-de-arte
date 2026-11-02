@@ -1,10 +1,10 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F4 en curso — Bloque B completado; Bloque C pendiente
-- **Último cambio:** Bloque B completado: Supabase público, auth, login, rutas protegidas y dashboard.
-- **Próximo paso:** Implementar el Bloque C de F4: medios y productos.
-- **Commits pendientes:** Bloque B de F4, pendiente de aprobación.
+- **Fase actual:** F4 en curso — Bloque C completado; verificación en deploy pendiente
+- **Último cambio:** Bloque C completado: medios con recorte/WebP y CRUD de productos.
+- **Próximo paso:** Probar F4 en Netlify y luego preparar F6.
+- **Commits pendientes:** Bloque C de F4, pendiente de aprobación.
 - **Push pendiente:** commits locales desde T14 hasta el cierre de F2.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 

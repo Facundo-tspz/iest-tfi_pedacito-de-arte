@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-02
-- **Fase actual:** F4 en curso — Bloque B completado; Bloque C pendiente
+- **Fase actual:** F4 en curso — Bloque C completado; verificación en deploy pendiente
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` con commits locales desde T14; Bloque B de F4 sin commit; push pendiente de aprobación.
+- **Estado del repositorio:** `main` con commits locales desde T14; Bloque C de F4 sin commit; push pendiente de aprobación.
 
 ---
 
@@ -189,7 +189,8 @@ Cierre:
 
 Pendiente:
 
-- Implementar el Bloque C de F4: medios y productos.
+- Probar F4 en el deploy: login, medios, productos y RLS.
+- Preparar F6: QA, deploy final, informe y defensa.
 - Cerrar F4 con pruebas, deploy, RLS y verificación.
 - F6 queda para la etapa final.
 
@@ -257,13 +258,18 @@ Completado:
 - Ruta `/estudio` protegida.
 - Layout administrativo con sidebar y dashboard básico.
 - `X-Robots-Tag: noindex` para `/estudio/*`.
+- Bloque C: `MediaPage` con subida, recorte, WebP y edición de alt.
+- Bloque C: `ProductosPage` y `ProductoFormPage` con imágenes, precios, características, SEO y opciones simples.
+- Functions `admin-media-url`, `admin-media` y `admin-productos`.
+- `react-easy-crop` instalado.
+- `specs/003-panel-admin/verificacion.md` creado.
 - Tests globales: `npm test` 257/257.
 - `npm run lint` y `npm run build` pasan.
 
 Pendiente:
 
-- Bloque C: biblioteca de medios con recorte/WebP y CRUD de productos.
-- Verificación de F4.
+- Probar login, medios, productos y RLS en Netlify.
+- Cerrar F4 y pasar a F6.
 
 ---
 
@@ -364,3 +370,4 @@ Alcance:
 | 2026-11-02 | F3 | T10–T11 completadas: integración, SEO y flujo del carrito. |
 | 2026-11-02 | F3 | T12 completada: verificación y cierre de F3. |
 | 2026-11-02 | F4 | Bloque B completado: Supabase público, auth, login, rutas protegidas y dashboard. |
+| 2026-11-02 | F4 | Bloque C completado: medios con recorte/WebP y CRUD de productos. |

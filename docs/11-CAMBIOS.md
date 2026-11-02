@@ -12,6 +12,7 @@
 
 | Fecha | Fase | Tecnología | Versión | Motivo | Alternativas evaluadas | Impacto | Aprobación | Estado |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2026-11-02 | F4 | `react-easy-crop` | 6.2.4 | Recorte de imágenes en la biblioteca de medios. | Se evaluó un recorte propio; se descartó por tiempo y accesibilidad. | Dependencia de UI para el panel. | Aprobado por el estudiante. | Instalado en F4. |
 | 2026-11-02 | F4 | `@supabase/supabase-js` | 2.58.0 | Cliente público de Supabase y Functions administrativas. | Evaluado como dependencia oficial del stack. | Agrega cliente JS y bundle de Functions. | Aprobado por el estudiante. | Instalado en F4. |
 | 2026-10-30 | F2 | `react-helmet-async` | 3.0.0 | Metadatos por ruta (title, description, canonical y Open Graph) en una SPA con React 18. Ya previsto en `docs/03-TECNOLOGIAS.md` y `docs/09-SEO.md`. | Hook propio `useSEO` con `useEffect`; se descarta para no reimplementar deduplicación y actualizaciones asíncronas. | Nueva dependencia; requiere `HelmetProvider`; impacto pequeño en el bundle. | Aprobado por el estudiante (C03). | Instalado en F2 (T01). |
 

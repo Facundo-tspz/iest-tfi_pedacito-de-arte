@@ -1,11 +1,20 @@
-import { NavLink, Outlet, useOutletContext } from 'react-router-dom';
+import { NavLink, Outlet, useLocation, useOutletContext } from 'react-router-dom';
 import Logo from '../ui/Logo';
-import { IconoPanel, IconoSalir } from './IconosAdmin';
+import { IconoMedios, IconoPanel, IconoProductos, IconoSalir } from './IconosAdmin';
 
-const ENLACES = [{ etiqueta: 'Dashboard', destino: '/estudio', icono: IconoPanel }];
+const ENLACES = [
+  { etiqueta: 'Dashboard', destino: '/estudio', icono: IconoPanel, exacto: true },
+  { etiqueta: 'Productos', destino: '/estudio/productos', icono: IconoProductos },
+  { etiqueta: 'Medios', destino: '/estudio/media', icono: IconoMedios },
+];
 
 export default function AdminLayout() {
   const { usuario, cerrarSesion } = useOutletContext();
+  const ubicacion = useLocation();
+  const actual =
+    ENLACES.find(
+      (enlace) => enlace.destino !== '/estudio' && ubicacion.pathname.startsWith(enlace.destino),
+    ) ?? ENLACES[0];
 
   return (
     <div className="flex min-h-screen bg-blanco">
@@ -19,11 +28,11 @@ export default function AdminLayout() {
 
         <nav aria-label="Navegación administrativa" className="p-3">
           <ul className="space-y-1">
-            {ENLACES.map(({ etiqueta, destino, icono: Icono }) => (
+            {ENLACES.map(({ etiqueta, destino, icono: Icono, exacto }) => (
               <li key={etiqueta}>
                 <NavLink
                   to={destino}
-                  end
+                  end={exacto}
                   className={({ isActive }) =>
                     `flex items-center gap-3 rounded-xl px-3 py-3 font-cuerpo text-sm font-medium transition-colors ${
                       isActive
@@ -58,7 +67,9 @@ export default function AdminLayout() {
             <p className="font-cuerpo text-xs font-semibold uppercase tracking-[0.16em] text-contraste">
               Panel
             </p>
-            <h1 className="font-titulos text-2xl font-semibold text-principal">Dashboard</h1>
+            <h1 className="font-titulos text-2xl font-semibold text-principal">
+              {actual.etiqueta}
+            </h1>
           </div>
 
           <div className="flex items-center gap-3">

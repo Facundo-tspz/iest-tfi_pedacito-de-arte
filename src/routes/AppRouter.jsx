@@ -9,6 +9,9 @@ import NotFoundPage from '../pages/NotFoundPage';
 import ProductoDetallePage from '../pages/ProductoDetallePage';
 import DashboardPage from '../pages/admin/DashboardPage';
 import LoginPage from '../pages/admin/LoginPage';
+import MediaPage from '../pages/admin/MediaPage';
+import ProductoFormPage from '../pages/admin/ProductoFormPage';
+import ProductosPage from '../pages/admin/ProductosPage';
 
 export function AppRoutes() {
   return (
@@ -17,6 +20,10 @@ export function AppRoutes() {
       <Route path="estudio" element={<RutaAdminProtegida />}>
         <Route element={<AdminLayout />}>
           <Route index element={<DashboardPage />} />
+          <Route path="productos" element={<ProductosPage />} />
+          <Route path="productos/nuevo" element={<ProductoFormPage />} />
+          <Route path="productos/:id" element={<ProductoFormPage />} />
+          <Route path="media" element={<MediaPage />} />
         </Route>
       </Route>
 
