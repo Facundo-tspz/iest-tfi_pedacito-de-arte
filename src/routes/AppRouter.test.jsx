@@ -32,6 +32,14 @@ describe('AppRoutes', () => {
     expect(screen.getByRole('heading', { level: 1, name: 'Catálogo' })).toBeInTheDocument();
   });
 
+  it('muestra el detalle en /catalogo/:slug', async () => {
+    renderizarRuta('/catalogo/agenda-botanica');
+
+    expect(
+      await screen.findByRole('heading', { level: 1, name: 'Agenda Botánica' }),
+    ).toBeInTheDocument();
+  });
+
   it('muestra la página 404 en una ruta desconocida', () => {
     renderizarRuta('/ruta-inexistente');
 

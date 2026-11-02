@@ -1,10 +1,10 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F2 en curso — T22 completada; T23 pendiente de aprobación
-- **Último cambio:** T22 completada: galería del detalle con miniaturas y navegación por teclado.
-- **Próximo paso:** Con “aprobado”, ejecutar T23: información del detalle, 404 y volver.
-- **Commits pendientes:** T22, pendiente de aprobación.
+- **Fase actual:** F2 en curso — T23–T26 completadas; T27 pendiente de aprobación
+- **Último cambio:** T23–T26 completadas: detalle completo con opciones, precio estimado, notas, WhatsApp y SEO.
+- **Próximo paso:** Con “aprobado”, ejecutar el bloque T27–T28: accesibilidad, responsive y cierre de F2.
+- **Commits pendientes:** ninguno; T23–T26 se cierran en este commit.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo
