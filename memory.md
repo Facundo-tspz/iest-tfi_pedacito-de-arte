@@ -1,10 +1,10 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F2 en curso — T16 completada; T17 pendiente de aprobación
-- **Último cambio:** T16 completada: categorías y novedades del Home con datos del servicio.
-- **Próximo paso:** Con “aprobado”, ejecutar T17: componer la Home y aplicar SEO.
-- **Commits pendientes:** T16, pendiente de aprobación.
+- **Fase actual:** F2 en curso — T17 completada; T18 pendiente de aprobación
+- **Último cambio:** T17 completada: Home compuesta con SEO, un solo h1 y todas las secciones.
+- **Próximo paso:** Con “aprobado”, ejecutar T18: buscador y filtros del catálogo.
+- **Commits pendientes:** ninguno; T17 se cierra en este commit.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo

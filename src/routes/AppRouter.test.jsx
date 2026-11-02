@@ -1,13 +1,16 @@
 import { render, screen } from '@testing-library/react';
+import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import { AppRoutes } from './AppRouter';
 
 function renderizarRuta(ruta) {
   return render(
-    <MemoryRouter initialEntries={[ruta]}>
-      <AppRoutes />
-    </MemoryRouter>,
+    <HelmetProvider>
+      <MemoryRouter initialEntries={[ruta]}>
+        <AppRoutes />
+      </MemoryRouter>
+    </HelmetProvider>,
   );
 }
 
@@ -15,14 +18,17 @@ describe('AppRoutes', () => {
   it('muestra el home en la ruta raíz', () => {
     renderizarRuta('/');
 
-    expect(screen.getByText(/Base técnica en construcción/)).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: 'Papelería creativa hecha con amor',
+      }),
+    ).toBeInTheDocument();
   });
 
   it('muestra la página 404 en una ruta desconocida', () => {
     renderizarRuta('/ruta-inexistente');
 
-    expect(
-      screen.getByRole('heading', { name: 'No encontramos esta página' }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'No encontramos esta página' })).toBeInTheDocument();
   });
 });

@@ -8,7 +8,10 @@ describe('punto de entrada', () => {
     await import('./main');
 
     expect(
-      await screen.findByText(/Base técnica en construcción/),
+      await screen.findByRole('heading', {
+        level: 1,
+        name: 'Papelería creativa hecha con amor',
+      }),
     ).toBeInTheDocument();
   });
 });

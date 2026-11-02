@@ -1,14 +1,26 @@
-import Logo from '../components/ui/Logo';
+import CategoriasHome from '../components/home/CategoriasHome';
+import HeroDestacados from '../components/home/HeroDestacados';
+import HeroProceso from '../components/home/HeroProceso';
+import IntroMarca from '../components/home/IntroMarca';
+import Novedades from '../components/home/Novedades';
+import ServiciosCTA from '../components/home/ServiciosCTA';
+import SEO from '../components/seo/SEO';
 
 export default function HomePage() {
   return (
-    <section className="contenedor min-h-[150vh] py-16">
-      <h1 className="sr-only">Pedacito de Arte</h1>
-      <Logo />
-      <p className="mt-6 max-w-xl font-cuerpo text-base text-contraste">
-        Base técnica en construcción. La navegación y el contenido del home se definen en la
-        siguiente etapa.
-      </p>
-    </section>
+    <>
+      <SEO
+        titulo="Pedacito de Arte | Papelería Creativa hecha con amor"
+        descripcion="Agendas personalizadas, agendas docentes, anotadores y revistas para colorear. Papelería artesanal hecha con amor. Armá tu encargo y envialo por WhatsApp."
+        url="/"
+      />
+
+      <HeroDestacados />
+      <IntroMarca />
+      <CategoriasHome />
+      <Novedades />
+      <HeroProceso />
+      <ServiciosCTA />
+    </>
   );
 }

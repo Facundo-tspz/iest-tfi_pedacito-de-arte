@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-01
-- **Fase actual:** F2 en curso — T16 completada; T17 pendiente de aprobación
+- **Fase actual:** F2 en curso — T17 completada; T18 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` actualizado en `origin`; T16 en commit de cierre.
+- **Estado del repositorio:** `main` actualizado en `origin`; T17 en commit de cierre.
 
 ---
 
@@ -154,18 +154,20 @@ Completado:
 - `src/components/home/ServiciosCTA.jsx` con franja de servicios, CTA de WhatsApp, estado sin número configurado y anclas `servicios` y `contacto`.
 - `src/components/home/CategoriasHome.jsx` con 4 tarjetas de categoría y enlace al catálogo filtrado.
 - `src/components/home/Novedades.jsx` con las siguientes 4 piezas por orden, excluyendo los slugs del hero.
+- `src/components/seo/SEO.jsx` con título, descripción, canonical, Open Graph y Twitter absolutos desde `VITE_SITE_URL`.
+- `HomePage` compuesta con hero, intro, categorías, novedades, proceso, servicios y SEO; un solo `h1`.
 - `useCarrusel` expone `reinicio` para reiniciar la barra de progreso al reanudar o cambiar de slide.
 - `src/styles/index.css` con la animación `progreso-hero`.
-- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro, servicios, categorías y novedades agregados; `npm test` 160/160.
-- `npm run lint` y `npm run build` pasan con T16.
+- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro, servicios, categorías, novedades, SEO y Home agregados; `npm test` 163/163.
+- `npm run lint` y `npm run build` pasan con T17.
 
 Cierre:
 
-- T16 completada; commit de cierre.
+- T17 completada; commit de cierre.
 
 Pendiente:
 
-- T17–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
+- T18–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
 
 ---
 
@@ -234,3 +236,4 @@ Alcance:
 | 2026-11-01 | F2 | T14 completada: hero de proceso con rotación, pausa/reanudación y movimiento reducido. |
 | 2026-11-01 | F2 | T15 completada: intro de marca y franja de servicios con CTA de WhatsApp. |
 | 2026-11-01 | F2 | T16 completada: categorías y novedades del Home con datos del servicio. |
+| 2026-11-01 | F2 | T17 completada: Home compuesta con SEO, un solo h1 y todas las secciones. |
