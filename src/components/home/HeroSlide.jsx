@@ -67,7 +67,7 @@ export default function HeroSlide({ producto, activo, posicion, total }) {
 
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Link
-                to={`/producto/${producto.slug}`}
+                to={`/catalogo/${producto.slug}`}
                 tabIndex={activo ? undefined : -1}
                 className="inline-flex min-h-12 items-center justify-center rounded-xl bg-blanco px-6 font-cuerpo text-base font-semibold text-principal transition-colors hover:bg-fondo focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario focus-visible:ring-offset-2 focus-visible:ring-offset-principal"
               >

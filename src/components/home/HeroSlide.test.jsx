@@ -44,7 +44,7 @@ describe('HeroSlide', () => {
     expect(within(slide).getByText(/15\.000/)).toBeInTheDocument();
     expect(within(slide).getByRole('link', { name: 'Ver producto' })).toHaveAttribute(
       'href',
-      '/producto/agenda-botanica',
+      '/catalogo/agenda-botanica',
     );
     expect(
       within(slide).getByRole('img', {

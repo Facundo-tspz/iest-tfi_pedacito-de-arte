@@ -1,10 +1,10 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F2 en curso — T18 completada; T19 pendiente de aprobación
-- **Último cambio:** T18 completada: buscador y filtros del catálogo con sincronización de URL.
-- **Próximo paso:** Con “aprobado”, ejecutar T19: tarjeta y grilla de productos.
-- **Commits pendientes:** ninguno; T18 se cierra en este commit.
+- **Fase actual:** F2 en curso — T19 completada; T20 pendiente de aprobación
+- **Último cambio:** T19 completada: tarjeta y grilla responsive de productos.
+- **Próximo paso:** Con “aprobado”, ejecutar T20: skeletons, estado vacío y error.
+- **Commits pendientes:** ninguno; T19 se cierra en este commit.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo

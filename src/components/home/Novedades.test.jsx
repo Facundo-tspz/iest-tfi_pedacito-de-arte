@@ -92,7 +92,7 @@ describe('Novedades', () => {
     expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(4);
     expect(
       screen.getByRole('heading', { level: 3, name: 'Agenda Minimal' }).closest('a'),
-    ).toHaveAttribute('href', '/producto/agenda-minimal');
+    ).toHaveAttribute('href', '/catalogo/agenda-minimal');
     expect(screen.getByText(/15\.000/)).toBeInTheDocument();
     expect(screen.getAllByText('Precio a confirmar')).toHaveLength(3);
     expect(

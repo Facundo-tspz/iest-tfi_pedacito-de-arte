@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-01
-- **Fase actual:** F2 en curso — T18 completada; T19 pendiente de aprobación
+- **Fase actual:** F2 en curso — T19 completada; T20 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` actualizado en `origin`; T18 en commit de cierre.
+- **Estado del repositorio:** `main` actualizado en `origin`; T19 en commit de cierre.
 
 ---
 
@@ -158,18 +158,21 @@ Completado:
 - `HomePage` compuesta con hero, intro, categorías, novedades, proceso, servicios y SEO; un solo `h1`.
 - `src/components/catalogo/BuscadorCatalogo.jsx` con etiqueta, debounce de 300 ms, limpieza, contador `aria-live` y URL con `replace`.
 - `src/components/catalogo/FiltrosCategoria.jsx` con “Todas”, `aria-pressed`, URL sincronizada y conservación de la búsqueda.
+- `src/components/catalogo/ProductoCard.jsx` con imagen o placeholder, categoría, nombre, descripción breve, precio y enlace al detalle.
+- `src/components/catalogo/GrillaProductos.jsx` responsive de 1, 2, 3 y 4 columnas.
+- `Novedades` y `HeroSlide` reutilizan la tarjeta y el enlace `/catalogo/:slug`.
 - `useCarrusel` expone `reinicio` para reiniciar la barra de progreso al reanudar o cambiar de slide.
 - `src/styles/index.css` con la animación `progreso-hero`.
-- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro, servicios, categorías, novedades, SEO, Home y controles de catálogo agregados; `npm test` 171/171.
-- `npm run lint` y `npm run build` pasan con T18.
+- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro, servicios, categorías, novedades, SEO, Home, controles de catálogo, tarjeta y grilla agregados; `npm test` 176/176.
+- `npm run lint` y `npm run build` pasan con T19.
 
 Cierre:
 
-- T18 completada; commit de cierre.
+- T19 completada; commit de cierre.
 
 Pendiente:
 
-- T19–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
+- T20–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
 
 ---
 
@@ -240,3 +243,4 @@ Alcance:
 | 2026-11-01 | F2 | T16 completada: categorías y novedades del Home con datos del servicio. |
 | 2026-11-01 | F2 | T17 completada: Home compuesta con SEO, un solo h1 y todas las secciones. |
 | 2026-11-01 | F2 | T18 completada: buscador y filtros del catálogo con sincronización de URL. |
+| 2026-11-01 | F2 | T19 completada: tarjeta y grilla responsive de productos. |
