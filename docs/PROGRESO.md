@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-01
-- **Fase actual:** F2 en curso — T14 completada; T15 pendiente de aprobación
+- **Fase actual:** F2 en curso — T15 completada; T16 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` actualizado en `origin`; T14 en commit de cierre.
+- **Estado del repositorio:** `main` actualizado en `origin`; T15 en commit de cierre.
 
 ---
 
@@ -150,18 +150,20 @@ Completado:
 - `src/components/home/HeroDestacados.jsx` con hasta 4 destacados, frase de marca, flechas, pausa/play, barra de progreso, `aria-live` solo manual, fallback y respeto al movimiento reducido.
 - `src/components/home/HeroSlide.jsx` con imagen o placeholder, categoría, nombre, descripción, precio y CTA; slides inactivos ocultos y fuera del orden de tabulación.
 - `src/components/home/HeroProceso.jsx` con 4 fotos de proceso, rotación de 4 s hacia la izquierda, pausa/reanudación, botón de pausa/play, movimiento reducido y `aria` correctos.
+- `src/components/home/IntroMarca.jsx` con presentación de marca, foto, enlaces al catálogo, WhatsApp y ancla `nosotros`.
+- `src/components/home/ServiciosCTA.jsx` con franja de servicios, CTA de WhatsApp, estado sin número configurado y anclas `servicios` y `contacto`.
 - `useCarrusel` expone `reinicio` para reiniciar la barra de progreso al reanudar o cambiar de slide.
 - `src/styles/index.css` con la animación `progreso-hero`.
-- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil y heroes agregados; `npm test` 152/152.
-- `npm run lint` y `npm run build` pasan con T14.
+- Tests de texto, precio, WhatsApp, servicio, hooks, UI compartida, layout, footer, navbar, menú móvil, heroes, intro y servicios agregados; `npm test` 156/156.
+- `npm run lint` y `npm run build` pasan con T15.
 
 Cierre:
 
-- T14 completada; commit de cierre.
+- T15 completada; commit de cierre.
 
 Pendiente:
 
-- T15–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
+- T16–T28: implementación, tests, build y validación de RF01–RF04, RP01–RP06.
 
 ---
 
@@ -228,3 +230,4 @@ Alcance:
 | 2026-11-01 | F2 | T12 completada: navbar con enlaces, menú móvil accesible y scroll a anclas conectado. |
 | 2026-11-01 | F2 | T13 completada: hero destacado con carrusel, barra de progreso, controles accesibles y tests. |
 | 2026-11-01 | F2 | T14 completada: hero de proceso con rotación, pausa/reanudación y movimiento reducido. |
+| 2026-11-01 | F2 | T15 completada: intro de marca y franja de servicios con CTA de WhatsApp. |

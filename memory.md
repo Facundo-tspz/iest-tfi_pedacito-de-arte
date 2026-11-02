@@ -1,10 +1,10 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F2 en curso — T14 completada; T15 pendiente de aprobación
-- **Último cambio:** T14 completada: hero de proceso con rotación, pausa/reanudación y movimiento reducido.
-- **Próximo paso:** Con “aprobado”, ejecutar T15: intro de marca y franja de servicios.
-- **Commits pendientes:** ninguno; T14 se cierra en este commit.
+- **Fase actual:** F2 en curso — T15 completada; T16 pendiente de aprobación
+- **Último cambio:** T15 completada: intro de marca y franja de servicios con CTA de WhatsApp.
+- **Próximo paso:** Con “aprobado”, ejecutar T16: categorías y novedades del Home.
+- **Commits pendientes:** T15, pendiente de aprobación.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo
