@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import ContadorCarrito from '../carrito/ContadorCarrito';
 
 const SELECTOR_ENFOCABLES = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -7,7 +8,7 @@ function obtenerEnfocables(contenedor) {
   return Array.from(contenedor.querySelectorAll(SELECTOR_ENFOCABLES));
 }
 
-export default function MenuMovil({ id, abierto, enlaces, onCerrar }) {
+export default function MenuMovil({ id, abierto, enlaces, cantidadCarrito = 0, onCerrar }) {
   const contenedorRef = useRef(null);
 
   useEffect(() => {
@@ -94,6 +95,10 @@ export default function MenuMovil({ id, abierto, enlaces, onCerrar }) {
             </li>
           ))}
         </ul>
+
+        <div className="mt-2 border-t border-blanco/15 pt-2">
+          <ContadorCarrito cantidad={cantidadCarrito} onClick={onCerrar} />
+        </div>
       </nav>
     </div>
   );

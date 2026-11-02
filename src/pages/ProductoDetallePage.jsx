@@ -8,12 +8,15 @@ import PrecioEstimado from '../components/producto/PrecioEstimado';
 import MensajeError from '../components/catalogo/MensajeError';
 import SEO from '../components/seo/SEO';
 import NotFoundPage from './NotFoundPage';
+import useCarrito from '../hooks/useCarrito';
 import useProducto from '../hooks/useProducto';
 import { formatearPrecio } from '../utils/precio';
 
 function DetalleProducto({ producto }) {
+  const { agregar } = useCarrito();
   const [seleccion, setSeleccion] = useState({});
   const [notas, setNotas] = useState('');
+  const [agregado, setAgregado] = useState(false);
   const opciones = producto.opciones ?? [];
   const tieneOpciones = opciones.some((opcion) => opcion.activo !== false);
   const opcionesSeleccionadas = opciones.filter(
@@ -23,6 +26,16 @@ function DetalleProducto({ producto }) {
 
   const seleccionarOpcion = (tipo, id) => {
     setSeleccion((actual) => ({ ...actual, [tipo]: id }));
+    setAgregado(false);
+  };
+
+  const cambiarNotas = (valor) => {
+    setNotas(valor);
+    setAgregado(false);
+  };
+
+  const manejarAgregar = () => {
+    setAgregado(agregar(producto, opcionesSeleccionadas, notas));
   };
 
   return (
@@ -97,12 +110,18 @@ function DetalleProducto({ producto }) {
             </section>
           ) : null}
 
-          <NotasPersonalizacion valor={notas} onCambiar={setNotas} />
+          <NotasPersonalizacion valor={notas} onCambiar={cambiarNotas} />
         </div>
 
         <aside aria-label="Precio y consulta">
           <PrecioEstimado precioBase={producto.precio_base} opciones={opcionesSeleccionadas} />
-          <CtaWhatsApp producto={producto} opciones={opcionesSeleccionadas} notas={notas} />
+          <CtaWhatsApp
+            producto={producto}
+            opciones={opcionesSeleccionadas}
+            notas={notas}
+            onAgregar={manejarAgregar}
+            agregado={agregado}
+          />
         </aside>
       </div>
     </section>

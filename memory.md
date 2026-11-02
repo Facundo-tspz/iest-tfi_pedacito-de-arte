@@ -1,10 +1,10 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F3 en curso — plan y tareas aprobados; T01 en curso
-- **Último cambio:** Plan y tareas de F3 aprobados; comienza T01.
-- **Próximo paso:** Implementar T01: utilidades del carrito y persistencia.
-- **Commits pendientes:** ninguno; T27–T28 se cierran en este commit.
+- **Fase actual:** F3 en curso — T05 completada; T06 pendiente de aprobación
+- **Último cambio:** T01–T05 completadas: utilidades, contexto, revalidación, agregado y contador.
+- **Próximo paso:** Implementar T06: página `/carrito` con lista y cantidades.
+- **Commits pendientes:** ninguno; T01–T05 se cierran en este commit.
 - **Push pendiente:** commits locales desde T14 hasta el cierre de F2.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 

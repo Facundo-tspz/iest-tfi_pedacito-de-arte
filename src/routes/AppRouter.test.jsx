@@ -2,14 +2,17 @@ import { render, screen } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
+import CarritoProvider from '../context/CarritoContext';
 import { AppRoutes } from './AppRouter';
 
 function renderizarRuta(ruta) {
   return render(
     <HelmetProvider>
-      <MemoryRouter initialEntries={[ruta]}>
-        <AppRoutes />
-      </MemoryRouter>
+      <CarritoProvider>
+        <MemoryRouter initialEntries={[ruta]}>
+          <AppRoutes />
+        </MemoryRouter>
+      </CarritoProvider>
     </HelmetProvider>,
   );
 }

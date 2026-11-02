@@ -1,7 +1,7 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-02
-- **Fase actual:** F3 en curso — plan y tareas aprobados; T01 en curso
+- **Fase actual:** F3 en curso — T05 completada; T06 pendiente de aprobación
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
 - **Estado del repositorio:** `main` con commits locales desde T14; push pendiente de aprobación.
 
@@ -189,8 +189,26 @@ Cierre:
 
 Pendiente:
 
-- Implementar T01–T12 de F3 antes de avanzar a F4.
+- Implementar T06–T12 de F3 antes de avanzar a F4.
 - El diseño de F4 quedó documentado; su implementación espera a que termine F3.
+
+---
+
+## 5.1. F3 en curso
+
+Completado:
+
+- T01: `src/utils/carrito.js` con clave de fusión, normalización de notas y cantidades, límites, totales, lectura/escritura segura de `localStorage` y tests.
+- T02: `CarritoProvider` y `useCarrito` con agregado, fusión, cantidades, quitar, vaciar y persistencia.
+- T03: revalidación de productos/opciones contra el servicio al recuperar el carrito.
+- T04: “Agregar al encargo” activo en el detalle, con confirmación accesible.
+- T05: contador por unidades en navbar y menú móvil.
+- Tests globales: `npm test` 228/228.
+- `npm run lint` y `npm run build` pasan con T01–T05.
+
+Pendiente:
+
+- T06–T12: página del carrito, resumen, estados, WhatsApp, integración y cierre de F3.
 
 ---
 
@@ -277,3 +295,8 @@ Alcance:
 | 2026-11-02 | F3 | Clarificación de F3 propuesta con decisiones C01–C20. |
 | 2026-11-02 | F3 | Clarificación aprobada; spec actualizada; plan y tareas creados. |
 | 2026-11-02 | F3 | Plan y tareas aprobados; comienza T01. |
+| 2026-11-02 | F3 | T01 completada: utilidades del carrito y persistencia con tests. |
+| 2026-11-02 | F3 | T02 completada: contexto del carrito y persistencia global. |
+| 2026-11-02 | F3 | T03 completada: revalidación de ítems contra el catálogo. |
+| 2026-11-02 | F3 | T04 completada: agregar al encargo desde el detalle. |
+| 2026-11-02 | F3 | T05 completada: contador del carrito en navbar y menú móvil. |

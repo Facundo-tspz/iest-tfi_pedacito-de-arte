@@ -41,7 +41,9 @@ describe('MenuMovil', () => {
     renderizarMenu();
 
     const primerEnlace = screen.getByRole('link', { name: 'Inicio' });
-    const ultimoEnlace = screen.getByRole('link', { name: 'Contacto' });
+    const ultimoEnlace = screen.getByRole('link', {
+      name: 'Carrito: 0 encargos',
+    });
 
     await waitFor(() => {
       expect(primerEnlace).toHaveFocus();
@@ -57,7 +59,9 @@ describe('MenuMovil', () => {
     renderizarMenu();
 
     const primerEnlace = screen.getByRole('link', { name: 'Inicio' });
-    const ultimoEnlace = screen.getByRole('link', { name: 'Contacto' });
+    const ultimoEnlace = screen.getByRole('link', {
+      name: 'Carrito: 0 encargos',
+    });
 
     await waitFor(() => {
       expect(primerEnlace).toHaveFocus();

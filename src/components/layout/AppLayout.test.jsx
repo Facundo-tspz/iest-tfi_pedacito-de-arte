@@ -1,17 +1,20 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
+import CarritoProvider from '../../context/CarritoContext';
 import AppLayout from './AppLayout';
 
 function renderizarLayout() {
   return render(
-    <MemoryRouter>
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route index element={<p>Contenido de prueba</p>} />
-        </Route>
-      </Routes>
-    </MemoryRouter>,
+    <CarritoProvider>
+      <MemoryRouter>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route index element={<p>Contenido de prueba</p>} />
+          </Route>
+        </Routes>
+      </MemoryRouter>
+    </CarritoProvider>,
   );
 }
 

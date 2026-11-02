@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Logo from '../ui/Logo';
+import useCarrito from '../../hooks/useCarrito';
 import useNavbarScroll from '../../hooks/useNavbarScroll';
+import ContadorCarrito from '../carrito/ContadorCarrito';
 import MenuMovil from './MenuMovil';
 
 const ID_MENU_MOVIL = 'menu-movil';
@@ -52,6 +54,7 @@ function IconoMenu({ abierto }) {
 
 export default function Navbar() {
   const { conFondo } = useNavbarScroll();
+  const { cantidadTotal } = useCarrito();
   const ubicacion = useLocation();
   const [menuAbierto, setMenuAbierto] = useState(false);
   const botonMenuRef = useRef(null);
@@ -120,6 +123,7 @@ export default function Navbar() {
               </NavLink>
             );
           })}
+          <ContadorCarrito cantidad={cantidadTotal} />
         </nav>
 
         <button
@@ -135,7 +139,13 @@ export default function Navbar() {
         </button>
       </div>
 
-      <MenuMovil id={ID_MENU_MOVIL} abierto={menuAbierto} enlaces={ENLACES} onCerrar={cerrarMenu} />
+      <MenuMovil
+        id={ID_MENU_MOVIL}
+        abierto={menuAbierto}
+        enlaces={ENLACES}
+        cantidadCarrito={cantidadTotal}
+        onCerrar={cerrarMenu}
+      />
     </header>
   );
 }

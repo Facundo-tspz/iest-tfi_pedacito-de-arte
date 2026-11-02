@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import userEvent from '@testing-library/user-event';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import configuracion from '../../config/configuracion';
 import CtaWhatsApp from './CtaWhatsApp';
 
@@ -58,11 +59,22 @@ describe('CtaWhatsApp', () => {
     expect(texto).toContain('Notas: Sin notas');
   });
 
-  it('mantiene Agregar al encargo deshabilitado con su aviso', () => {
-    render(<CtaWhatsApp producto={PRODUCTO} />);
+  it('permite agregar al encargo y confirma la acción', async () => {
+    const usuario = userEvent.setup();
+    const agregar = vi.fn();
 
-    expect(screen.getByRole('button', { name: 'Agregar al encargo' })).toBeDisabled();
-    expect(screen.getByText('Disponible en la próxima etapa.')).toBeInTheDocument();
+    render(<CtaWhatsApp producto={PRODUCTO} onAgregar={agregar} />);
+
+    await usuario.click(screen.getByRole('button', { name: 'Agregar al encargo' }));
+
+    expect(agregar).toHaveBeenCalledTimes(1);
+    expect(screen.getByRole('button', { name: 'Agregar al encargo' })).toBeEnabled();
+  });
+
+  it('muestra confirmación cuando el producto fue agregado', () => {
+    render(<CtaWhatsApp producto={PRODUCTO} agregado />);
+
+    expect(screen.getByRole('status')).toHaveTextContent('Producto agregado al encargo.');
   });
 
   it('deshabilita la consulta si falta el número de WhatsApp', () => {

@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import CarritoProvider from '../context/CarritoContext';
 import configuracion from '../config/configuracion';
 import ProductoDetallePage from './ProductoDetallePage';
 
@@ -11,17 +12,20 @@ const URL_ORIGINAL = configuracion.urlSitio;
 function renderizarDetalle(ruta = '/catalogo/agenda-botanica') {
   return render(
     <HelmetProvider>
-      <MemoryRouter initialEntries={[ruta]}>
-        <Routes>
-          <Route path="/catalogo/:slug" element={<ProductoDetallePage />} />
-        </Routes>
-      </MemoryRouter>
+      <CarritoProvider>
+        <MemoryRouter initialEntries={[ruta]}>
+          <Routes>
+            <Route path="/catalogo/:slug" element={<ProductoDetallePage />} />
+          </Routes>
+        </MemoryRouter>
+      </CarritoProvider>
     </HelmetProvider>,
   );
 }
 
 describe('ProductoDetallePage', () => {
   beforeEach(() => {
+    window.localStorage.clear();
     configuracion.whatsapp = '549297462371';
     configuracion.urlSitio = 'https://pedacito.test';
   });
@@ -52,7 +56,7 @@ describe('ProductoDetallePage', () => {
     expect(screen.getByRole('group', { name: 'Interior' })).toBeInTheDocument();
     expect(screen.getByRole('group', { name: 'Tamaño' })).toBeInTheDocument();
     expect(screen.getByLabelText('Notas de personalización')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Agregar al encargo' })).toBeDisabled();
+    expect(screen.getByRole('button', { name: 'Agregar al encargo' })).toBeEnabled();
 
     const enlaceInicial = screen.getByRole('link', {
       name: 'Consultar por WhatsApp',
@@ -74,6 +78,10 @@ describe('ProductoDetallePage', () => {
 
     expect(textoActualizado).toContain('Opciones: Interior: Rayado');
     expect(textoActualizado).toContain('Notas: Con nombre');
+
+    await usuario.click(screen.getByRole('button', { name: 'Agregar al encargo' }));
+
+    expect(screen.getByText('Producto agregado al encargo.')).toBeInTheDocument();
   });
 
   it('aplica los metadatos del producto con fallback', async () => {

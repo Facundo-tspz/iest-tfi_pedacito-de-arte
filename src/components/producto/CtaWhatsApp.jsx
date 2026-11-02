@@ -3,8 +3,14 @@ import configuracion from '../../config/configuracion';
 import { construirMensajeWhatsApp, crearUrlWhatsApp } from '../../utils/whatsapp';
 import Boton from '../ui/Boton';
 
-export default function CtaWhatsApp({ producto, opciones = [], notas = '' }) {
-  const idAviso = useId();
+export default function CtaWhatsApp({
+  producto,
+  opciones = [],
+  notas = '',
+  onAgregar,
+  agregado = false,
+}) {
+  const idConfirmacion = useId();
   const idConfiguracion = useId();
   const urlProducto = `${configuracion.urlSitio}/catalogo/${producto.slug}`;
   const mensaje = construirMensajeWhatsApp({
@@ -27,13 +33,25 @@ export default function CtaWhatsApp({ producto, opciones = [], notas = '' }) {
         </Boton>
       )}
 
-      <Boton variante="secundario" disabled aria-describedby={idAviso} className="w-full">
+      <Boton
+        variante="secundario"
+        onClick={onAgregar}
+        aria-describedby={agregado ? idConfirmacion : undefined}
+        className="w-full"
+      >
         Agregar al encargo
       </Boton>
 
-      <p id={idAviso} className="text-center font-cuerpo text-xs leading-relaxed text-contraste">
-        Disponible en la próxima etapa.
-      </p>
+      {agregado ? (
+        <p
+          id={idConfirmacion}
+          role="status"
+          aria-live="polite"
+          className="text-center font-cuerpo text-xs leading-relaxed text-complementario-secundario"
+        >
+          Producto agregado al encargo.
+        </p>
+      ) : null}
 
       {!urlWhatsApp ? (
         <p

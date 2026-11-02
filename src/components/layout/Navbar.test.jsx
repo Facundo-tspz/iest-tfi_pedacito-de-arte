@@ -2,6 +2,7 @@ import { act, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, useNavigate } from 'react-router-dom';
 import { beforeEach, describe, expect, it } from 'vitest';
+import CarritoProvider from '../../context/CarritoContext';
 import Navbar from './Navbar';
 
 function definirScrollY(valor) {
@@ -31,15 +32,18 @@ function NavegadorPrueba() {
 
 function renderizarNavbar({ conNavegador = false } = {}) {
   return render(
-    <MemoryRouter initialEntries={['/']}>
-      <Navbar />
-      {conNavegador ? <NavegadorPrueba /> : null}
-    </MemoryRouter>,
+    <CarritoProvider>
+      <MemoryRouter initialEntries={['/']}>
+        <Navbar />
+        {conNavegador ? <NavegadorPrueba /> : null}
+      </MemoryRouter>
+    </CarritoProvider>,
   );
 }
 
 describe('Navbar', () => {
   beforeEach(() => {
+    window.localStorage.clear();
     definirScrollY(0);
   });
 
@@ -74,6 +78,10 @@ describe('Navbar', () => {
     expect(within(navegacion).getByRole('link', { name: 'Contacto' })).toHaveAttribute(
       'href',
       '/#contacto',
+    );
+    expect(within(navegacion).getByRole('link', { name: 'Carrito: 0 encargos' })).toHaveAttribute(
+      'href',
+      '/carrito',
     );
   });
 
@@ -128,7 +136,7 @@ describe('Navbar', () => {
       'aria-expanded',
       'true',
     );
-    expect(within(menu).getAllByRole('link')).toHaveLength(5);
+    expect(within(menu).getAllByRole('link')).toHaveLength(6);
 
     await waitFor(() => {
       expect(within(menu).getByRole('link', { name: 'Inicio' })).toHaveFocus();

@@ -1,7 +1,7 @@
 # Tareas — Spec 002: Carrito + WhatsApp
 
 - **Fase:** F3
-- **Estado:** Aprobado — T01 en curso
+- **Estado:** Aprobado — T05 completada; T06 pendiente
 - **Plan:** `specs/002-carrito-whatsapp/plan.md`
 - **Regla:** una tarea por vez. No se avanza sin verificar la anterior.
 - **Estimación:** cada tarea debe resolverse en menos de 30 minutos. Si una tarea se agranda, se divide.

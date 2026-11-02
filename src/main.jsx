@@ -9,13 +9,16 @@ import '@fontsource/poppins/latin-400.css';
 import '@fontsource/poppins/latin-500.css';
 import '@fontsource/poppins/latin-600.css';
 import '@fontsource/poppins/latin-800.css';
+import CarritoProvider from './context/CarritoContext';
 import AppRouter from './routes/AppRouter';
 import './styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
-      <AppRouter />
+      <CarritoProvider>
+        <AppRouter />
+      </CarritoProvider>
     </HelmetProvider>
   </React.StrictMode>,
 );
