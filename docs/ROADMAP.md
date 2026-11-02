@@ -5,7 +5,7 @@
 - [x] **F0** — Constitución, arnés y documentación
 - [x] **F1** — Base técnica del proyecto
 - [x] **F2** — Spec 001: Home + Catálogo
-- [ ] **F3** — Spec 002: Carrito de encargos + WhatsApp
+- [x] **F3** — Spec 002: Carrito de encargos + WhatsApp
 - [ ] **F4** — Spec 003: Panel admin + CMS
 - [ ] **F5** — Producción multimedia con IA
 - [ ] **F6** — QA, deploy, informe y defensa
@@ -29,8 +29,8 @@
 | **F0** | Constitución, arnés y documentación | Completada y publicada (`76dee25`); esperando “aprobado F0” |
 | **F1** | Base técnica del proyecto | Completada y publicada (`26ce078`); aprobada |
 | **F2** | Spec 001: Home + Catálogo | Completada y aprobada |
-| **F3** | Spec 002: Carrito de encargos + WhatsApp | En curso — T06 completada; T07 pendiente |
-| **F4** | Spec 003: Panel admin + CMS | Pendiente |
+| **F3** | Spec 002: Carrito de encargos + WhatsApp | Completada y aprobada |
+| **F4** | Spec 003: Panel admin + CMS | En curso — base de autenticación y Supabase |
 | **F5** | Producción multimedia con IA | Pendiente |
 | **F6** | QA, deploy, informe y defensa | Pendiente |
 

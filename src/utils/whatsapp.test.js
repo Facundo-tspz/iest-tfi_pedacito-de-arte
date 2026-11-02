@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { construirMensajeWhatsApp, crearUrlWhatsApp } from './whatsapp';
+import { construirMensajeCarrito, construirMensajeWhatsApp, crearUrlWhatsApp } from './whatsapp';
 
 const PRODUCTO = { nombre: 'Agenda Botánica', codigo: 'AG-001' };
 const OPCIONES = [
@@ -48,6 +48,51 @@ describe('construirMensajeWhatsApp', () => {
     const mensaje = construirMensajeWhatsApp({ producto: PRODUCTO });
 
     expect(mensaje).not.toContain('URL:');
+  });
+});
+
+describe('construirMensajeCarrito', () => {
+  const ITEM = {
+    nombre: 'Agenda Botánica',
+    codigo: 'AG-001',
+    slug: 'agenda-botanica',
+    cantidad: 2,
+    precio_base: 10000,
+    opciones: [{ tipo_opcion: 'Interior', valor: 'Rayado' }],
+    notas: 'Para regalo',
+  };
+
+  it('incluye ítems, cantidades, opciones, notas, precio y URL', () => {
+    const mensaje = construirMensajeCarrito([ITEM], 'https://pedacito.test/');
+
+    expect(mensaje).toContain('1. Agenda Botánica (AG-001)');
+    expect(mensaje).toContain('Cantidad: 2');
+    expect(mensaje).toContain('Opciones: Interior: Rayado');
+    expect(mensaje).toContain('Notas: Para regalo');
+    expect(mensaje).toMatch(/Precio estimado: \$[\s]+20\.000/);
+    expect(mensaje).toContain('URL: https://pedacito.test/catalogo/agenda-botanica');
+    expect(mensaje).toMatch(/Total estimado: \$[\s]+20\.000/);
+  });
+
+  it('usa Total a confirmar cuando algún ítem no tiene precio', () => {
+    const mensaje = construirMensajeCarrito(
+      [{ ...ITEM, precio_base: null }],
+      'https://pedacito.test',
+    );
+
+    expect(mensaje).toContain('Precio estimado: Precio a confirmar');
+    expect(mensaje).toContain('Total a confirmar por WhatsApp');
+    expect(mensaje).not.toContain('$ 0');
+  });
+
+  it('usa Sin preferencia y Sin notas cuando faltan datos', () => {
+    const mensaje = construirMensajeCarrito(
+      [{ ...ITEM, opciones: [], notas: '' }],
+      'https://pedacito.test',
+    );
+
+    expect(mensaje).toContain('Opciones: Sin preferencia');
+    expect(mensaje).toContain('Notas: Sin notas');
   });
 });
 

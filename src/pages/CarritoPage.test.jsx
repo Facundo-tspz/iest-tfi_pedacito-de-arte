@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
@@ -43,10 +43,14 @@ describe('CarritoPage', () => {
     quitar = vi.fn();
     useCarrito.mockReturnValue({
       items: [ITEM],
+      cantidadTotal: 2,
+      totalEstimado: 21000,
+      tienePreciosPendientes: false,
       aviso: null,
       limpiarAviso: vi.fn(),
       cambiarCantidad,
       quitar,
+      vaciar: vi.fn(),
     });
   });
 
@@ -70,15 +74,27 @@ describe('CarritoPage', () => {
 
     await usuario.click(screen.getByRole('button', { name: 'Quitar' }));
     expect(quitar).toHaveBeenCalledWith(ITEM.clave);
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Resumen del encargo' }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('status')).toHaveTextContent(/21\.000/);
+
+    await waitFor(() => {
+      expect(document.title).toBe('Carrito de encargos | Pedacito de Arte');
+    });
   });
 
   it('muestra el estado vacío con enlace al catálogo', () => {
     useCarrito.mockReturnValue({
       items: [],
+      cantidadTotal: 0,
+      totalEstimado: 0,
+      tienePreciosPendientes: false,
       aviso: null,
       limpiarAviso: vi.fn(),
       cambiarCantidad: vi.fn(),
       quitar: vi.fn(),
+      vaciar: vi.fn(),
     });
 
     renderizarCarrito();

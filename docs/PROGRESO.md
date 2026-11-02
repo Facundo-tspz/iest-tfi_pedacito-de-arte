@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-02
-- **Fase actual:** F3 en curso — T06 completada; T07 pendiente de aprobación
+- **Fase actual:** F3 completada y aprobada; F4 en curso — base de autenticación y Supabase
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` con commits locales desde T14; T06 en commit de cierre; push pendiente de aprobación.
+- **Estado del repositorio:** `main` con commits locales desde T14; F3 en commit de cierre; push pendiente de aprobación.
 
 ---
 
@@ -189,7 +189,7 @@ Cierre:
 
 Pendiente:
 
-- Implementar T06–T12 de F3 antes de avanzar a F4.
+- Implementar el Bloque B de F4: Supabase público, auth, login, rutas protegidas y dashboard.
 - El diseño de F4 quedó documentado; su implementación espera a que termine F3.
 
 ---
@@ -204,12 +204,19 @@ Completado:
 - T04: “Agregar al encargo” activo en el detalle, con confirmación accesible.
 - T05: contador por unidades en navbar y menú móvil.
 - T06: página `/carrito` con lista de ítems, opciones, notas, cantidades y acciones.
-- Tests globales: `npm test` 234/234.
-- `npm run lint` y `npm run build` pasan con T01–T06.
+- T07: resumen con total estimado, precio pendiente, estado vacío y confirmación de vaciado.
+- T08: mensaje de WhatsApp del carrito con ítems, cantidades, opciones, notas, URL y total.
+- T09: botón “Enviar encargo por WhatsApp” con manejo de número faltante.
+- T10: integración de ruta, SEO y accesibilidad del carrito.
+- T11: flujo agregar desde detalle → contador → carrito verificado.
+- T12: `specs/002-carrito-whatsapp/verificacion.md` con matriz RF/AC.
+- Tests globales: `npm test` 246/246.
+- `npm run lint` y `npm run build` pasan con T01–T12.
 
-Pendiente:
+Cierre:
 
-- T07–T12: resumen, totales, estados, WhatsApp, integración y cierre de F3.
+- F3 completada y aprobada.
+- Commit de cierre de F3.
 
 ## 5.2. Base de datos creada
 
@@ -328,3 +335,8 @@ Alcance:
 | 2026-11-02 | F3 | Migraciones de Supabase y seed real preparados para ejecutar. |
 | 2026-11-02 | F3 | Migraciones ejecutadas y admin `Facundo` creado y verificado. |
 | 2026-11-02 | F3 | T06 completada: página `/carrito` con lista y cantidades. |
+| 2026-11-02 | F3 | T07 completada: resumen, totales, vaciado y estados del carrito. |
+| 2026-11-02 | F3 | T08 completada: mensaje de WhatsApp del carrito. |
+| 2026-11-02 | F3 | T09 completada: botón de envío del encargo. |
+| 2026-11-02 | F3 | T10–T11 completadas: integración, SEO y flujo del carrito. |
+| 2026-11-02 | F3 | T12 completada: verificación y cierre de F3. |

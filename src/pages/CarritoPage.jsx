@@ -1,10 +1,23 @@
 import { Link } from 'react-router-dom';
+import BotonEnviarCarrito from '../components/carrito/BotonEnviarCarrito';
+import CarritoVacio from '../components/carrito/CarritoVacio';
 import ItemCarrito from '../components/carrito/ItemCarrito';
+import ResumenCarrito from '../components/carrito/ResumenCarrito';
 import SEO from '../components/seo/SEO';
 import useCarrito from '../hooks/useCarrito';
 
 export default function CarritoPage() {
-  const { items, aviso, limpiarAviso, cambiarCantidad, quitar } = useCarrito();
+  const {
+    items,
+    cantidadTotal,
+    totalEstimado,
+    tienePreciosPendientes,
+    aviso,
+    limpiarAviso,
+    cambiarCantidad,
+    quitar,
+    vaciar,
+  } = useCarrito();
 
   return (
     <>
@@ -50,28 +63,29 @@ export default function CarritoPage() {
         ) : null}
 
         {items.length === 0 ? (
-          <div className="mt-8 rounded-2xl border border-contraste/15 bg-blanco/60 p-8 text-center">
-            <h2 className="font-titulos text-2xl font-semibold text-principal">
-              Tu carrito está vacío
-            </h2>
-            <p className="mx-auto mt-3 max-w-md font-cuerpo text-sm leading-relaxed text-contraste">
-              Elegí una pieza del catálogo y agregala para armar tu encargo.
-            </p>
-            <Link
-              to="/catalogo"
-              className="mt-6 inline-flex min-h-11 items-center justify-center rounded-xl bg-principal px-5 font-cuerpo text-sm font-semibold text-blanco transition-colors hover:bg-principal/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario focus-visible:ring-offset-2 focus-visible:ring-offset-fondo"
-            >
-              Ver catálogo
-            </Link>
+          <div className="mt-8">
+            <CarritoVacio />
           </div>
         ) : (
-          <ul className="mt-8 space-y-4">
-            {items.map((item) => (
-              <li key={item.clave}>
-                <ItemCarrito item={item} onCambiarCantidad={cambiarCantidad} onQuitar={quitar} />
-              </li>
-            ))}
-          </ul>
+          <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
+            <ul className="space-y-4">
+              {items.map((item) => (
+                <li key={item.clave}>
+                  <ItemCarrito item={item} onCambiarCantidad={cambiarCantidad} onQuitar={quitar} />
+                </li>
+              ))}
+            </ul>
+
+            <div className="space-y-4">
+              <ResumenCarrito
+                cantidadTotal={cantidadTotal}
+                totalEstimado={totalEstimado}
+                tienePreciosPendientes={tienePreciosPendientes}
+                onVaciar={vaciar}
+              />
+              <BotonEnviarCarrito items={items} />
+            </div>
+          </div>
         )}
       </section>
     </>

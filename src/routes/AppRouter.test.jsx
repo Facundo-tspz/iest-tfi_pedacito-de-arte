@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import CarritoProvider from '../context/CarritoContext';
 import { AppRoutes } from './AppRouter';
 
@@ -18,6 +19,10 @@ function renderizarRuta(ruta) {
 }
 
 describe('AppRoutes', () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+  });
+
   it('muestra el home en la ruta raíz', () => {
     renderizarRuta('/');
 
@@ -49,6 +54,16 @@ describe('AppRoutes', () => {
     expect(
       screen.getByRole('heading', { level: 1, name: 'Carrito de encargos' }),
     ).toBeInTheDocument();
+  });
+
+  it('agrega desde el detalle y actualiza el contador', async () => {
+    const usuario = userEvent.setup();
+    renderizarRuta('/catalogo/agenda-botanica');
+
+    await screen.findByRole('heading', { level: 1, name: 'Agenda Botánica' });
+    await usuario.click(screen.getByRole('button', { name: 'Agregar al encargo' }));
+
+    expect(screen.getByRole('link', { name: 'Carrito: 1 encargo' })).toBeInTheDocument();
   });
 
   it('muestra la página 404 en una ruta desconocida', () => {
