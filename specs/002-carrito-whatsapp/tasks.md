@@ -1,7 +1,7 @@
 # Tareas — Spec 002: Carrito + WhatsApp
 
 - **Fase:** F3
-- **Estado:** Aprobado — T01–T12 completadas; F3 aprobada
+- **Estado:** Aprobada — T01–T12 completadas; commit de cierre `beeed24`
 - **Plan:** `specs/002-carrito-whatsapp/plan.md`
 - **Regla:** una tarea por vez. No se avanza sin verificar la anterior.
 - **Estimación:** cada tarea debe resolverse en menos de 30 minutos. Si una tarea se agranda, se divide.
@@ -27,7 +27,28 @@
 
 ---
 
-## 2. Orden de ejecución
+## 2. Estado de ejecución
+
+| ID | Tarea | Estado | Evidencia |
+| :--- | :--- | :--- | :--- |
+| T01 | Utilidades del carrito y persistencia. | Completada | `src/utils/carrito.js`, `src/utils/carrito.test.js`; commit `c75f504`. |
+| T02 | `CarritoProvider` y `useCarrito`. | Completada | `src/context/CarritoContext.jsx`, `src/hooks/useCarrito.js`, tests; commit `c75f504`. |
+| T03 | Revalidación contra el catálogo. | Completada | Contexto + tests de revalidación; commit `c75f504`. |
+| T04 | Agregar desde el detalle. | Completada | `CtaWhatsApp`, `ProductoDetallePage`, tests; commit `c75f504`. |
+| T05 | Contador en navbar y menú móvil. | Completada | `Navbar`, `MenuMovil`, `ContadorCarrito`, tests; commit `c75f504`. |
+| T06 | Página `/carrito` con lista y cantidades. | Completada | `CarritoPage`, `ItemCarrito`, tests; commit `61f5293`. |
+| T07 | Resumen, totales, vaciado y estados. | Completada | `ResumenCarrito`, `CarritoVacio`, tests; commit `beeed24`. |
+| T08 | Mensaje de WhatsApp del carrito. | Completada | `construirMensajeCarrito` en `src/utils/whatsapp.js` + tests; commit `beeed24`. |
+| T09 | Botón de envío y número faltante. | Completada | `BotonEnviarCarrito` + tests; commit `beeed24`. |
+| T10 | Ruta, SEO y accesibilidad del carrito. | Completada | `/carrito`, `SEO`, `h1`, pruebas de navegación; commit `beeed24`. |
+| T11 | Flujo detalle → contador → carrito. | Completada | Test de integración en `AppRouter.test.jsx`; commit `beeed24`. |
+| T12 | Calidad y evidencia de F3. | Completada | `specs/002-carrito-whatsapp/verificacion.md`; `npm test` 246/246; lint y build OK; commit `beeed24`. |
+
+**Verificación actual:** `npm test` 257/257, lint y build OK, incluyendo F4.
+
+---
+
+## 3. Orden de ejecución
 
 1. T01–T03: modelo, contexto y revalidación.
 2. T04–T05: agregado desde detalle y contador.
@@ -38,7 +59,7 @@
 
 ---
 
-## 3. Reglas de avance
+## 4. Reglas de avance
 
 - Marcar una tarea como terminada solo cuando su “Listo cuando” se cumple y sus tests pasan.
 - No empezar una tarea si la dependencia no está terminada.
