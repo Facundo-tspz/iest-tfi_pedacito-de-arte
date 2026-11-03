@@ -5,7 +5,7 @@
 - **Último cambio:** F4 cerrada: login, medios, productos, RLS, Functions y deploy verificados. Tests 276/276.
 - **Próximo paso:** Producir las imágenes 4:3 del catálogo y asignarlas desde el panel.
 - **Commits pendientes:** Ninguno.
-- **Push pendiente:** Ninguno; `main` sincronizado hasta `323a4db`.
+- **Push pendiente:** Ninguno; `main` actualizado con el cierre de F4.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo

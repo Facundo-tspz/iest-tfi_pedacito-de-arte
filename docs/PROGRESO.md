@@ -3,7 +3,7 @@
 - **Última actualización:** 2026-11-03
 - **Fase actual:** F5 en curso — F4 cerrada; faltan imágenes de catálogo y multimedia
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` sincronizado hasta `323a4db`; sin cambios pendientes.
+- **Estado del repositorio:** `main` actualizado con el cierre de F4; sin cambios pendientes.
 
 ---
 
