@@ -3,7 +3,7 @@
 - **Última actualización:** 2026-11-02
 - **Fase actual:** F4 en curso — Bloque C completado y deploy verificado; pruebas manuales y RLS pendientes
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` sincronizado hasta `1aefebf`; tareas de F3/F4, `docs/informe` y soporte de imagen de hero sin commit.
+- **Estado del repositorio:** `main` sincronizado hasta `45c8b83`; mejora de organización de medios y tareas de F3/F4 sin commit.
 
 ---
 
@@ -372,4 +372,5 @@ Alcance:
 | 2026-11-02 | F4 | Bloque B completado: Supabase público, auth, login, rutas protegidas y dashboard. |
 | 2026-11-02 | F4 | Bloque C completado: medios con recorte/WebP y CRUD de productos. |
 | 2026-11-02 | F5 | Se crea `docs/informe/prompts-hero.md` con los prompts del hero y su fundamentación. |
-| 2026-11-02 | F5 | Medios admite recorte 16:9; `producto_imagenes.es_hero` separa la imagen del hero de la del catálogo. Tests 267/267; migración `005` pendiente de ejecutar. |
+| 2026-11-02 | F5 | Medios admite recorte 16:9; `producto_imagenes.es_hero` separa la imagen del hero de la del catálogo. Tests 267/267; migración `005` ejecutada. |
+| 2026-11-02 | F5 | Medios y Productos agregan buscador, filtro por formato, nombre visible y seleccionadas primero. Tests 273/273. |

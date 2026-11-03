@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Cropper from 'react-easy-crop';
 import 'react-easy-crop/react-easy-crop.css';
 import Boton from '../../components/ui/Boton';
@@ -10,6 +10,7 @@ import {
   subirArchivoMedia,
 } from '../../services/admin';
 import { FORMATOS_IMAGEN, recortarImagenWebp } from '../../utils/imagen';
+import { etiquetaFormato, filtrarMedios, nombreDesdePath, ordenarMedios } from '../../utils/medios';
 
 function nombreArchivo(nombre) {
   return nombre.replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9_-]+/g, '-');
@@ -28,7 +29,21 @@ export default function MediaPage() {
   const [formato, setFormato] = useState('4:3');
   const [subiendo, setSubiendo] = useState(false);
   const [altEdicion, setAltEdicion] = useState({});
+  const [buscarMedios, setBuscarMedios] = useState('');
+  const [filtroFormato, setFiltroFormato] = useState('todos');
+  const [ordenMedios, setOrdenMedios] = useState('recientes');
   const formatoSeleccionado = FORMATOS_IMAGEN[formato];
+  const mediosFiltrados = useMemo(
+    () =>
+      ordenarMedios(
+        filtrarMedios(medios, {
+          buscar: buscarMedios,
+          formato: filtroFormato,
+        }),
+        ordenMedios,
+      ),
+    [medios, buscarMedios, filtroFormato, ordenMedios],
+  );
 
   useEffect(() => {
     let activo = true;
@@ -294,8 +309,92 @@ export default function MediaPage() {
           </p>
         ) : null}
 
+        {!cargando && medios.length > 0 ? (
+          <>
+            <div className="mt-5 grid gap-3 rounded-2xl border border-contraste/15 bg-blanco p-4 sm:grid-cols-[minmax(0,1fr)_10rem_10rem_auto]">
+              <div>
+                <label
+                  htmlFor="media-buscar"
+                  className="block font-cuerpo text-xs font-semibold uppercase tracking-[0.12em] text-contraste"
+                >
+                  Buscar imagen
+                </label>
+                <input
+                  id="media-buscar"
+                  type="search"
+                  value={buscarMedios}
+                  onChange={(evento) => setBuscarMedios(evento.target.value)}
+                  placeholder="Anotador A6, hero, catálogo…"
+                  className="mt-2 min-h-10 w-full rounded-lg border border-contraste/20 px-3 font-cuerpo text-sm text-principal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="media-filtro-formato"
+                  className="block font-cuerpo text-xs font-semibold uppercase tracking-[0.12em] text-contraste"
+                >
+                  Formato
+                </label>
+                <select
+                  id="media-filtro-formato"
+                  value={filtroFormato}
+                  onChange={(evento) => setFiltroFormato(evento.target.value)}
+                  className="mt-2 min-h-10 w-full rounded-lg border border-contraste/20 bg-blanco px-3 font-cuerpo text-sm text-principal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario"
+                >
+                  <option value="todos">Todos</option>
+                  <option value="hero">Hero (16:9)</option>
+                  <option value="catalogo">Catálogo (4:3)</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="media-orden"
+                  className="block font-cuerpo text-xs font-semibold uppercase tracking-[0.12em] text-contraste"
+                >
+                  Orden
+                </label>
+                <select
+                  id="media-orden"
+                  value={ordenMedios}
+                  onChange={(evento) => setOrdenMedios(evento.target.value)}
+                  className="mt-2 min-h-10 w-full rounded-lg border border-contraste/20 bg-blanco px-3 font-cuerpo text-sm text-principal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario"
+                >
+                  <option value="recientes">Más recientes</option>
+                  <option value="nombre">Nombre A–Z</option>
+                </select>
+              </div>
+
+              <div className="flex items-end">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setBuscarMedios('');
+                    setFiltroFormato('todos');
+                    setOrdenMedios('recientes');
+                  }}
+                  className="min-h-10 w-full rounded-lg border border-contraste/20 px-3 font-cuerpo text-sm font-semibold text-principal transition-colors hover:bg-fondo focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario"
+                >
+                  Limpiar
+                </button>
+              </div>
+            </div>
+
+            <p role="status" aria-live="polite" className="mt-3 font-cuerpo text-sm text-contraste">
+              Mostrando {mediosFiltrados.length} de {medios.length} imágenes.
+            </p>
+
+            {mediosFiltrados.length === 0 ? (
+              <p className="mt-4 font-cuerpo text-sm text-contraste">
+                No hay imágenes que coincidan con la búsqueda.
+              </p>
+            ) : null}
+          </>
+        ) : null}
+
         <ul className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {medios.map((medio) => (
+          {mediosFiltrados.map((medio) => (
             <li key={medio.id} className="rounded-2xl border border-contraste/15 bg-blanco p-4">
               <img
                 src={medio.url}
@@ -307,6 +406,17 @@ export default function MediaPage() {
                 }}
                 className="w-full rounded-xl object-cover"
               />
+              <div className="mt-3 flex flex-wrap items-start justify-between gap-2">
+                <p className="min-w-0 break-words font-cuerpo text-sm font-semibold text-principal">
+                  {nombreDesdePath(medio.path)}
+                </p>
+                <span className="rounded-full bg-fondo px-2 py-1 font-cuerpo text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-contraste">
+                  {etiquetaFormato(medio)}
+                </span>
+              </div>
+              <p className="mt-1 font-cuerpo text-xs text-contraste">
+                {medio.width && medio.height ? `${medio.width} × ${medio.height}` : 'Sin medidas'}
+              </p>
               <label
                 htmlFor={`alt-${medio.id}`}
                 className="mt-3 block font-cuerpo text-xs font-semibold uppercase tracking-[0.12em] text-contraste"

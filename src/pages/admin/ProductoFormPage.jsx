@@ -1,8 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Boton from '../../components/ui/Boton';
 import { guardarProductoAdmin, listarMediaAdmin, obtenerProductoAdmin } from '../../services/admin';
 import { obtenerCategorias } from '../../services/catalogo';
+import {
+  etiquetaFormato,
+  filtrarMedios,
+  nombreDesdePath,
+  ordenarMedios,
+  priorizarSeleccionados,
+} from '../../utils/medios';
 
 const PRODUCTO_VACIO = {
   codigo: '',
@@ -42,10 +49,29 @@ export default function ProductoFormPage() {
   const [medios, setMedios] = useState([]);
   const [imagenesSeleccionadas, setImagenesSeleccionadas] = useState([]);
   const [imagenHero, setImagenHero] = useState('');
+  const [buscarMedios, setBuscarMedios] = useState('');
+  const [filtroFormato, setFiltroFormato] = useState('todos');
+  const [soloSeleccionadas, setSoloSeleccionadas] = useState(false);
   const [opciones, setOpciones] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [guardando, setGuardando] = useState(false);
   const [error, setError] = useState('');
+  const mediosVisibles = useMemo(
+    () =>
+      priorizarSeleccionados(
+        ordenarMedios(
+          filtrarMedios(medios, {
+            buscar: buscarMedios,
+            formato: filtroFormato,
+            soloSeleccionadas,
+            seleccionadas: imagenesSeleccionadas,
+          }),
+          'nombre',
+        ),
+        imagenesSeleccionadas,
+      ),
+    [medios, buscarMedios, filtroFormato, soloSeleccionadas, imagenesSeleccionadas],
+  );
 
   useEffect(() => {
     let activo = true;
@@ -317,28 +343,105 @@ export default function ProductoFormPage() {
               .
             </p>
           ) : (
-            <div className="mt-3 grid gap-3 sm:grid-cols-3">
-              {medios.map((medio) => (
-                <label
-                  key={medio.id}
-                  className="flex cursor-pointer items-center gap-3 rounded-xl border border-contraste/15 bg-blanco p-3"
-                >
+            <>
+              <div className="mt-3 grid gap-3 rounded-2xl border border-contraste/15 bg-blanco p-4 sm:grid-cols-[minmax(0,1fr)_10rem_auto]">
+                <div>
+                  <label
+                    htmlFor="producto-buscar-medios"
+                    className="block font-cuerpo text-xs font-semibold uppercase tracking-[0.12em] text-contraste"
+                  >
+                    Buscar imagen
+                  </label>
+                  <input
+                    id="producto-buscar-medios"
+                    type="search"
+                    value={buscarMedios}
+                    onChange={(evento) => setBuscarMedios(evento.target.value)}
+                    placeholder="Anotador A6, hero, catálogo…"
+                    className="mt-2 min-h-10 w-full rounded-lg border border-contraste/20 px-3 font-cuerpo text-sm text-principal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="producto-filtro-formato"
+                    className="block font-cuerpo text-xs font-semibold uppercase tracking-[0.12em] text-contraste"
+                  >
+                    Formato
+                  </label>
+                  <select
+                    id="producto-filtro-formato"
+                    value={filtroFormato}
+                    onChange={(evento) => setFiltroFormato(evento.target.value)}
+                    className="mt-2 min-h-10 w-full rounded-lg border border-contraste/20 bg-blanco px-3 font-cuerpo text-sm text-principal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario"
+                  >
+                    <option value="todos">Todos</option>
+                    <option value="hero">Hero (16:9)</option>
+                    <option value="catalogo">Catálogo (4:3)</option>
+                  </select>
+                </div>
+
+                <label className="flex items-end gap-2 pb-2 font-cuerpo text-sm text-contraste">
                   <input
                     type="checkbox"
-                    checked={imagenesSeleccionadas.includes(medio.path)}
-                    onChange={() => alternarImagen(medio.path)}
+                    checked={soloSeleccionadas}
+                    onChange={(evento) => setSoloSeleccionadas(evento.target.checked)}
                   />
-                  <img
-                    src={medio.url}
-                    alt={medio.alt}
-                    className="h-14 w-14 rounded-lg object-cover"
-                  />
-                  <span className="min-w-0 break-words font-cuerpo text-xs text-contraste">
-                    {medio.alt}
-                  </span>
+                  Solo seleccionadas
                 </label>
-              ))}
-            </div>
+              </div>
+
+              <p
+                role="status"
+                aria-live="polite"
+                className="mt-3 font-cuerpo text-sm text-contraste"
+              >
+                Mostrando {mediosVisibles.length} de {medios.length} imágenes. Seleccionadas:{' '}
+                {imagenesSeleccionadas.length}.
+              </p>
+
+              {mediosVisibles.length === 0 ? (
+                <p className="mt-3 font-cuerpo text-sm text-contraste">
+                  No hay imágenes que coincidan con la búsqueda.
+                </p>
+              ) : null}
+
+              <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                {mediosVisibles.map((medio) => (
+                  <label
+                    key={medio.id}
+                    className={`flex cursor-pointer items-start gap-3 rounded-xl border p-3 ${
+                      imagenesSeleccionadas.includes(medio.path)
+                        ? 'border-complementario-secundario bg-fondo/60'
+                        : 'border-contraste/15 bg-blanco'
+                    }`}
+                  >
+                    <input
+                      className="mt-1"
+                      type="checkbox"
+                      checked={imagenesSeleccionadas.includes(medio.path)}
+                      onChange={() => alternarImagen(medio.path)}
+                    />
+                    <img
+                      src={medio.url}
+                      alt={medio.alt}
+                      className="h-14 w-14 rounded-lg object-cover"
+                    />
+                    <span className="min-w-0">
+                      <span className="block break-words font-cuerpo text-xs font-semibold text-principal">
+                        {nombreDesdePath(medio.path)}
+                      </span>
+                      <span className="mt-1 block font-cuerpo text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-contraste">
+                        {etiquetaFormato(medio)}
+                      </span>
+                      <span className="mt-1 line-clamp-2 block break-words font-cuerpo text-xs text-contraste">
+                        {medio.alt}
+                      </span>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </>
           )}
 
           {imagenesSeleccionadas.length > 0 ? (

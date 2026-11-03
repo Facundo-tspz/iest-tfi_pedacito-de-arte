@@ -2,9 +2,9 @@
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
 - **Fase actual:** F4 en curso — Bloque C completado y deploy verificado; pruebas manuales y RLS pendientes
-- **Último cambio:** Medios ahora soporta 16:9 y los productos tienen imagen de hero separada (`es_hero`). Tests 267/267.
-- **Próximo paso:** Ejecutar `db/005_hero_imagen.sql`, subir las imágenes 16:9 y probar hero/catálogo.
-- **Commits pendientes:** Tareas de F3/F4, `docs/informe` y soporte de imagen de hero, pendientes de aprobación.
+- **Último cambio:** Medios y Productos ahora tienen buscador, filtro por formato y nombre visible. Tests 273/273.
+- **Próximo paso:** Subir las imágenes 16:9, asignar el hero y probar Home/catálogo.
+- **Commits pendientes:** Mejora de organización de medios y tareas de F3/F4, pendientes de aprobación.
 - **Push pendiente:** Ninguno; `main` sincronizado hasta `1aefebf`.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
