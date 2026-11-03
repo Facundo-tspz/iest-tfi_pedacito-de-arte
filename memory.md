@@ -1,8 +1,8 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F4 en curso — Bloque C completado y deploy verificado; pruebas manuales y RLS pendientes
-- **Último cambio:** El hero se excluye del catálogo y de la galería; solo aparece en el Home. Tests 276/276.
+- **Fase actual:** F5 en curso — F4 cerrada; faltan imágenes de catálogo y multimedia
+- **Último cambio:** F4 cerrada: login, medios, productos, RLS, Functions y deploy verificados. Tests 276/276.
 - **Próximo paso:** Producir las imágenes 4:3 del catálogo y asignarlas desde el panel.
 - **Commits pendientes:** Ninguno.
 - **Push pendiente:** Ninguno; `main` sincronizado hasta `323a4db`.

@@ -1,7 +1,7 @@
 # Progreso del Proyecto: Pedacito de Arte
 
-- **Última actualización:** 2026-11-02
-- **Fase actual:** F4 en curso — Bloque C completado y deploy verificado; pruebas manuales y RLS pendientes
+- **Última actualización:** 2026-11-03
+- **Fase actual:** F5 en curso — F4 cerrada; faltan imágenes de catálogo y multimedia
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
 - **Estado del repositorio:** `main` sincronizado hasta `323a4db`; sin cambios pendientes.
 
@@ -189,10 +189,9 @@ Cierre:
 
 Pendiente:
 
-- Probar F4 en el deploy: login, medios, productos y RLS.
-- Preparar F6: QA, deploy final, informe y defensa.
-- Cerrar F4 con pruebas, deploy, RLS y verificación.
-- F6 queda para la etapa final.
+- F4 cerrada con pruebas de deploy y RLS.
+- F5: completar imágenes de catálogo y multimedia.
+- F6: QA, deploy final, informe y defensa.
 
 ---
 
@@ -239,13 +238,15 @@ Incluyen:
 - RLS y bucket `media`;
 - usuario admin `Facundo` verificado.
 
-Pendiente:
+Verificación:
 
-- Verificar RLS con la `anon key` desde el cliente.
+- RLS comprobada con `anon`: actualización de categoría devuelve 0 filas; `usuarios_admin` no devuelve registros.
+- Functions administrativas sin sesión responden `401`.
+- Imagen pública de producto responde `200` con `image/webp`.
 
 ---
 
-## 5.3. F4 en curso — Bloque B
+## 5.3. F4 cerrada — Panel admin MVP
 
 Completado:
 
@@ -262,14 +263,20 @@ Completado:
 - Bloque C: `ProductosPage` y `ProductoFormPage` con imágenes, precios, características, SEO y opciones simples.
 - Functions `admin-media-url`, `admin-media` y `admin-productos`.
 - `react-easy-crop` instalado.
-- `specs/003-panel-admin/verificacion.md` creado.
-- Tests globales: `npm test` 257/257.
+- `specs/003-panel-admin/verificacion.md` actualizado y cerrado.
+- Tests globales: `npm test` 276/276.
 - `npm run lint` y `npm run build` pasan.
+- Login y carga de imágenes verificados manualmente en Netlify.
+- Productos editados con imágenes y hero reflejados en Supabase público.
+- RLS con `anon`: actualización de categoría devuelve 0 filas y `usuarios_admin` no devuelve registros.
+- Functions administrativas sin sesión responden `401`.
+- Imagen pública de producto responde `200` con `image/webp`.
+- Deploy de `89eafb2` publicado; `/`, `/catalogo` y `/estudio/login` responden `200`; `/estudio/login` conserva `X-Robots-Tag: noindex`.
 
-Pendiente:
+Cierre:
 
-- Probar login, medios, productos y RLS en Netlify.
-- Cerrar F4 y pasar a F6.
+- T08 completada; F4 cerrada.
+- F5 continúa con las imágenes de catálogo y el resto de multimedia.
 
 ---
 
@@ -376,3 +383,4 @@ Alcance:
 | 2026-11-02 | F5 | Medios y Productos agregan buscador, filtro por formato, nombre visible y seleccionadas primero. Tests 273/273. |
 | 2026-11-02 | F5 | Se documentan los prompts de fondo y composición para las imágenes del catálogo en `docs/informe/prompts-catalogo.md`. |
 | 2026-11-02 | F5 | El hero se excluye de las tarjetas y la galería; si el producto solo tiene hero, se muestra placeholder. Tests 276/276. |
+| 2026-11-03 | F4 | F4 cerrada: login y medios verificados, productos reflejados en Supabase, RLS y Functions sin sesión comprobadas. |
