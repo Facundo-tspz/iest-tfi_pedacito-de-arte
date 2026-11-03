@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import configuracion from '../../config/configuracion';
 import { crearUrlWhatsApp } from '../../utils/whatsapp';
 import Boton from '../ui/Boton';
-import PlaceholderImagen from '../ui/PlaceholderImagen';
 import Seccion from '../ui/Seccion';
 
 const CLASE_CTA_PRIMARIA =
@@ -58,11 +57,12 @@ export default function IntroMarca() {
           ) : null}
         </div>
 
-        <PlaceholderImagen
-          alt="Mesa de trabajo con papeles, herramientas y materiales de encuadernación"
-          aspecto="tarjeta"
-          texto="Foto del taller próximamente"
-          className="w-full shadow-xl shadow-principal/10"
+        <img
+          src="/media/stand-feria.jpg"
+          alt="Stand de Pedacito de Arte en una feria con agendas, anotadores y revistas"
+          loading="lazy"
+          decoding="async"
+          className="aspect-[4/3] w-full rounded-xl object-cover shadow-xl shadow-principal/10"
         />
       </div>
     </Seccion>

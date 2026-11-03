@@ -30,7 +30,7 @@ describe('IntroMarca', () => {
     expect(screen.getByText(/Pedacito de Arte diseña y confecciona agendas/i)).toBeInTheDocument();
     expect(
       screen.getByRole('img', {
-        name: 'Mesa de trabajo con papeles, herramientas y materiales de encuadernación',
+        name: 'Stand de Pedacito de Arte en una feria con agendas, anotadores y revistas',
       }),
     ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Ver catálogo' })).toHaveAttribute('href', '/catalogo');
