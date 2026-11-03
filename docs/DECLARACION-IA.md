@@ -12,32 +12,28 @@
 
 | Herramienta | Tipo | Uso en el proyecto | Licencia / condiciones revisadas |
 | :--- | :--- | :--- | :--- |
-| opencode | Agente de código | Asistencia en documentación, specs, código y tests. | Pendiente de completar |
-| ChatGPT / Gemini / otra | Generación de texto e imágenes | A completar según las herramientas usadas. | Pendiente de completar |
-| Herramienta de video | Generación de clips | A completar. | Pendiente de completar |
-| ElevenLabs / Suno u otra | Voz y música | A completar. | Pendiente de completar |
-| Canva / Chart.js / Python | Gráficos e infografía | A completar. | Pendiente de completar |
+| opencode | Agente de código | Asistencia en documentación, specs, código y tests. | Herramienta de desarrollo; revisión humana de cada cambio. |
+| ChatGPT | Generación de texto e imágenes | Fondos, composiciones de producto, gráficos y revisión de textos. | Uso académico; condiciones de OpenAI. |
+| Herramienta de video | Generación de clips | No se utilizó. | No aplica. |
+| Voz y música | Generación de audio | No se utilizó. | No aplica. |
+| Canva / Chart.js / Python | Gráficos e infografía | Gráficos generados con ChatGPT; infografía pendiente. | Revisar condiciones si se usa Canva. |
 
 ---
 
 ## 2. Alcance del uso de IA
 
-Marcar y completar al cierre del proyecto:
-
-- [ ] Generación y revisión de documentación.
-- [ ] Generación de especificaciones y planes.
-- [ ] Generación y corrección de código.
-- [ ] Generación de tests.
-- [ ] Generación de imágenes.
+- [x] Generación y revisión de documentación.
+- [x] Generación de especificaciones y planes.
+- [x] Generación y corrección de código.
+- [x] Generación de tests.
+- [x] Generación de imágenes.
 - [ ] Generación de video, voz o música.
-- [ ] Generación de gráficos o infografía.
-- [ ] Corrección de redacción y estilo.
+- [x] Generación de gráficos.
+- [x] Corrección de redacción y estilo.
 
-Describir brevemente qué partes fueron generadas o asistidas por IA y cuáles fueron producidas por el estudiante:
+La IA se utilizó como asistencia para documentación, código, pruebas e imágenes. Los fondos y las composiciones de producto se generaron con ChatGPT a partir de fotografías reales; los productos, tapas, textos y proporciones se conservaron. Los gráficos se generaron con datos reales del repositorio y deben verificarse antes de la entrega. Las fotografías del proceso artesanal y del stand son reales y no se contabilizan como piezas generadas con IA.
 
-```text
-A completar.
-```
+No se utilizaron datos personales reales, personas identificables ni personajes protegidos en las piezas generadas.
 
 ---
 
@@ -45,13 +41,13 @@ A completar.
 
 Declaro que:
 
-- Leí y comprendí todo el código incorporado al proyecto.
+- Leí y comprendí el código incorporado al proyecto.
 - Revisé cada pieza visual antes de integrarla.
 - Verifiqué que no se usaran datos personales reales en prompts.
 - No se generaron personas reales identificables ni deepfakes.
 - No se imitaron marcas, logos ni estilos de artistas con nombre propio.
-- Revisé sesgos en las imágenes y documenté al menos una corrección.
-- Verifiqué las licencias y condiciones de uso comercial de las herramientas.
+- Revisé sesgos en las imágenes y documenté correcciones.
+- Revisé las licencias y condiciones de uso de las herramientas utilizadas.
 - Registré los prompts y los errores de la IA en `docs/PROMPTS.md`.
 - Registré las piezas generadas en `multimedia/FICHAS-IA.md`.
 - Las decisiones de producto, ética y alcance fueron tomadas por mí.
@@ -63,7 +59,9 @@ Declaro que:
 - [ ] Todas las piezas generadas con IA tienen la leyenda “Generado con IA” en el sitio.
 - [ ] El video promocional declara el uso de IA en su descripción.
 - [ ] Se activó la etiqueta de contenido alterado o sintético cuando correspondió.
-- [ ] El informe incluye el detalle del uso de IA.
+- [x] El informe incluye el detalle del uso de IA.
+
+Las piezas se identifican en las fichas de IA y en esta declaración. La etiqueta visible en el sitio queda como mejora pendiente.
 
 ---
 
@@ -71,14 +69,12 @@ Declaro que:
 
 La IA se utilizó como herramienta de asistencia. El estudiante asume la responsabilidad final por el contenido, el funcionamiento, la seguridad, la originalidad y la veracidad de los datos presentados.
 
-```text
-A completar con una reflexión final antes de la entrega.
-```
+La IA puede producir errores de texto, datos, perspectiva o licencias. Por eso los resultados se revisaron y se descartaron las piezas que no cumplían con los requisitos. No se utilizaron imágenes de personas reales ni personajes protegidos.
 
 ---
 
 ## 6. Firma
 
 Nombre: Facundo Páez  
-Fecha: __________________  
-Firma: __________________
+Fecha: 2026-11-03  
+Firma: Facundo Páez

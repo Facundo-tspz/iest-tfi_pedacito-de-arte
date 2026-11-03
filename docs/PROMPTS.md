@@ -41,12 +41,12 @@ Se requieren al menos tres casos. No inventar casos: registrar solo errores real
 
 ### Caso 3
 
-- **Fase / spec:**
-- **Qué hizo mal la IA:**
-- **Cómo se detectó:**
-- **Corrección aplicada:**
-- **Archivo o commit:**
-- **Aprendizaje:**
+- **Fase / spec:** F5, imágenes.
+- **Qué hizo mal la IA:** asumió que todas las imágenes debían recortarse en 4:3. Las composiciones 16:9 del hero perdían el espacio reservado para el texto y el producto quedaba descentrado.
+- **Cómo se detectó:** al subir las imágenes del hero, el recorte no coincidía con la composición y el producto se veía mal en el catálogo.
+- **Corrección aplicada:** se agregó selección de formato 4:3/16:9 en Medios, el campo `es_hero` y la exclusión de la imagen de hero del catálogo y la galería.
+- **Archivo o commit:** `MediaPage.jsx`, `src/utils/imagenes.js`, `db/005_hero_imagen.sql`; commits `45c8b83` y `715ae9d`.
+- **Aprendizaje:** no asumir una única proporción para todas las imágenes; modelar formatos y usos.
 
 ---
 
