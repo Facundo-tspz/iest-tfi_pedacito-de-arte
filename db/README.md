@@ -17,6 +17,7 @@ Abrir **SQL Editor** en Supabase y ejecutar, en este orden:
 2. `db/002_policies.sql`
 3. `db/003_storage.sql`
 4. `db/004_seed.sql`
+5. `db/005_hero_imagen.sql`
 
 Cada archivo debe ejecutarse completo. No ejecutar en otro orden.
 

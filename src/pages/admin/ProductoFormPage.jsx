@@ -41,6 +41,7 @@ export default function ProductoFormPage() {
   const [categorias, setCategorias] = useState([]);
   const [medios, setMedios] = useState([]);
   const [imagenesSeleccionadas, setImagenesSeleccionadas] = useState([]);
+  const [imagenHero, setImagenHero] = useState('');
   const [opciones, setOpciones] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [guardando, setGuardando] = useState(false);
@@ -63,8 +64,11 @@ export default function ProductoFormPage() {
         setMedios(mediosDatos);
 
         if (productoDatos) {
+          const imagenesProducto = productoDatos.imagenes ?? [];
+
           setProducto(normalizarProducto(productoDatos));
-          setImagenesSeleccionadas((productoDatos.imagenes ?? []).map((imagen) => imagen.path));
+          setImagenesSeleccionadas(imagenesProducto.map((imagen) => imagen.path));
+          setImagenHero(imagenesProducto.find((imagen) => imagen.es_hero)?.path ?? '');
           setOpciones(productoDatos.opciones ?? []);
         }
 
@@ -95,6 +99,12 @@ export default function ProductoFormPage() {
   };
 
   const alternarImagen = (path) => {
+    const seleccionada = imagenesSeleccionadas.includes(path);
+
+    if (seleccionada && imagenHero === path) {
+      setImagenHero('');
+    }
+
     setImagenesSeleccionadas((actuales) =>
       actuales.includes(path) ? actuales.filter((item) => item !== path) : [...actuales, path],
     );
@@ -112,6 +122,7 @@ export default function ProductoFormPage() {
         path: medio.path,
         alt: medio.alt,
         orden: indice,
+        es_hero: medio.path === imagenHero,
       }));
 
     try {
@@ -329,6 +340,36 @@ export default function ProductoFormPage() {
               ))}
             </div>
           )}
+
+          {imagenesSeleccionadas.length > 0 ? (
+            <div className="mt-5">
+              <label
+                htmlFor="producto-imagen-hero"
+                className="block font-cuerpo text-sm font-semibold text-principal"
+              >
+                Imagen para el hero
+              </label>
+              <select
+                id="producto-imagen-hero"
+                value={imagenHero}
+                onChange={(evento) => setImagenHero(evento.target.value)}
+                className="mt-2 min-h-11 w-full rounded-xl border border-contraste/20 bg-blanco px-4 font-cuerpo text-base text-principal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario"
+              >
+                <option value="">Sin imagen de hero</option>
+                {medios
+                  .filter((medio) => imagenesSeleccionadas.includes(medio.path))
+                  .map((medio) => (
+                    <option key={medio.id} value={medio.path}>
+                      {medio.alt}
+                    </option>
+                  ))}
+              </select>
+              <p className="mt-2 font-cuerpo text-xs text-contraste">
+                El catálogo usa la primera imagen que no esté marcada como hero. La imagen de hero
+                debe ser 16:9.
+              </p>
+            </div>
+          ) : null}
         </section>
 
         <section>

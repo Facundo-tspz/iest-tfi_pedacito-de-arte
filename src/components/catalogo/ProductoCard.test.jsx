@@ -63,4 +63,28 @@ describe('ProductoCard', () => {
       screen.getByRole('img', { name: 'Agenda Botánica abierta sobre una mesa' }),
     ).toHaveAttribute('src', 'https://cdn.test/agenda-botanica.webp');
   });
+
+  it('no usa la imagen del hero en la tarjeta del catálogo', () => {
+    renderizarCard({
+      ...PRODUCTO,
+      imagenes: [
+        {
+          url: 'https://cdn.test/hero.webp',
+          alt: 'Agenda Botánica sobre mesa de taller',
+          orden: 1,
+          es_hero: true,
+        },
+        {
+          url: 'https://cdn.test/catalogo.webp',
+          alt: 'Agenda Botánica cerrada para catálogo',
+          orden: 2,
+          es_hero: false,
+        },
+      ],
+    });
+
+    expect(
+      screen.getByRole('img', { name: 'Agenda Botánica cerrada para catálogo' }),
+    ).toHaveAttribute('src', 'https://cdn.test/catalogo.webp');
+  });
 });

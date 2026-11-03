@@ -1,9 +1,9 @@
 # Progreso del Proyecto: Pedacito de Arte
 
 - **Última actualización:** 2026-11-02
-- **Fase actual:** F4 en curso — Bloque C completado; verificación en deploy pendiente
+- **Fase actual:** F4 en curso — Bloque C completado y deploy verificado; pruebas manuales y RLS pendientes
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` con commits locales desde T14; Bloque C de F4 sin commit; push pendiente de aprobación.
+- **Estado del repositorio:** `main` sincronizado hasta `1aefebf`; tareas de F3/F4, `docs/informe` y soporte de imagen de hero sin commit.
 
 ---
 
@@ -371,3 +371,5 @@ Alcance:
 | 2026-11-02 | F3 | T12 completada: verificación y cierre de F3. |
 | 2026-11-02 | F4 | Bloque B completado: Supabase público, auth, login, rutas protegidas y dashboard. |
 | 2026-11-02 | F4 | Bloque C completado: medios con recorte/WebP y CRUD de productos. |
+| 2026-11-02 | F5 | Se crea `docs/informe/prompts-hero.md` con los prompts del hero y su fundamentación. |
+| 2026-11-02 | F5 | Medios admite recorte 16:9; `producto_imagenes.es_hero` separa la imagen del hero de la del catálogo. Tests 267/267; migración `005` pendiente de ejecutar. |

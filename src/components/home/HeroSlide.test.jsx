@@ -84,4 +84,34 @@ describe('HeroSlide', () => {
       screen.getByRole('img', { name: 'Agenda Botánica abierta sobre una mesa' }),
     ).toHaveAttribute('src', 'https://cdn.test/agenda.webp');
   });
+
+  it('prioriza la imagen marcada como hero', () => {
+    const productoConHero = {
+      ...PRODUCTO,
+      imagenes: [
+        {
+          url: 'https://cdn.test/catalogo.webp',
+          alt: 'Agenda Botánica para catálogo',
+          orden: 1,
+          es_hero: false,
+        },
+        {
+          url: 'https://cdn.test/hero.webp',
+          alt: 'Agenda Botánica sobre mesa de taller',
+          orden: 2,
+          es_hero: true,
+        },
+      ],
+    };
+
+    render(
+      <MemoryRouter>
+        <HeroSlide producto={productoConHero} activo posicion={0} total={4} />
+      </MemoryRouter>,
+    );
+
+    expect(
+      screen.getByRole('img', { name: 'Agenda Botánica sobre mesa de taller' }),
+    ).toHaveAttribute('src', 'https://cdn.test/hero.webp');
+  });
 });

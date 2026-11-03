@@ -5,7 +5,7 @@ import { normalizarTexto } from '../utils/texto';
 const SELECT_PRODUCTO = `
   *,
   categoria:categorias(id, nombre, slug, activo),
-  imagenes:producto_imagenes(id, url, path, alt, orden),
+  imagenes:producto_imagenes(id, url, path, alt, orden, es_hero),
   opciones:opciones_personalizacion(id, tipo_opcion, valor, precio_extra, orden, activo)
 `;
 
@@ -56,6 +56,7 @@ function mapearProducto(producto) {
       url: imagen.url,
       alt: imagen.alt,
       orden: imagen.orden ?? 0,
+      es_hero: Boolean(imagen.es_hero),
     })),
     opciones: ordenarPorOrden(producto.opciones ?? []).map((opcion) => ({
       id: opcion.id,

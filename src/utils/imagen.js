@@ -1,3 +1,18 @@
+export const FORMATOS_IMAGEN = {
+  '4:3': {
+    etiqueta: 'Catálogo (4:3)',
+    aspecto: 4 / 3,
+    ancho: 1200,
+    alto: 900,
+  },
+  '16:9': {
+    etiqueta: 'Hero (16:9)',
+    aspecto: 16 / 9,
+    ancho: 1920,
+    alto: 1080,
+  },
+};
+
 export async function recortarImagenWebp(
   archivo,
   area,

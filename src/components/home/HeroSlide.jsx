@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import PlaceholderImagen from '../ui/PlaceholderImagen';
 import { formatearPrecio } from '../../utils/precio';
+import { obtenerImagenHero } from '../../utils/imagenes';
 
 function ImagenHero({ producto, posicion }) {
-  const imagen = producto.imagenes?.[0];
+  const imagen = obtenerImagenHero(producto);
   const alt = imagen?.alt || `Imagen de ${producto.nombre}`;
 
   if (imagen?.url) {

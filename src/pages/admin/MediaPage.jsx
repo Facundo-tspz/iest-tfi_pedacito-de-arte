@@ -9,7 +9,7 @@ import {
   registrarMediaAdmin,
   subirArchivoMedia,
 } from '../../services/admin';
-import { recortarImagenWebp } from '../../utils/imagen';
+import { FORMATOS_IMAGEN, recortarImagenWebp } from '../../utils/imagen';
 
 function nombreArchivo(nombre) {
   return nombre.replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9_-]+/g, '-');
@@ -25,8 +25,10 @@ export default function MediaPage() {
   const [zoom, setZoom] = useState(1);
   const [area, setArea] = useState(null);
   const [alt, setAlt] = useState('');
+  const [formato, setFormato] = useState('4:3');
   const [subiendo, setSubiendo] = useState(false);
   const [altEdicion, setAltEdicion] = useState({});
+  const formatoSeleccionado = FORMATOS_IMAGEN[formato];
 
   useEffect(() => {
     let activo = true;
@@ -100,7 +102,10 @@ export default function MediaPage() {
     setError('');
 
     try {
-      const blob = await recortarImagenWebp(archivo, area);
+      const blob = await recortarImagenWebp(archivo, area, {
+        ancho: formatoSeleccionado.ancho,
+        alto: formatoSeleccionado.alto,
+      });
       const webp = new File([blob], `${nombreArchivo(archivo.name)}.webp`, {
         type: 'image/webp',
       });
@@ -121,8 +126,8 @@ export default function MediaPage() {
         url: preparacion.url,
         alt: alt.trim(),
         mime: 'image/webp',
-        width: 1200,
-        height: 900,
+        width: formatoSeleccionado.ancho,
+        height: formatoSeleccionado.alto,
         size_bytes: webp.size,
       });
 
@@ -195,14 +200,40 @@ export default function MediaPage() {
           className="mt-2 block w-full font-cuerpo text-sm text-contraste file:mr-4 file:rounded-lg file:border-0 file:bg-principal file:px-4 file:py-2 file:font-cuerpo file:text-sm file:font-semibold file:text-blanco"
         />
 
+        <label
+          htmlFor="media-formato"
+          className="mt-5 block font-cuerpo text-sm font-semibold text-principal"
+        >
+          Formato de recorte
+        </label>
+        <select
+          id="media-formato"
+          value={formato}
+          onChange={(evento) => {
+            setFormato(evento.target.value);
+            setArea(null);
+          }}
+          className="mt-2 min-h-11 w-full rounded-xl border border-contraste/20 bg-blanco px-4 font-cuerpo text-base text-principal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-complementario-secundario"
+        >
+          {Object.entries(FORMATOS_IMAGEN).map(([clave, datos]) => (
+            <option key={clave} value={clave}>
+              {datos.etiqueta}
+            </option>
+          ))}
+        </select>
+        <p className="mt-2 font-cuerpo text-xs text-contraste">
+          Usá 4:3 para catálogo y 16:9 para las imágenes del hero.
+        </p>
+
         {preview ? (
           <div className="mt-5">
             <div className="relative h-64 overflow-hidden rounded-xl bg-fondo">
               <Cropper
+                key={formato}
                 image={preview}
                 crop={crop}
                 zoom={zoom}
-                aspect={4 / 3}
+                aspect={formatoSeleccionado.aspecto}
                 onCropChange={setCrop}
                 onZoomChange={setZoom}
                 onCropComplete={(_, areaRecortada) => setArea(areaRecortada)}
@@ -270,7 +301,11 @@ export default function MediaPage() {
                 src={medio.url}
                 alt={medio.alt}
                 loading="lazy"
-                className="aspect-[4/3] w-full rounded-xl object-cover"
+                style={{
+                  aspectRatio:
+                    medio.width && medio.height ? `${medio.width} / ${medio.height}` : '4 / 3',
+                }}
+                className="w-full rounded-xl object-cover"
               />
               <label
                 htmlFor={`alt-${medio.id}`}

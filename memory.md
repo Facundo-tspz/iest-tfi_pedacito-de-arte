@@ -1,11 +1,11 @@
 # Memoria del Proyecto
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
-- **Fase actual:** F4 en curso — Bloque C completado; verificación en deploy pendiente
-- **Último cambio:** Bloque C completado: medios con recorte/WebP y CRUD de productos.
-- **Próximo paso:** Probar F4 en Netlify y luego preparar F6.
-- **Commits pendientes:** Bloque C de F4, pendiente de aprobación.
-- **Push pendiente:** commits locales desde T14 hasta el cierre de F2.
+- **Fase actual:** F4 en curso — Bloque C completado y deploy verificado; pruebas manuales y RLS pendientes
+- **Último cambio:** Medios ahora soporta 16:9 y los productos tienen imagen de hero separada (`es_hero`). Tests 267/267.
+- **Próximo paso:** Ejecutar `db/005_hero_imagen.sql`, subir las imágenes 16:9 y probar hero/catálogo.
+- **Commits pendientes:** Tareas de F3/F4, `docs/informe` y soporte de imagen de hero, pendientes de aprobación.
+- **Push pendiente:** Ninguno; `main` sincronizado hasta `1aefebf`.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo

@@ -71,6 +71,43 @@ describe('GaleriaProducto', () => {
     ).toBeInTheDocument();
   });
 
+  it('deja la imagen de hero al final y muestra primero la de catálogo', () => {
+    render(
+      <GaleriaProducto
+        producto={{
+          slug: 'agenda-con-hero',
+          nombre: 'Agenda con hero',
+          imagenes: [
+            {
+              id: 'hero',
+              url: 'https://cdn.test/hero.webp',
+              alt: 'Agenda sobre mesa de taller',
+              orden: 1,
+              es_hero: true,
+            },
+            {
+              id: 'catalogo',
+              url: 'https://cdn.test/catalogo.webp',
+              alt: 'Agenda cerrada para catálogo',
+              orden: 2,
+              es_hero: false,
+            },
+          ],
+        }}
+      />,
+    );
+
+    expect(screen.getByRole('img', { name: 'Agenda cerrada para catálogo' })).toBeInTheDocument();
+
+    const botones = screen.getAllByRole('button');
+
+    expect(botones).toHaveLength(2);
+    expect(botones[1]).toHaveAttribute(
+      'aria-label',
+      'Mostrar imagen 2: Agenda sobre mesa de taller',
+    );
+  });
+
   it('usa un placeholder y no muestra miniaturas si no hay imágenes', () => {
     render(
       <GaleriaProducto

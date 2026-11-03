@@ -4,7 +4,7 @@ import { leerBody, respuestaJson } from './_lib/respuestas.mjs';
 const SELECT_ADMIN = `
   *,
   categoria:categorias(id, nombre, slug, activo),
-  imagenes:producto_imagenes(id, url, path, alt, orden),
+  imagenes:producto_imagenes(id, url, path, alt, orden, es_hero),
   opciones:opciones_personalizacion(id, tipo_opcion, valor, precio_extra, orden, activo)
 `;
 
@@ -50,13 +50,24 @@ function normalizarProducto(body, admin) {
 }
 
 function normalizarImagenes(imagenes = []) {
+  let heroAsignado = false;
+
   return (Array.isArray(imagenes) ? imagenes : [])
-    .map((imagen, indice) => ({
-      url: texto(imagen?.url, 1000),
-      path: texto(imagen?.path, 300),
-      alt: texto(imagen?.alt, 300),
-      orden: Number.isFinite(Number(imagen?.orden)) ? Number(imagen.orden) : indice,
-    }))
+    .map((imagen, indice) => {
+      const esHero = Boolean(imagen?.es_hero) && !heroAsignado;
+
+      if (esHero) {
+        heroAsignado = true;
+      }
+
+      return {
+        url: texto(imagen?.url, 1000),
+        path: texto(imagen?.path, 300),
+        alt: texto(imagen?.alt, 300),
+        orden: Number.isFinite(Number(imagen?.orden)) ? Number(imagen.orden) : indice,
+        es_hero: esHero,
+      };
+    })
     .filter((imagen) => imagen.url && imagen.path && imagen.alt);
 }
 
@@ -74,10 +85,7 @@ function normalizarOpciones(opciones = []) {
 
 async function reemplazarRelaciones(supabase, productoId, imagenes, opciones) {
   await supabase.from('producto_imagenes').delete().eq('producto_id', productoId);
-  await supabase
-    .from('opciones_personalizacion')
-    .delete()
-    .eq('producto_id', productoId);
+  await supabase.from('opciones_personalizacion').delete().eq('producto_id', productoId);
 
   if (imagenes.length > 0) {
     const { error } = await supabase
@@ -125,7 +133,7 @@ export async function handler(event) {
       return respuestaJson(500, { error: 'No se pudieron cargar los productos.' });
     }
 
-    return respuestaJson(200, id ? data : data ?? []);
+    return respuestaJson(200, id ? data : (data ?? []));
   }
 
   if (event.httpMethod === 'POST' || event.httpMethod === 'PUT') {
@@ -165,10 +173,7 @@ export async function handler(event) {
         return respuestaJson(400, { error: 'Falta el id del producto.' });
       }
 
-      const { error } = await supabase
-        .from('productos')
-        .update(producto)
-        .eq('id', id);
+      const { error } = await supabase.from('productos').update(producto).eq('id', id);
 
       if (error) {
         return respuestaJson(500, { error: 'No se pudo actualizar el producto.' });

@@ -25,6 +25,7 @@
 | 2026-10-30 | F4 | `productos` | Agregar `caracteristicas text[] NOT NULL DEFAULT '{}'`. | RF04.1 exige mostrar características y hoy no existe un campo para eso. | El mock de F2 usa `caracteristicas: string[]`; el admin de F4 debe permitir editar una lista. | Aprobado por el estudiante (C02). | Reflejado en `docs/05-DATOS.md`; pendiente de implementar en el esquema de F4. |
 | 2026-11-02 | F4 | `productos` | Agregar `precio_mayorista`, `cantidad_minima_mayorista` y `precio_desde`. | Los productos reales tienen precio minorista y mayorista, y la Agenda Personalizada se muestra “desde”. | El catálogo público debe mostrar “Consultar precio mayorista” cuando no haya valor. | Aprobado por el estudiante. | Reflejado en `docs/05-DATOS.md` y migraciones. |
 | 2026-11-02 | F4 | `categorias` | “Revistas para Colorear” pasa a “Para colorear”. | Unifica revistas, libros para colorear y futuros productos como mandalas. | Cambia el nombre y slug de la cuarta categoría. | Aprobado por el estudiante (C21). | Reflejado en docs, spec y seed. |
+| 2026-11-02 | F5 | `producto_imagenes` | Agregar `es_hero boolean NOT NULL DEFAULT false` con índice único por producto. | El hero necesita una imagen horizontal 16:9 distinta de la foto principal del catálogo. | El admin puede marcar una imagen para el hero; el catálogo usa la primera imagen que no sea hero. | Aprobado por el estudiante. | Migración `db/005_hero_imagen.sql`; pendiente de ejecutar en Supabase. |
 
 ---
 

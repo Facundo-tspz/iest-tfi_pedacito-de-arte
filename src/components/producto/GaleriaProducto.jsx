@@ -1,10 +1,9 @@
 import { useRef, useState } from 'react';
 import PlaceholderImagen from '../ui/PlaceholderImagen';
+import { obtenerImagenesGaleria } from '../../utils/imagenes';
 
 function obtenerImagenes(producto) {
-  return Array.isArray(producto?.imagenes)
-    ? [...producto.imagenes].sort((a, b) => a.orden - b.orden)
-    : [];
+  return obtenerImagenesGaleria(producto);
 }
 
 function ImagenPrincipal({ producto, imagen }) {
