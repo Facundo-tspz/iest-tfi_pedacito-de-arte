@@ -36,11 +36,10 @@ describe('selección de imágenes de producto', () => {
     expect(obtenerImagenPrincipal(PRODUCTO)?.id).toBe('catalogo-1');
   });
 
-  it('deja la imagen de hero al final de la galería', () => {
+  it('excluye la imagen de hero de la galería', () => {
     expect(obtenerImagenesGaleria(PRODUCTO).map((imagen) => imagen.id)).toEqual([
       'catalogo-1',
       'catalogo-2',
-      'hero',
     ]);
   });
 
@@ -51,6 +50,23 @@ describe('selección de imágenes de producto', () => {
 
     expect(obtenerImagenHero(productoSinHero)?.id).toBe('unica');
     expect(obtenerImagenPrincipal(productoSinHero)?.id).toBe('unica');
+  });
+
+  it('no usa el hero como imagen de catálogo si es la única imagen', () => {
+    const productoConSoloHero = {
+      imagenes: [
+        {
+          id: 'hero',
+          url: 'https://cdn.test/hero.webp',
+          alt: 'Producto sobre mesa de taller',
+          orden: 1,
+          es_hero: true,
+        },
+      ],
+    };
+
+    expect(obtenerImagenPrincipal(productoConSoloHero)).toBeNull();
+    expect(obtenerImagenesGaleria(productoConSoloHero)).toEqual([]);
   });
 
   it('devuelve null cuando no hay imágenes', () => {

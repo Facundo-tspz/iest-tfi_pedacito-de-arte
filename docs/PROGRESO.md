@@ -3,7 +3,7 @@
 - **Última actualización:** 2026-11-02
 - **Fase actual:** F4 en curso — Bloque C completado y deploy verificado; pruebas manuales y RLS pendientes
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` sincronizado hasta `45c8b83`; mejora de organización de medios y tareas de F3/F4 sin commit.
+- **Estado del repositorio:** `main` sincronizado hasta `9a5e401`; ajuste de hero y documentación de prompts sin commit.
 
 ---
 
@@ -374,3 +374,5 @@ Alcance:
 | 2026-11-02 | F5 | Se crea `docs/informe/prompts-hero.md` con los prompts del hero y su fundamentación. |
 | 2026-11-02 | F5 | Medios admite recorte 16:9; `producto_imagenes.es_hero` separa la imagen del hero de la del catálogo. Tests 267/267; migración `005` ejecutada. |
 | 2026-11-02 | F5 | Medios y Productos agregan buscador, filtro por formato, nombre visible y seleccionadas primero. Tests 273/273. |
+| 2026-11-02 | F5 | Se documentan los prompts de fondo y composición para las imágenes del catálogo en `docs/informe/prompts-catalogo.md`. |
+| 2026-11-02 | F5 | El hero se excluye de las tarjetas y la galería; si el producto solo tiene hero, se muestra placeholder. Tests 276/276. |

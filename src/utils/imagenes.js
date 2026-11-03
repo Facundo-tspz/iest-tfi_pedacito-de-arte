@@ -15,18 +15,9 @@ export function obtenerImagenHero(producto) {
 export function obtenerImagenPrincipal(producto) {
   const imagenes = obtenerImagenes(producto);
 
-  return imagenes.find((imagen) => !imagen.es_hero) ?? imagenes[0] ?? null;
+  return imagenes.find((imagen) => !imagen.es_hero) ?? null;
 }
 
 export function obtenerImagenesGaleria(producto) {
-  return obtenerImagenes(producto).sort((a, b) => {
-    const heroA = a.es_hero ? 1 : 0;
-    const heroB = b.es_hero ? 1 : 0;
-
-    if (heroA !== heroB) {
-      return heroA - heroB;
-    }
-
-    return (a.orden ?? 0) - (b.orden ?? 0);
-  });
+  return obtenerImagenes(producto).filter((imagen) => !imagen.es_hero);
 }

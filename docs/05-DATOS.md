@@ -82,7 +82,7 @@ Las imágenes se cargan después desde el panel. El seed no incluye archivos de 
 | `es_hero` | `boolean` | NOT NULL, DEFAULT false; máximo una por producto |
 | `created_at` | `timestamptz` | DEFAULT `now()` |
 
-`es_hero` separa la imagen horizontal del hero de la imagen principal del catálogo. El hero usa la imagen marcada; las tarjetas y la galería priorizan las imágenes que no son de hero. La biblioteca de medios permite recortar en 4:3 para catálogo y 16:9 para hero.
+`es_hero` separa la imagen horizontal del hero de la imagen principal del catálogo. El hero usa la imagen marcada; las tarjetas y la galería excluyen las imágenes de hero. La biblioteca de medios permite recortar en 4:3 para catálogo y 16:9 para hero.
 
 ### `opciones_personalizacion`
 

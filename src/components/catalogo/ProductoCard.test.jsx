@@ -87,4 +87,23 @@ describe('ProductoCard', () => {
       screen.getByRole('img', { name: 'Agenda Botánica cerrada para catálogo' }),
     ).toHaveAttribute('src', 'https://cdn.test/catalogo.webp');
   });
+
+  it('muestra el placeholder si el producto solo tiene imagen de hero', () => {
+    renderizarCard({
+      ...PRODUCTO,
+      imagenes: [
+        {
+          url: 'https://cdn.test/hero.webp',
+          alt: 'Agenda Botánica sobre mesa de taller',
+          orden: 1,
+          es_hero: true,
+        },
+      ],
+    });
+
+    expect(screen.getByText('Foto próximamente')).toBeInTheDocument();
+    expect(
+      screen.queryByRole('img', { name: 'Agenda Botánica sobre mesa de taller' }),
+    ).not.toBeInTheDocument();
+  });
 });

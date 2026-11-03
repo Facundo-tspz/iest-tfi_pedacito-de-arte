@@ -71,7 +71,7 @@ describe('GaleriaProducto', () => {
     ).toBeInTheDocument();
   });
 
-  it('deja la imagen de hero al final y muestra primero la de catálogo', () => {
+  it('excluye la imagen de hero de la galería', () => {
     render(
       <GaleriaProducto
         producto={{
@@ -98,14 +98,33 @@ describe('GaleriaProducto', () => {
     );
 
     expect(screen.getByRole('img', { name: 'Agenda cerrada para catálogo' })).toBeInTheDocument();
+    expect(
+      screen.queryByRole('img', { name: 'Agenda sobre mesa de taller' }),
+    ).not.toBeInTheDocument();
+    expect(screen.queryAllByRole('button')).toHaveLength(0);
+  });
 
-    const botones = screen.getAllByRole('button');
-
-    expect(botones).toHaveLength(2);
-    expect(botones[1]).toHaveAttribute(
-      'aria-label',
-      'Mostrar imagen 2: Agenda sobre mesa de taller',
+  it('muestra el placeholder si el producto solo tiene imagen de hero', () => {
+    render(
+      <GaleriaProducto
+        producto={{
+          slug: 'agenda-solo-hero',
+          nombre: 'Agenda solo hero',
+          imagenes: [
+            {
+              id: 'hero',
+              url: 'https://cdn.test/hero.webp',
+              alt: 'Agenda sobre mesa de taller',
+              orden: 1,
+              es_hero: true,
+            },
+          ],
+        }}
+      />,
     );
+
+    expect(screen.getByRole('img', { name: 'Imagen de Agenda solo hero' })).toBeInTheDocument();
+    expect(screen.queryAllByRole('button')).toHaveLength(0);
   });
 
   it('usa un placeholder y no muestra miniaturas si no hay imágenes', () => {
