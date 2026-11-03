@@ -2,8 +2,8 @@
 
 - **Fuente completa de progreso:** `docs/PROGRESO.md`
 - **Fase actual:** F5 en curso — F4 cerrada; faltan imágenes de catálogo y multimedia
-- **Último cambio:** F4 cerrada: login, medios, productos, RLS, Functions y deploy verificados. Tests 276/276.
-- **Próximo paso:** Producir las imágenes 4:3 del catálogo y asignarlas desde el panel.
+- **Último cambio:** Se integran fotos locales del proceso artesanal en el Home. Tests focalizados y build correctos.
+- **Próximo paso:** Completar imágenes 4:3 del catálogo y el resto de F5.
 - **Commits pendientes:** Ninguno.
 - **Push pendiente:** Ninguno; `main` actualizado con el cierre de F4.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.

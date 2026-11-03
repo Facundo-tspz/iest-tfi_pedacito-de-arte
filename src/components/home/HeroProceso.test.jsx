@@ -28,7 +28,7 @@ describe('HeroProceso', () => {
     vi.clearAllMocks();
   });
 
-  it('muestra 4 fotos de proceso, la primera activa y sin h1', () => {
+  it('muestra 3 fotos de proceso, la primera activa y sin h1', () => {
     renderizarHero();
 
     expect(screen.getByRole('region', { name: 'Proceso artesanal' })).toBeInTheDocument();
@@ -44,10 +44,10 @@ describe('HeroProceso', () => {
 
     const slides = obtenerSlides();
 
-    expect(slides).toHaveLength(4);
+    expect(slides).toHaveLength(3);
     expect(slides[0]).toHaveAttribute('aria-hidden', 'false');
     expect(slides[1]).toHaveAttribute('aria-hidden', 'true');
-    expect(screen.getByRole('group', { name: '1 de 4' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: '1 de 3' })).toBeInTheDocument();
     expect(screen.getByRole('img', { name: FOTOS[0].alt })).toBeInTheDocument();
     expect(screen.queryByRole('img', { name: FOTOS[1].alt })).not.toBeInTheDocument();
   });
@@ -65,13 +65,13 @@ describe('HeroProceso', () => {
       vi.advanceTimersByTime(3999);
     });
 
-    expect(screen.getByRole('group', { name: '1 de 4' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: '1 de 3' })).toBeInTheDocument();
 
     act(() => {
       vi.advanceTimersByTime(1);
     });
 
-    expect(screen.getByRole('group', { name: '2 de 4' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: '2 de 3' })).toBeInTheDocument();
     expect(slides[0]).toHaveClass('-translate-x-full');
     expect(slides[1]).toHaveClass('translate-x-0');
   });
@@ -90,7 +90,7 @@ describe('HeroProceso', () => {
       vi.advanceTimersByTime(4000);
     });
 
-    expect(screen.getByRole('group', { name: '1 de 4' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: '1 de 3' })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: 'Reproducir carrusel de proceso' }));
 
@@ -98,7 +98,7 @@ describe('HeroProceso', () => {
       vi.advanceTimersByTime(4000);
     });
 
-    expect(screen.getByRole('group', { name: '2 de 4' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: '2 de 3' })).toBeInTheDocument();
   });
 
   it('pausa al hacer clic y reanuda a los 5 segundos', () => {
@@ -111,7 +111,7 @@ describe('HeroProceso', () => {
       vi.advanceTimersByTime(4999);
     });
 
-    expect(screen.getByRole('group', { name: '1 de 4' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: '1 de 3' })).toBeInTheDocument();
 
     act(() => {
       vi.advanceTimersByTime(1);
@@ -121,13 +121,13 @@ describe('HeroProceso', () => {
       vi.advanceTimersByTime(3999);
     });
 
-    expect(screen.getByRole('group', { name: '1 de 4' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: '1 de 3' })).toBeInTheDocument();
 
     act(() => {
       vi.advanceTimersByTime(1);
     });
 
-    expect(screen.getByRole('group', { name: '2 de 4' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: '2 de 3' })).toBeInTheDocument();
   });
 
   it('no pausa al pasar el mouse', () => {
@@ -140,7 +140,7 @@ describe('HeroProceso', () => {
       vi.advanceTimersByTime(4000);
     });
 
-    expect(screen.getByRole('group', { name: '2 de 4' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: '2 de 3' })).toBeInTheDocument();
   });
 
   it('se detiene, fija la primera imagen y oculta el botón con movimiento reducido', () => {
@@ -152,7 +152,7 @@ describe('HeroProceso', () => {
       vi.advanceTimersByTime(8000);
     });
 
-    expect(screen.getByRole('group', { name: '1 de 4' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: '1 de 3' })).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /carrusel de proceso/i })).not.toBeInTheDocument();
     expect(screen.getByRole('img', { name: FOTOS[0].alt })).toBeInTheDocument();
   });

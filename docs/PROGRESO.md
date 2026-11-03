@@ -384,3 +384,4 @@ Alcance:
 | 2026-11-02 | F5 | Se documentan los prompts de fondo y composición para las imágenes del catálogo en `docs/informe/prompts-catalogo.md`. |
 | 2026-11-02 | F5 | El hero se excluye de las tarjetas y la galería; si el producto solo tiene hero, se muestra placeholder. Tests 276/276. |
 | 2026-11-03 | F4 | F4 cerrada: login y medios verificados, productos reflejados en Supabase, RLS y Functions sin sesión comprobadas. |
+| 2026-11-03 | F5 | Se integran fotos locales del proceso artesanal en `public/media/proceso/` y en el hero de proceso. |

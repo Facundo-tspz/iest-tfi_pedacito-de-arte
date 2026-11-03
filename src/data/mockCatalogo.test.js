@@ -86,11 +86,10 @@ describe('mockCatalogo', () => {
     }
   });
 
-  it('define cuatro fotos de proceso', () => {
-    expect(FOTOS_PROCESO).toHaveLength(4);
-    expect(FOTOS_PROCESO.every((foto) => foto.provisional && foto.alt.trim().length > 0)).toBe(
-      true,
-    );
+  it('define tres fotos de proceso con URL y alt', () => {
+    expect(FOTOS_PROCESO).toHaveLength(3);
+    expect(FOTOS_PROCESO.every((foto) => foto.url && foto.alt.trim().length > 0)).toBe(true);
+    expect(FOTOS_PROCESO.every((foto) => foto.provisional === false)).toBe(true);
   });
 
   it('usa códigos y slugs únicos', () => {
