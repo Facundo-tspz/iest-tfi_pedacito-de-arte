@@ -4,8 +4,8 @@
 - **Fase actual:** F4 en curso — Bloque C completado y deploy verificado; pruebas manuales y RLS pendientes
 - **Último cambio:** El hero se excluye del catálogo y de la galería; solo aparece en el Home. Tests 276/276.
 - **Próximo paso:** Producir las imágenes 4:3 del catálogo y asignarlas desde el panel.
-- **Commits pendientes:** Ajuste de hero y documentación de prompts, pendientes de commit y push.
-- **Push pendiente:** Ninguno; `main` sincronizado hasta `1aefebf`.
+- **Commits pendientes:** Ninguno.
+- **Push pendiente:** Ninguno; `main` sincronizado hasta `323a4db`.
 - **Regla:** no avanzar de fase sin la palabra “aprobado”.
 
 ## Contexto mínimo para un agente nuevo

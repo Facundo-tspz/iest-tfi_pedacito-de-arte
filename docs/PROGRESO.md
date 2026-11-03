@@ -3,7 +3,7 @@
 - **Última actualización:** 2026-11-02
 - **Fase actual:** F4 en curso — Bloque C completado y deploy verificado; pruebas manuales y RLS pendientes
 - **Repositorio:** https://github.com/Facundo-tspz/iest-tfi_pedacito-de-arte
-- **Estado del repositorio:** `main` sincronizado hasta `9a5e401`; ajuste de hero y documentación de prompts sin commit.
+- **Estado del repositorio:** `main` sincronizado hasta `323a4db`; sin cambios pendientes.
 
 ---
 
